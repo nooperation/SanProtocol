@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace SanBot.Packets.WorldState
+namespace SanProtocol.WorldState
 {
     public class CreateAgentController : IPacket
     {

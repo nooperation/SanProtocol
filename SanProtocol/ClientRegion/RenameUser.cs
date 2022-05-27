@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SanBot.Packets.ClientRegion
+namespace SanProtocol.ClientRegion
 {
     public class RenameUser : IPacket
     {

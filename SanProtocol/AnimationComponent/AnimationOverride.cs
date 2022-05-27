@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SanBot.Packets.AnimationComponent
+namespace SanProtocol.AnimationComponent
 {
     public class AnimationOverride : IPacket
     {

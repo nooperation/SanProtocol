@@ -1,4 +1,4 @@
-﻿namespace SanBot.Packets
+﻿namespace SanProtocol
 {
     public interface IPacket
     {

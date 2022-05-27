@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 
-namespace SanBot.Packets
+namespace SanProtocol
 {
     public class Utils
     {

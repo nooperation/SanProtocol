@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SanBot.Packets.ClientVoice
+namespace SanProtocol.ClientVoice
 {
     public class LocalAudioMute : IPacket
     {

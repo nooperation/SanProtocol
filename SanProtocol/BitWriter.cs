@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SanBot.Packets
+namespace SanProtocol
 {
     public class BitWriter
     {

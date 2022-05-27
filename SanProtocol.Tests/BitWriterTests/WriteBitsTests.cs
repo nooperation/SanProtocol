@@ -1,16 +1,16 @@
-using SanBot.Packets;
+using SanProtocol;
 
-namespace SanProtocol.Tests
+namespace SanProtocol.Tests.BitWriterTests
 {
-    public class UnitTest1
+    public class WriteBitsTests
     {
         private ulong ReadUlong(List<byte> buffer, int? offset = null, int? count = null)
         {
             ulong value = 0;
 
-            for (int i = (offset ?? 0); i < (count ?? buffer.Count); i++)
+            for (int i = offset ?? 0; i < (count ?? buffer.Count); i++)
             {
-                value |= (ulong)buffer[i] << (8 * i);
+                value |= (ulong)buffer[i] << 8 * i;
             }
 
             return value;
@@ -300,9 +300,9 @@ namespace SanProtocol.Tests
 
             offset = BitWriter.WriteBits(buffer, offset, 0b_10101010101, 11);
 
-            offset = BitWriter.WriteBits(buffer, offset, 0b_1110001111001100111111011000110110011101, 5*8);
+            offset = BitWriter.WriteBits(buffer, offset, 0b_1110001111001100111111011000110110011101, 5 * 8);
             Assert.Equal(7, buffer.Count);
-            Assert.Equal(5*8 + 11, offset);
+            Assert.Equal(5 * 8 + 11, offset);
             Assert.Equal(0b_1110001111001100111111011000110110011101_10101010101UL, ReadUlong(buffer));
         }
 
@@ -402,25 +402,6 @@ namespace SanProtocol.Tests
             Assert.Equal(64 + 11, offset);
             Assert.Equal(0b_10010110110011110001111001100111111011000110110011101_10101010101UL, ReadUlong(buffer, 0, 8));
             Assert.Equal(0b_10100011101UL, ReadUlong(buffer, 8));
-        }
-
-        [Fact]
-        public void Write8Byte_offset1()
-        {
-            var buffer = new List<byte>();
-            var offset = 0L;
-
-            offset = BitWriter.WriteBits(buffer, offset, 0x123456789ABCDEF0, 64);
-            Assert.Equal(8, buffer.Count);
-            Assert.Equal(64, offset);
-            Assert.Equal(0xF0, buffer[0]);
-            Assert.Equal(0xDE, buffer[1]);
-            Assert.Equal(0xBC, buffer[2]);
-            Assert.Equal(0x9A, buffer[3]);
-            Assert.Equal(0x78, buffer[4]);
-            Assert.Equal(0x56, buffer[5]);
-            Assert.Equal(0x34, buffer[6]);
-            Assert.Equal(0x12, buffer[7]);
         }
     }
 }

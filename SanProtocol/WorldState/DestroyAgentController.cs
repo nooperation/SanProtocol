@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SanBot.Packets.WorldState
+namespace SanProtocol.WorldState
 {
     public class DestroyAgentController : IPacket
     {

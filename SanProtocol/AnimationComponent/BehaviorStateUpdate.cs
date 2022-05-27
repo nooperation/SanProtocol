@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace SanBot.Packets.AnimationComponent
+namespace SanProtocol.AnimationComponent
 {
     public class BehaviorStateUpdate : IPacket
     {

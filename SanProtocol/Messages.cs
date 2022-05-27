@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SanBot
+namespace SanProtocol
 {
     public class Messages
     {

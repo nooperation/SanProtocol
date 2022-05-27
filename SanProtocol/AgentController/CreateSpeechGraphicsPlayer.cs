@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SanBot.Packets.AgentController
+namespace SanProtocol.AgentController
 {
     // REMOVED 40.11.0.1810696  (2020-08-13)
     public class CreateSpeechGraphicsPlayer : IPacket
