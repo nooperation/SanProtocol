@@ -9,6 +9,20 @@ namespace SanProtocol
     {
         public const string Zero = "00000000000000000000000000000000";
 
+        private Guid? _guid;
+        public Guid Guid 
+        {
+            get
+            {
+                if(_guid == null)
+                {
+                    _guid = new Guid(this.Format());
+                }
+
+                return _guid.Value;
+            }
+        }
+
         public string UUID { get; set; }
         public ulong Upper { get; set; }
         public ulong Lower { get; set; }

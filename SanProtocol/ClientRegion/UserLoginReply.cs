@@ -9,12 +9,12 @@ namespace SanProtocol.ClientRegion
     {
         public uint MessageId => Messages.ClientRegion.UserLoginReply;
 
-        public byte Success { get; set; }
+        public bool Success { get; set; }
         public uint SessionId { get; set; }
         public string RegionServerVersion { get; set; }
         public List<string> Privileges { get; set; } = new List<string>();
 
-        public UserLoginReply(byte success, uint sessionId, string regionServerVersion, List<string> privileges)
+        public UserLoginReply(bool success, uint sessionId, string regionServerVersion, List<string> privileges)
         {
             this.Success = success;
             this.SessionId = sessionId;
@@ -24,7 +24,7 @@ namespace SanProtocol.ClientRegion
 
         public UserLoginReply(BinaryReader br)
         {
-            Success = br.ReadByte();
+            Success = br.ReadByte() != 0;
             SessionId = br.ReadUInt32();
             RegionServerVersion = br.ReadSanString();
             var numPrivileges = br.ReadUInt32();
