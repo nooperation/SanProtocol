@@ -42,8 +42,8 @@ namespace SanProtocol.ClientVoice
                     bw.Write(MessageId);
                     bw.Write(Instance);
                     bw.Write(AgentControllerId);
-                    bw.Write(Data.GetBytes());
-                    bw.Write(SpeechGraphicsData.GetBytes());
+                    bw.Write(Data.GetBytes().Skip(4).ToArray());
+                    bw.Write(SpeechGraphicsData.GetBytes().Skip(4).ToArray());
                     bw.Write(Broadcast);
                 }
                 return ms.ToArray();

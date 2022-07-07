@@ -17,7 +17,7 @@ namespace SanProtocol.WorldState
         public List<CreateCharacterNode> CharacterNodes { get; set; } = new List<CreateCharacterNode>();
         public ulong Frame { get; set; }
         public SanUUID PersonaId { get; set; }
-        public byte IsRemoteAgent { get; set; }
+        public bool IsRemoteAgent { get; set; }
 
         public CreateAgentController(uint sessionId, uint clusterId, uint agentControllerId, uint characterObjectId, List<CreateCharacterNode> characterNodes, ulong frame, SanUUID personaId, byte isRemoteAgent)
         {
@@ -28,7 +28,7 @@ namespace SanProtocol.WorldState
             this.CharacterNodes = characterNodes;
             this.Frame = frame;
             this.PersonaId = personaId;
-            this.IsRemoteAgent = isRemoteAgent;
+            this.IsRemoteAgent = isRemoteAgent != 0;
         }
 
         public CreateAgentController(BinaryReader br)
@@ -46,7 +46,7 @@ namespace SanProtocol.WorldState
 
             Frame = br.ReadUInt64();
             PersonaId = br.ReadSanUUID();
-            IsRemoteAgent = br.ReadByte();
+            IsRemoteAgent = br.ReadByte() != 0;
         }
 
         public byte[] GetBytes()

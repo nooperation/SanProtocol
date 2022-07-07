@@ -91,7 +91,7 @@ namespace SanProtocol
             var results = new List<float>();
             for (int i = 0; i < numFloats; i++)
             {
-                BitOffset = ReadBits(Buffer, BitOffset, out ulong floatData, 13);
+                BitOffset = ReadBits(Buffer, BitOffset, out ulong floatData, bitsPerFloat);
 
                 var mask = (long)Math.Pow(2, bitsPerFloat - 1) - 1;
                 var value = ((long)floatData - mask) * (1.0f / mask) * modifier;

@@ -84,12 +84,27 @@ namespace SanProtocol
 
         public override int GetHashCode()
         {
-            return UUID.GetHashCode();
+            return this.UUID.GetHashCode();
         }
 
         public override bool Equals(object? obj)
         {
-            return UUID.Equals(obj);
+            if(obj is SanUUID targetUUID)
+            {
+                return this.Lower == targetUUID.Lower && this.Upper == targetUUID.Upper;
+            }
+
+            return false;
+        }
+
+        public static bool operator ==(SanUUID x, SanUUID y)
+        {
+            return x.Lower == y.Lower && x.Upper == y.Upper;
+        }
+
+        public static bool operator !=(SanUUID x, SanUUID y)
+        {
+            return !(x == y);
         }
 
         public static implicit operator SanUUID(string str) => new SanUUID(str);

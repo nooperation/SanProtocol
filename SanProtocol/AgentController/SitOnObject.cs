@@ -12,16 +12,12 @@ namespace SanProtocol.AgentController
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }
         public ulong ComponentId { get; set; }
-        public byte OwnershipWatermark { get; set; }
-        public byte SkipAnimation { get; set; }
 
-        public SitOnObject(ulong frame, uint agentControllerId, ulong componentId, byte ownershipWatermark, byte skipAnimation)
+        public SitOnObject(ulong frame, uint agentControllerId, ulong componentId)
         {
             this.Frame = frame;
             this.AgentControllerId = agentControllerId;
             this.ComponentId = componentId;
-            this.OwnershipWatermark = ownershipWatermark;
-            this.SkipAnimation = skipAnimation;
         }
 
         public SitOnObject(BinaryReader br)
@@ -29,8 +25,6 @@ namespace SanProtocol.AgentController
             Frame = br.ReadUInt64();
             AgentControllerId = br.ReadUInt32();
             ComponentId = br.ReadUInt64();
-            OwnershipWatermark = br.ReadByte();
-            SkipAnimation = br.ReadByte();
         }
 
         public byte[] GetBytes()
@@ -43,8 +37,6 @@ namespace SanProtocol.AgentController
                     bw.Write(Frame);
                     bw.Write(AgentControllerId);
                     bw.Write(ComponentId);
-                    bw.Write(OwnershipWatermark);
-                    bw.Write(SkipAnimation);
                 }
                 return ms.ToArray();
             }
@@ -55,9 +47,7 @@ namespace SanProtocol.AgentController
             return $"AgentController::SitOnObject:\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
-                   $"  {nameof(ComponentId)} = {ComponentId}\n" +
-                   $"  {nameof(OwnershipWatermark)} = {OwnershipWatermark}\n" +
-                   $"  {nameof(SkipAnimation)} = {SkipAnimation}\n";
+                   $"  {nameof(ComponentId)} = {ComponentId}\n";
         }
     }
 }

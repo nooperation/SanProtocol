@@ -67,7 +67,7 @@ namespace SanProtocol
                 var mask = (ulong)Math.Pow(2, bitsPerFloat - 1) - 1;
                 var result = (ulong)Math.Round(value * (mask / modifier) + mask);
 
-                BitOffset = WriteBits(Buffer, BitOffset, result, 13);
+                BitOffset = WriteBits(Buffer, BitOffset, result, bitsPerFloat);
             }
         }
 

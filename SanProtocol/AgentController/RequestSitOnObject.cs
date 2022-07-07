@@ -9,13 +9,11 @@ namespace SanProtocol.AgentController
     {
         public override uint MessageId => Messages.AgentController.RequestSitOnObject;
 
-        public RequestSitOnObject(ulong frame, uint agentControllerId, ulong componentId, byte ownershipWatermark, byte skipAnimation)
+        public RequestSitOnObject(ulong frame, uint agentControllerId, ulong componentId)
             : base(
                  frame,
                  agentControllerId,
-                 componentId,
-                 ownershipWatermark,
-                 skipAnimation
+                 componentId
             )
         {
         }
@@ -30,9 +28,7 @@ namespace SanProtocol.AgentController
             return $"AgentController::RequestSitOnObject:\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
-                   $"  {nameof(ComponentId)} = {ComponentId}\n" +
-                   $"  {nameof(OwnershipWatermark)} = {OwnershipWatermark}\n" +
-                   $"  {nameof(SkipAnimation)} = {SkipAnimation}\n";
+                   $"  {nameof(ComponentId)} = {ComponentId}\n";
         }
     }
 }

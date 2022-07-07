@@ -12,7 +12,7 @@ namespace SanProtocol.ClientVoice
         public SanUUID Instance { get; set; }
         public uint AgentControllerId { get; set; }
         public byte Broadcast { get; set; }
-        public byte Mute { get; set; }
+        public byte Mute { get; set; } // TODO: This is a flag for the inverse. 1 = unmuted?
 
         public LocalAudioStreamState(SanUUID instance, uint agentControllerId, byte broadcast, byte mute)
         {

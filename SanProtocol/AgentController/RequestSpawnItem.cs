@@ -45,6 +45,7 @@ namespace SanProtocol.AgentController
             {
                 using (var bw = new BinaryWriter(ms))
                 {
+                    bw.Write(MessageId);
                     bw.Write(Frame);
                     bw.Write(AgentControllerId);
                     bw.Write(ResourceId);
@@ -54,7 +55,6 @@ namespace SanProtocol.AgentController
                     bitWriter.WriteFloats(SpawnPosition, 26, 2048.0f);
                     bitWriter.WriteQuaternion(SpawnOrientation, 13);
                     var bits = bitWriter.GetBytes();
-
                     bw.Write(bits);
                 }
                 return ms.ToArray();
