@@ -24,11 +24,16 @@ namespace SanProtocol
         internal static void DumpReader(BinaryReader br, string name)
         {
             var originalPosition = br.BaseStream.Position;
-            Console.WriteLine($"{name}:");
-            var x = br.ReadBytes((int)(br.BaseStream.Length - br.BaseStream.Position));
-            Console.WriteLine(Utils.DumpPacket(x, false));
-            Console.WriteLine("---");
+            var bytes = br.ReadBytes((int)(br.BaseStream.Length - br.BaseStream.Position));
             br.BaseStream.Seek(originalPosition, SeekOrigin.Begin);
+
+            Console.WriteLine($"{name}: {Utils.DumpPacket(bytes, false)}");
+        }
+        internal static void DumpWriter(MemoryStream ms, string name)
+        {
+            var bytes = ms.ToArray().Skip(4).ToArray();
+
+            Console.WriteLine($"{name}: {Utils.DumpPacket(bytes, true)}");
         }
     }
 }

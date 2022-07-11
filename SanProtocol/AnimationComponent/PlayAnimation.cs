@@ -53,6 +53,7 @@ namespace SanProtocol.AnimationComponent
                     bw.Write(ResourceId);
 
                     var bitWriter = new BitWriter();
+
                     bitWriter.WriteFloat(PlaybackSpeed, 16, 10.0f);
                     bitWriter.WriteUnsigned(SkeletonType, 2);
                     bitWriter.WriteUnsigned(AnimationType, 3);
@@ -61,6 +62,7 @@ namespace SanProtocol.AnimationComponent
 
                     bw.Write(bits);
                 }
+
                 return ms.ToArray();
             }
         }

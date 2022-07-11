@@ -50,8 +50,8 @@ namespace SanProtocol.AgentController
             {
                 using (var bw = new BinaryWriter(ms))
                 {
-                    bw.Write(AgentControllerId);
                     bw.Write(MessageId);
+                    bw.Write(AgentControllerId);
                     bw.Write(Frame);
                     bw.Write(ComponentId);
                     bw.Write(ResourceId);
@@ -65,6 +65,7 @@ namespace SanProtocol.AgentController
 
                     bw.Write(bits);
                 }
+
                 return ms.ToArray();
             }
         }

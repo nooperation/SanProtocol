@@ -88,9 +88,6 @@ namespace SanProtocol.AnimationComponent
                 Bools.Add(new BoolVariable(br));
             }
 
-            // TODO: ReadVersion ..?? I thought this was only for assets...
-            //var unknown = br.ReadInt32();
-
             var internalEventIdsLength = br.ReadInt32();
             for (int i = 0; i < internalEventIdsLength; i++)
             {
@@ -180,6 +177,7 @@ namespace SanProtocol.AnimationComponent
                         bw.Write(bytes);
                     }
                 }
+
                 return ms.ToArray();
             }
         }

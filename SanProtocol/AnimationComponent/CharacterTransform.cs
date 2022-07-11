@@ -50,7 +50,10 @@ namespace SanProtocol.AnimationComponent
                     bitWriter.WriteFloats(Position, 24, 2048.0f);
                     bitWriter.WriteQuaternion(OrientationQuat, 12);
                     var bits = bitWriter.GetBytes();
+
+                    bw.Write(bits);
                 }
+
                 return ms.ToArray();
             }
         }

@@ -22,7 +22,19 @@ namespace SanProtocol.AgentController
         public float CharacterForward { get; set; }
         public Quaternion CameraForward { get; set; }
 
-        public CharacterControllerInput(ulong frame, uint agentControllerId, byte jumpState, byte jumpBtnPressed, float moveRight, float moveForward, float cameraYaw, float cameraPitch, float behaviorYawDelta, float behaviorPitchDelta, float characterForward, Quaternion cameraForward)
+        public CharacterControllerInput(
+            ulong frame,
+            uint agentControllerId,
+            byte jumpState,
+            byte jumpBtnPressed,
+            float moveRight,
+            float moveForward,
+            float cameraYaw,
+            float cameraPitch,
+            float behaviorYawDelta,
+            float behaviorPitchDelta,
+            float characterForward,
+            Quaternion cameraForward)
         {
             this.Frame = frame;
             this.AgentControllerId = agentControllerId;
@@ -81,6 +93,7 @@ namespace SanProtocol.AgentController
 
                     bw.Write(bits);
                 }
+
                 return ms.ToArray();
             }
         }
