@@ -33,13 +33,24 @@ namespace SanProtocol.AgentController
 
         public byte[] GetBytes()
         {
-            var bitWriter = new BitWriter();
-            bitWriter.WriteFloats(Position, 16, 3.0f);
-            bitWriter.WriteQuaternion(Orientation, 12);
-            bitWriter.WriteUnsigned(Enabled ? 1u : 0u, 1);
-            bitWriter.WriteUnsigned(ControlPointType, 4);
+            using (var ms = new MemoryStream())
+            {
+                using (var bw = new BinaryWriter(ms))
+                {
+                    bw.Write(MessageId);
 
-            return bitWriter.GetBytes();
+                    var bitWriter = new BitWriter();
+                    bitWriter.WriteFloats(Position, 16, 3.0f);
+                    bitWriter.WriteQuaternion(Orientation, 12);
+                    bitWriter.WriteUnsigned(Enabled ? 1u : 0u, 1);
+                    bitWriter.WriteUnsigned(ControlPointType, 4);
+                    var bits = bitWriter.GetBytes();
+
+                    bw.Write(bits);
+                }
+
+                return ms.ToArray();
+            }
         }
 
         public override string ToString()

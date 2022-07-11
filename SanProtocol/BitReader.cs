@@ -34,9 +34,10 @@ namespace SanProtocol
 
         public ulong ReadUnsigned(byte numBits)
         {
+            var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - numBits);
             BitOffset = ReadBits(Buffer, BitOffset, out ulong output, numBits);
 
-            return output;
+            return output & mask;
         }
 
         public float ReadFloat(byte bits, float modifier = 1.0f)

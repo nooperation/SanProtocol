@@ -12,6 +12,7 @@ namespace SanProtocol.AgentController
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }
         public uint ControlPointsLength { get; set; }
+        public List<AgentController.ControlPoint> ControlPoints { get; set; }
         public float LeftIndexTrigger { get; set; }
         public float RightIndexTrigger { get; set; }
         public float LeftGripTrigger { get; set; }
@@ -25,7 +26,7 @@ namespace SanProtocol.AgentController
         public CharacterControlPointInput(
             ulong frame,
             uint agentControllerId,
-            uint controlPointsLength,
+            List<AgentController.ControlPoint> controlPoints,
             float leftIndexTrigger,
             float rightIndexTrigger,
             float leftGripTrigger,
@@ -38,7 +39,8 @@ namespace SanProtocol.AgentController
         {
             this.Frame = frame;
             this.AgentControllerId = agentControllerId;
-            this.ControlPointsLength = controlPointsLength;
+            this.ControlPointsLength = (uint)controlPoints.Count;
+            this.ControlPoints = controlPoints;
             this.LeftIndexTrigger = leftIndexTrigger;
             this.RightIndexTrigger = rightIndexTrigger;
             this.LeftGripTrigger = leftGripTrigger;
@@ -55,6 +57,13 @@ namespace SanProtocol.AgentController
             Frame = br.ReadUInt64();
             AgentControllerId = br.ReadUInt32();
             ControlPointsLength = br.ReadUInt32();
+
+            ControlPoints = new List<ControlPoint>();
+            for (int i = 0; i < ControlPointsLength; i++)
+            {
+                var newControlPoint = new AgentController.ControlPoint(br);
+                ControlPoints.Add(newControlPoint);
+            }
 
             var bitReader = new BitReader(br, 8 + 8 + 8 + 8 + 7 + 7 + 1 + 1 + 1);
             LeftIndexTrigger = bitReader.ReadFloat(8, 1.0f);
@@ -77,7 +86,13 @@ namespace SanProtocol.AgentController
                     bw.Write(MessageId);
                     bw.Write(Frame);
                     bw.Write(AgentControllerId);
+
                     bw.Write(ControlPointsLength);
+                    foreach (var controlPoint in ControlPoints)
+                    {
+                        var bytes = controlPoint.GetBytes().Skip(4).ToArray();
+                        bw.Write(bytes);
+                    }
 
                     var bitWriter = new BitWriter();
                     bitWriter.WriteFloat(LeftIndexTrigger, 8, 1.0f);

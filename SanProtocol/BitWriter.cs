@@ -73,7 +73,9 @@ namespace SanProtocol
 
         public void WriteUnsigned(ulong value, int numBits)
         {
-            BitOffset = WriteBits(Buffer, BitOffset, value, numBits);
+            var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - numBits);
+
+            BitOffset = WriteBits(Buffer, BitOffset, value & mask, numBits);
         }
 
         public static long WriteBits(List<byte> buffer, long bitOffset, ulong value, int numBits)

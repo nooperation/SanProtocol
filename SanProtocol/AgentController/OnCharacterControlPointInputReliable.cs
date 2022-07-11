@@ -9,11 +9,23 @@ namespace SanProtocol.AgentController
     {
         public override uint MessageId => Messages.AgentController.CharacterControlPointInputReliable;
         
-        public CharacterControlPointInputReliable(ulong frame, uint agentControllerId, uint controlPointsLength, byte leftIndexTrigger, byte rightIndexTrigger, byte leftGripTrigger, byte rightGripTrigger, byte leftTouches, byte rightTouches, bool indexTriggerControlsHand, bool leftHandIsHolding, bool rightHandIsHolding)
+        public CharacterControlPointInputReliable(
+            ulong frame,
+            uint agentControllerId,
+            List<AgentController.ControlPoint> controlPoints,
+            float leftIndexTrigger,
+            float rightIndexTrigger,
+            float leftGripTrigger,
+            float rightGripTrigger,
+            byte leftTouches,
+            byte rightTouches,
+            bool indexTriggerControlsHand,
+            bool leftHandIsHolding,
+            bool rightHandIsHolding)
         : base(
                 frame,
                 agentControllerId,
-                controlPointsLength,
+                controlPoints,
                 leftIndexTrigger,
                 rightIndexTrigger,
                 leftGripTrigger,

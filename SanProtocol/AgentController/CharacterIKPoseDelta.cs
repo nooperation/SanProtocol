@@ -11,8 +11,8 @@ namespace SanProtocol.AgentController
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }
-        public Dictionary<byte, Quaternion> BoneRotations { get; set; }
-        public List<float> RootBoneTranslationDelta { get; set; }
+        public Dictionary<byte, Quaternion> BoneRotations { get; set; } = new Dictionary<byte, Quaternion>();
+        public List<float> RootBoneTranslationDelta { get; set; } = new List<float>();
 
         public CharacterIKPoseDelta(uint agentControllerId, ulong frame, Dictionary<byte, Quaternion> boneRotations, List<float> rootBoneTranslationDelta)
         {
@@ -28,8 +28,8 @@ namespace SanProtocol.AgentController
 
             AgentControllerId = br.ReadUInt32();
             Frame = br.ReadUInt64();
-
             var numBoneRotations = br.ReadUInt32();
+
             var bitReader = new BitReader(br, (int)numBoneRotations * (6 + (3 * 7 + 4)) + 3 * 9);
             for (int i = 0; i < numBoneRotations; i++)
             {
@@ -37,6 +37,7 @@ namespace SanProtocol.AgentController
                 var localOrientation = bitReader.ReadQuaternion(3, 7);
                 BoneRotations[boneIndex] = localOrientation;
             }
+
             RootBoneTranslationDelta = bitReader.ReadFloats(3, 9, 0.1f);
         }
 
@@ -49,7 +50,6 @@ namespace SanProtocol.AgentController
                     bw.Write(MessageId);
                     bw.Write(AgentControllerId);
                     bw.Write(Frame);
-
                     bw.Write(BoneRotations.Count);
 
                     var bitWriter = new BitWriter();

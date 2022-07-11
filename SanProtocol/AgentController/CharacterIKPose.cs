@@ -14,11 +14,12 @@ namespace SanProtocol.AgentController
         public Dictionary<byte, Quaternion> BoneRotations { get; set; } = new Dictionary<byte, Quaternion>();
         public List<float> RootBoneTranslation { get; set; } = new List<float>();
 
-        public CharacterIKPose(uint agentControllerId, ulong frame, Dictionary<byte, Quaternion> boneRotations)
+        public CharacterIKPose(uint agentControllerId, ulong frame, Dictionary<byte, Quaternion> boneRotations, List<float> rootBoneTranslation)
         {
             this.AgentControllerId = agentControllerId;
             this.Frame = frame;
             this.BoneRotations = boneRotations;
+            this.RootBoneTranslation = rootBoneTranslation;
         }
 
         public CharacterIKPose(BinaryReader br)
@@ -49,7 +50,6 @@ namespace SanProtocol.AgentController
                     bw.Write(MessageId);
                     bw.Write(AgentControllerId);
                     bw.Write(Frame);
-
                     bw.Write(BoneRotations.Count);
 
                     var bitWriter = new BitWriter();
