@@ -59,13 +59,14 @@ namespace SanProtocol.AgentController
             ControlPointsLength = br.ReadUInt32();
 
             ControlPoints = new List<ControlPoint>();
+
+            var bitReader = new BitReader(br);
             for (int i = 0; i < ControlPointsLength; i++)
             {
-                var newControlPoint = new AgentController.ControlPoint(br);
+                var newControlPoint = new AgentController.ControlPoint(bitReader);
                 ControlPoints.Add(newControlPoint);
             }
 
-            var bitReader = new BitReader(br, 8 + 8 + 8 + 8 + 7 + 7 + 1 + 1 + 1);
             LeftIndexTrigger = bitReader.ReadFloat(8, 1.0f);
             RightIndexTrigger = bitReader.ReadFloat(8, 1.0f);
             LeftGripTrigger = bitReader.ReadFloat(8, 1.0f);
@@ -86,15 +87,14 @@ namespace SanProtocol.AgentController
                     bw.Write(MessageId);
                     bw.Write(Frame);
                     bw.Write(AgentControllerId);
-
                     bw.Write(ControlPointsLength);
-                    foreach (var controlPoint in ControlPoints)
-                    {
-                        var bytes = controlPoint.GetBytes().Skip(4).ToArray();
-                        bw.Write(bytes);
-                    }
 
                     var bitWriter = new BitWriter();
+                    foreach (var controlPoint in ControlPoints)
+                    {
+                        controlPoint.WriteBits(bitWriter);
+                    }
+
                     bitWriter.WriteFloat(LeftIndexTrigger, 8, 1.0f);
                     bitWriter.WriteFloat(RightIndexTrigger, 8, 1.0f);
                     bitWriter.WriteFloat(LeftGripTrigger, 8, 1.0f);
@@ -104,10 +104,11 @@ namespace SanProtocol.AgentController
                     bitWriter.WriteUnsigned(IndexTriggerControlsHand ? 1u : 0u, 1);
                     bitWriter.WriteUnsigned(LeftHandIsHolding ? 1u : 0u, 1);
                     bitWriter.WriteUnsigned(RightHandIsHolding ? 1u : 0u, 1);
-                    var bits = bitWriter.GetBytes();
 
+                    var bits = bitWriter.GetBytes();
                     bw.Write(bits);
                 }
+
                 return ms.ToArray();
             }
         }

@@ -32,6 +32,16 @@ namespace SanProtocol
             this.BitOffset = 0;
         }
 
+        public BitReader(BinaryReader br)
+        {
+            var bytesToRead = br.BaseStream.Length - br.BaseStream.Position;
+
+            // ReadBits tends to go way out of bounds. Just give ourselves enough room to play with.
+            Buffer = new byte[bytesToRead + 8];
+            br.Read(Buffer, 0, (int)bytesToRead);
+            this.BitOffset = 0;
+        }
+
         public ulong ReadUnsigned(byte numBits)
         {
             var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - numBits);

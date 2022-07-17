@@ -11,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }
-        public Dictionary<byte, Quaternion> BoneRotations { get; set; } = new Dictionary<byte, Quaternion>();
+        public List<Tuple<byte, Quaternion>> BoneRotations { get; set; } = new List<Tuple<byte, Quaternion>>();
         public List<float> RootBoneTranslation { get; set; } = new List<float>();
 
-        public CharacterIKPose(uint agentControllerId, ulong frame, Dictionary<byte, Quaternion> boneRotations, List<float> rootBoneTranslation)
+        public CharacterIKPose(uint agentControllerId, ulong frame, List<Tuple<byte, Quaternion>> boneRotations, List<float> rootBoneTranslation)
         {
             this.AgentControllerId = agentControllerId;
             this.Frame = frame;
@@ -24,18 +24,18 @@ namespace SanProtocol.AgentController
 
         public CharacterIKPose(BinaryReader br)
         {
-            BoneRotations = new Dictionary<byte, Quaternion>();
+            BoneRotations = new List<Tuple<byte, Quaternion>>();
 
             AgentControllerId = br.ReadUInt32();
             Frame = br.ReadUInt64();
             var numBoneRotations = br.ReadUInt32();
 
-            var bitReader = new BitReader(br, (int)numBoneRotations * (6 + (3 * 12 + 4)) + 3 * 14);
+            var bitReader = new BitReader(br);
             for (int i = 0; i < numBoneRotations; i++)
             {
                 var boneIndex = (byte)bitReader.ReadUnsigned(6);
                 var localOrientation = bitReader.ReadQuaternion(3, 12);
-                BoneRotations[boneIndex] = localOrientation;
+                BoneRotations.Add(new Tuple<byte, Quaternion>(boneIndex, localOrientation));
             }
 
             RootBoneTranslation = bitReader.ReadFloats(3, 14, 3.0f);
@@ -55,8 +55,8 @@ namespace SanProtocol.AgentController
                     var bitWriter = new BitWriter();
                     foreach (var item in BoneRotations)
                     {
-                        bitWriter.WriteFloat(item.Key, 6, 1.0f);
-                        bitWriter.WriteQuaternion(item.Value, 12);
+                        bitWriter.WriteUnsigned(item.Item1, 6);
+                        bitWriter.WriteQuaternion(item.Item2, 12);
                     }
                     bitWriter.WriteFloats(RootBoneTranslation, 14, 3.0f);
                     var bits = bitWriter.GetBytes();

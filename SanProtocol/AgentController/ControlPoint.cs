@@ -31,6 +31,15 @@ namespace SanProtocol.AgentController
             ControlPointType = (byte)bitReader.ReadUnsigned(4);
         }
 
+        public ControlPoint(BitReader bitReader)
+        {
+            // 93 bits
+            Position = bitReader.ReadFloats(3, 16, 3.0f);
+            Orientation = bitReader.ReadQuaternion(3, 12);
+            Enabled = bitReader.ReadUnsigned(1) != 0;
+            ControlPointType = (byte)bitReader.ReadUnsigned(4);
+        }
+
         public byte[] GetBytes()
         {
             using (var ms = new MemoryStream())
@@ -51,6 +60,15 @@ namespace SanProtocol.AgentController
 
                 return ms.ToArray();
             }
+        }
+
+        public void WriteBits(BitWriter bitWriter)
+        {
+            // 93 bits
+            bitWriter.WriteFloats(Position, 16, 3.0f);
+            bitWriter.WriteQuaternion(Orientation, 12);
+            bitWriter.WriteUnsigned(Enabled ? 1u : 0u, 1);
+            bitWriter.WriteUnsigned(ControlPointType, 4);
         }
 
         public override string ToString()

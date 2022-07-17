@@ -30,7 +30,7 @@ namespace SanProtocol.AgentController
             Frame = br.ReadUInt64();
             var numBoneRotations = br.ReadUInt32();
 
-            var bitReader = new BitReader(br, (int)numBoneRotations * (6 + (3 * 7 + 4)) + 3 * 9);
+            var bitReader = new BitReader(br);
             for (int i = 0; i < numBoneRotations; i++)
             {
                 var boneIndex = (byte)bitReader.ReadUnsigned(6);
@@ -55,9 +55,10 @@ namespace SanProtocol.AgentController
                     var bitWriter = new BitWriter();
                     foreach (var item in BoneRotations)
                     {
-                        bitWriter.WriteFloat(item.Key, 6, 1.0f);
+                        bitWriter.WriteUnsigned(item.Key, 6);
                         bitWriter.WriteQuaternion(item.Value, 7);
                     }
+
                     bitWriter.WriteFloats(RootBoneTranslationDelta, 9, 0.1f);
                     var bits = bitWriter.GetBytes();
 

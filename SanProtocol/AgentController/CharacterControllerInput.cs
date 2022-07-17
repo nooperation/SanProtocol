@@ -57,7 +57,7 @@ namespace SanProtocol.AgentController
             JumpState = br.ReadByte();
             JumpBtnPressed = br.ReadByte();
 
-            var bitReader = new BitReader(br, 12 + 12 + 13 + 13 + 11 + 11 + 15 + (2*12 + 4));
+            var bitReader = new BitReader(br);
             MoveRight = bitReader.ReadFloat(12, 1.0f);
             MoveForward = bitReader.ReadFloat(12, 1.0f);
             CameraYaw = bitReader.ReadFloat(13, 64.0f);
