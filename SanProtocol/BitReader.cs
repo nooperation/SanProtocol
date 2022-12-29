@@ -56,6 +56,7 @@ namespace SanProtocol
             return floats[0];
         }
 
+        private byte[] _cleanBytes = new byte[256];
         public List<float> ReadFloats(int numFloats, int bitsPerFloat, float modifier = 1.0f)
         {
             if(numFloats < 0)
@@ -64,18 +65,23 @@ namespace SanProtocol
             }
 
             int bufferSize = 1 + (numFloats * bitsPerFloat) / 8;
-            byte[] cleanBytes = new byte[bufferSize];
+            if(bufferSize > _cleanBytes.Length)
+            {
+                _cleanBytes = new byte[bufferSize];
+            }
 
-            BitOffset = ReadManyBits(Buffer, BitOffset, cleanBytes, 0, numFloats * bitsPerFloat);
+            BitOffset = ReadManyBits(Buffer, BitOffset, _cleanBytes, 0, numFloats * bitsPerFloat);
 
-            var results = new List<float>();
+            var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
+            var valueModifier = (1.0f / mask) * modifier;
+
+            var results = new List<float>(numFloats);
             var bitOffset = 0L;
             for (int i = 0; i < numFloats; i++)
             {
-                bitOffset = BitReader.ReadBits(cleanBytes, bitOffset, out ulong floatData, bitsPerFloat);
+                bitOffset = BitReader.ReadBits(_cleanBytes, bitOffset, out ulong floatData, bitsPerFloat);
 
-                var mask = (long)Math.Pow(2, bitsPerFloat - 1) - 1;
-                var value = ((long)floatData - mask) * (1.0f / mask) * modifier;
+                var value = ((long)floatData - (long)mask) * valueModifier;
 
                 results.Add(value);
             }
@@ -99,13 +105,15 @@ namespace SanProtocol
                 modifier = 0.70710802f;
             }
 
-            var results = new List<float>();
+            var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
+            var valueModifier = (1.0f / mask) * modifier;
+
+            var results = new List<float>(numFloats);
             for (int i = 0; i < numFloats; i++)
             {
                 BitOffset = ReadBits(Buffer, BitOffset, out ulong floatData, bitsPerFloat);
 
-                var mask = (long)Math.Pow(2, bitsPerFloat - 1) - 1;
-                var value = ((long)floatData - mask) * (1.0f / mask) * modifier;
+                var value = ((long)floatData - (long)mask) * valueModifier;
 
                 results.Add(value);
             }

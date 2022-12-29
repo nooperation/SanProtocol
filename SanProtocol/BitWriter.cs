@@ -32,7 +32,7 @@ namespace SanProtocol
 
             foreach (var value in floats)
             {
-                var mask = (ulong)Math.Pow(2, bitsPerFloat - 1) - 1;
+                var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
                 var result = (ulong)Math.Round(value * (mask / modifier) + mask);
 
                 tempBufferBitOffset = WriteBits(tempBuffer, tempBufferBitOffset, result, bitsPerFloat);
@@ -59,7 +59,7 @@ namespace SanProtocol
 
             foreach (var value in quat.Values)
             {
-                var mask = (ulong)Math.Pow(2, bitsPerFloat - 1) - 1;
+                var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
                 var result = (ulong)Math.Round(value * (mask / modifier) + mask);
 
                 BitOffset = WriteBits(Buffer, BitOffset, result, bitsPerFloat);
