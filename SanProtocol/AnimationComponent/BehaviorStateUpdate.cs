@@ -188,11 +188,11 @@ namespace SanProtocol.AnimationComponent
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(ExceptAgentControllerId)} = {ExceptAgentControllerId}\n" +
-                   $"  {nameof(Floats)} = {Floats}\n" +
-                   $"  {nameof(Vectors)} = {Vectors}\n" +
-                   $"  {nameof(Quaternions)} = {Quaternions}\n" +
-                   $"  {nameof(Int8s)} = {Int8s}\n" +
-                   $"  {nameof(Bools)} = {Bools}\n" +
+                   $"  {nameof(Floats)} = {string.Join(", ", Floats)}\n" +
+                   $"  {nameof(Vectors)} = {string.Join(", ", Vectors)}\n" +
+                   $"  {nameof(Quaternions)} = {string.Join(", ", Quaternions)}\n" +
+                   $"  {nameof(Int8s)} = {string.Join(", ", Int8s)}\n" +
+                   $"  {nameof(Bools)} = {string.Join(", ", Bools)}\n" +
                    $"  {nameof(InternalEventIds)} = {String.Join(',', InternalEventIds)}\n" +
                    $"  {nameof(AnimationAction)} = {AnimationAction}\n" +
                    $"  {nameof(NodeLocalTimes)} = {String.Join(',', NodeLocalTimes)}\n" +
