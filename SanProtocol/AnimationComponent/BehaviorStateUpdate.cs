@@ -8,7 +8,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class BehaviorStateUpdate : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.BehaviorStateUpdate;
+        public uint MessageId => Messages.AnimationComponentMessages.BehaviorStateUpdate;
 
         public ulong Frame { get; set; }
         public ulong ComponentId { get; set; }

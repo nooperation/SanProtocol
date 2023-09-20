@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class PresenceUpdate : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.PresenceUpdate;
+        public uint MessageId => Messages.ClientKafkaMessages.PresenceUpdate;
 
         public SanUUID PersonaId { get; set; }
         public byte Present { get; set; }

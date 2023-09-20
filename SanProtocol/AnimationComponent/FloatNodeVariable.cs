@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class FloatNodeVariable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.FloatNodeVariable;
+        public uint MessageId => Messages.AnimationComponentMessages.FloatNodeVariable;
 
         public ushort NodeId { get; set; }
         public float Value { get; set; }

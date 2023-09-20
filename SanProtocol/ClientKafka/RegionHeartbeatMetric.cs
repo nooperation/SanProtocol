@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RegionHeartbeatMetric : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RegionHeartbeatMetric;
+        public uint MessageId => Messages.ClientKafkaMessages.RegionHeartbeatMetric;
 
         public SanUUID OwnerPersonaID { get; set; }
         public float AverageFrameRate { get; set; }

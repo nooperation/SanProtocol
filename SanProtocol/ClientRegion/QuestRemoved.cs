@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class QuestRemoved : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.QuestRemoved;
+        public uint MessageId => Messages.ClientRegionMessages.QuestRemoved;
 
         public SanUUID QuestId { get; set; }
 

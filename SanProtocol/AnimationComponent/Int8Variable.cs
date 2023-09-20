@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class Int8Variable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.Int8Variable;
+        public uint MessageId => Messages.AnimationComponentMessages.Int8Variable;
 
         public ushort InternalId { get; set; }
         public byte Value { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class RiggedMeshScaleChanged : IPacket
     {
-        public uint MessageId => Messages.GameWorld.RiggedMeshScaleChanged;
+        public uint MessageId => Messages.GameWorldMessages.RiggedMeshScaleChanged;
 
         public ulong Componentid { get; set; }
         public ulong Frame { get; set; }

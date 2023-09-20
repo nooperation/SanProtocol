@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterIKBone : IPacket
     {
-        public uint MessageId => Messages.AgentController.CharacterIKBone;
+        public uint MessageId => Messages.AgentControllerMessages.CharacterIKBone;
 
         public byte BoneIndex { get; set; }
         public Quaternion LocalOrientation { get; set; } = new Quaternion();

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class RequestDropPortal : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.RequestDropPortal;
+        public uint MessageId => Messages.ClientRegionMessages.RequestDropPortal;
 
         public string SansarUri { get; set; }
         public string SansarUriDescription { get; set; }

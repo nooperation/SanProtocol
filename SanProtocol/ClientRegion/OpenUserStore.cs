@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class OpenUserStore : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.OpenUserStore;
+        public uint MessageId => Messages.ClientRegionMessages.OpenUserStore;
 
         public string CreatorHandle { get; set; }
 

@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryCreateListing : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryCreateListing;
+        public uint MessageId => Messages.EditServerMessages.InventoryCreateListing;
 
         public string Authorization { get; set; }
         public SanUUID ItemId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class CreateClusterViaDefinition : IPacket
     {
-        public uint MessageId => Messages.WorldState.CreateClusterViaDefinition;
+        public uint MessageId => Messages.WorldStateMessages.CreateClusterViaDefinition;
 
         public uint ClusterId { get; set; }
         public uint StartingObjectId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UIScriptableBarCancel : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UIScriptableBarCancel;
+        public uint MessageId => Messages.ClientRegionMessages.UIScriptableBarCancel;
 
         public uint BarId { get; set; }
 

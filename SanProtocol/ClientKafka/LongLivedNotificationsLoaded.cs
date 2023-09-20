@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class LongLivedNotificationsLoaded : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.LongLivedNotificationsLoaded;
+        public uint MessageId => Messages.ClientKafkaMessages.LongLivedNotificationsLoaded;
 
         public ulong Offset { get; set; }
 

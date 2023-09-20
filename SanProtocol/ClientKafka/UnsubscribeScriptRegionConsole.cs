@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class UnsubscribeScriptRegionConsole : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.UnsubscribeScriptRegionConsole;
+        public uint MessageId => Messages.ClientKafkaMessages.UnsubscribeScriptRegionConsole;
 
         public string InstanceId { get; set; }
 

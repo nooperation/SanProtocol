@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class CharacterBehaviorInternalState : BehaviorInternalState
     {
-        public override uint MessageId => Messages.AnimationComponent.CharacterBehaviorInternalState;
+        public override uint MessageId => Messages.AnimationComponentMessages.CharacterBehaviorInternalState;
 
         public CharacterBehaviorInternalState(ulong componentId, ulong frame, List<AnimationOverride> overrides, byte[] slotStates, byte[] stateData, byte isPlaying)
             : base(componentId, frame, overrides, slotStates, stateData, isPlaying)

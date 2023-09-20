@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterControlPointInputReliable : CharacterControlPointInput
     {
-        public override uint MessageId => Messages.AgentController.CharacterControlPointInputReliable;
+        public override uint MessageId => Messages.AgentControllerMessages.CharacterControlPointInputReliable;
         
         public CharacterControlPointInputReliable(
             ulong frame,

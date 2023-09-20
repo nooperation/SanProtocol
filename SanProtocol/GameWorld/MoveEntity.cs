@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class MoveEntity : IPacket
     {
-        public uint MessageId => Messages.GameWorld.MoveEntity;
+        public uint MessageId => Messages.GameWorldMessages.MoveEntity;
 
         public ulong StartFrame { get; set; }
         public ulong ComponentId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class AddUser : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.AddUser;
+        public uint MessageId => Messages.ClientRegionMessages.AddUser;
 
         public uint SessionId { get; set; }
         public string UserName { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LocalSetMuteAll : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LocalSetMuteAll;
+        public uint MessageId => Messages.ClientVoiceMessages.LocalSetMuteAll;
 
         public byte MuteAll { get; set; }
 

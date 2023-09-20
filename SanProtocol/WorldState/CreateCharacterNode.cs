@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class CreateCharacterNode : IPacket
     {
-        public uint MessageId => Messages.WorldState.CreateCharacterNode;
+        public uint MessageId => Messages.WorldStateMessages.CreateCharacterNode;
 
         public byte NodeType { get; set; }
         public byte ControllerNodetype { get; set; }

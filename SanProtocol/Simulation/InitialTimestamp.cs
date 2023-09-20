@@ -7,7 +7,7 @@ namespace SanProtocol.Simulation
 {
     public class InitialTimestamp : IPacket
     {
-        public uint MessageId => Messages.Simulation.InitialTimestamp;
+        public uint MessageId => Messages.SimulationMessages.InitialTimestamp;
 
         public ulong Nanoseconds { get; set; }
         public ulong Frame { get; set; }

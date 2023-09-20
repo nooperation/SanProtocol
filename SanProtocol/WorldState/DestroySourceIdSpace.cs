@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class DestroySourceIdSpace : IPacket
     {
-        public uint MessageId => Messages.WorldState.DestroySourceIdSpace;
+        public uint MessageId => Messages.WorldStateMessages.DestroySourceIdSpace;
 
         public uint SourceIdSpace { get; set; }
 

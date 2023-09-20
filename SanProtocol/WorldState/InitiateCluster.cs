@@ -8,7 +8,7 @@ namespace SanProtocol.WorldState
 {
     public class InitiateCluster : IPacket
     {
-        public uint MessageId => Messages.WorldState.InitiateCluster;
+        public uint MessageId => Messages.WorldStateMessages.InitiateCluster;
 
         public uint ClusterId { get; set; }
         public ulong Frame { get; set; }

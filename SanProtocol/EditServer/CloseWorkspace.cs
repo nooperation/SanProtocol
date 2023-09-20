@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class CloseWorkspace : IPacket
     {
-        public uint MessageId => Messages.EditServer.CloseWorkspace;
+        public uint MessageId => Messages.EditServerMessages.CloseWorkspace;
 
         public uint WorkspaceId { get; set; }
 

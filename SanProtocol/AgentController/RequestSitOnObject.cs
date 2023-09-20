@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestSitOnObject : SitOnObject
     {
-        public override uint MessageId => Messages.AgentController.RequestSitOnObject;
+        public override uint MessageId => Messages.AgentControllerMessages.RequestSitOnObject;
 
         public RequestSitOnObject(ulong frame, uint agentControllerId, ulong componentId)
             : base(

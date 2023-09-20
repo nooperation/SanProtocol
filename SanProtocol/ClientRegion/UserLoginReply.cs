@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UserLoginReply : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UserLoginReply;
+        public uint MessageId => Messages.ClientRegionMessages.UserLoginReply;
 
         public bool Success { get; set; }
         public uint SessionId { get; set; }

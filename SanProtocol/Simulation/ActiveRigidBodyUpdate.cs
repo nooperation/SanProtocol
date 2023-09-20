@@ -7,7 +7,7 @@ namespace SanProtocol.Simulation
 {
     public class ActiveRigidBodyUpdate : IPacket
     {
-        public uint MessageId => Messages.Simulation.ActiveRigidBodyUpdate;
+        public uint MessageId => Messages.SimulationMessages.ActiveRigidBodyUpdate;
 
         public ulong ComponentId { get; set; }
         public ulong Frame { get; set; }

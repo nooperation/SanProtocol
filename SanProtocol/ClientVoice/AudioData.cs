@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class AudioData : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.AudioData;
+        public uint MessageId => Messages.ClientVoiceMessages.AudioData;
 
         public ulong Sequence { get; set; }
         public ushort Volume { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LocalSetRegionBroadcasted : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LocalSetRegionBroadcasted;
+        public uint MessageId => Messages.ClientVoiceMessages.LocalSetRegionBroadcasted;
 
         public byte Broadcasted { get; set; }
 

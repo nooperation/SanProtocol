@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ShowWorldDetail : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ShowWorldDetail;
+        public uint MessageId => Messages.ClientRegionMessages.ShowWorldDetail;
 
         public string SansarUri { get; set; }
         public byte Show { get; set; }

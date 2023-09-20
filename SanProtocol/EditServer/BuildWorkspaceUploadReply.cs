@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceUploadReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.BuildWorkspaceUploadReply;
+        public uint MessageId => Messages.EditServerMessages.BuildWorkspaceUploadReply;
 
         public byte Success { get; set; }
         public string WorldDefinitionId { get; set; }

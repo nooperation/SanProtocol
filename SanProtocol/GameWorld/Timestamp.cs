@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class Timestamp : IPacket
     {
-        public uint MessageId => Messages.GameWorld.Timestamp;
+        public uint MessageId => Messages.GameWorldMessages.Timestamp;
 
         public ulong Nanoseconds { get; set; }
         public ulong Frame { get; set; }

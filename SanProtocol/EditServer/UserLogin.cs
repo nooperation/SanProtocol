@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class UserLogin : IPacket
     {
-        public uint MessageId => Messages.EditServer.UserLogin;
+        public uint MessageId => Messages.EditServerMessages.UserLogin;
 
         public string Authorization { get; set; }
         public uint Secret { get; set; }

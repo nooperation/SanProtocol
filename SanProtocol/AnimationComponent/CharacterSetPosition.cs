@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class CharacterSetPosition : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.CharacterSetPosition;
+        public uint MessageId => Messages.AnimationComponentMessages.CharacterSetPosition;
 
         public ulong Frame { get; set; }
         public ulong ComponentId { get; set; }

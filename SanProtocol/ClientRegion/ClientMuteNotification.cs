@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientMuteNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientMuteNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientMuteNotification;
 
         public string Message { get; set; }
 

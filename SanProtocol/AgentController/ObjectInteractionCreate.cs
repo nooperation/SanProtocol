@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class ObjectInteractionCreate : IPacket
     {
-        public uint MessageId => Messages.AgentController.ObjectInteractionCreate;
+        public uint MessageId => Messages.AgentControllerMessages.ObjectInteractionCreate;
 
         public ulong Frame { get; set; }
         public uint ClusterId { get; set; }

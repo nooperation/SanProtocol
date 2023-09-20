@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestWarpCharacter : WarpCharacter
     {
-        public override uint MessageId => Messages.AgentController.RequestWarpCharacter;
+        public override uint MessageId => Messages.AgentControllerMessages.RequestWarpCharacter;
 
         public RequestWarpCharacter(ulong frame, uint agentControllerId, float position_x, float position_y, float position_z, float rotation_x, float rotation_y, float rotation_z, float rotation_w)
             : base(frame, agentControllerId, position_x, position_y, position_z, rotation_x, rotation_y, rotation_z, rotation_w)

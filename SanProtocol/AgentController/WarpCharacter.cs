@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class WarpCharacter : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.WarpCharacter;
+        public virtual uint MessageId => Messages.AgentControllerMessages.WarpCharacter;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

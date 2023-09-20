@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class UserReaction : IPacket
     {
-        public uint MessageId => Messages.AgentController.UserReaction;
+        public uint MessageId => Messages.AgentControllerMessages.UserReaction;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

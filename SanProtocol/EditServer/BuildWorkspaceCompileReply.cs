@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceCompileReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.BuildWorkspaceCompileReply;
+        public uint MessageId => Messages.EditServerMessages.BuildWorkspaceCompileReply;
 
         public byte CompileStatus { get; set; }
         public byte IsCanceled { get; set; }

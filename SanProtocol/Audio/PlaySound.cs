@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class PlaySound : IPacket
     {
-        public uint MessageId => Messages.Audio.PlaySound;
+        public uint MessageId => Messages.AudioMessages.PlaySound;
 
         public SanUUID ResourceId { get; set; }
         public ulong CreatePlayHandleId { get; set; }

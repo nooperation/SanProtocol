@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TeleportTo : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TeleportTo;
+        public uint MessageId => Messages.ClientRegionMessages.TeleportTo;
 
         public string PersonaHandle { get; set; }
         public string LocationHandle { get; set; }

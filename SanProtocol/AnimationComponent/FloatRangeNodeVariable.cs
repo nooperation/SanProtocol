@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class FloatRangeNodeVariable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.FloatRangeNodeVariable;
+        public uint MessageId => Messages.AnimationComponentMessages.FloatRangeNodeVariable;
 
         public ushort NodeId { get; set; }
         public float StartValue { get; set; }

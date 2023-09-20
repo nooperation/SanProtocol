@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class SetCharacterNodePhysics : IPacket
     {
-        public uint MessageId => Messages.AgentController.SetCharacterNodePhysics;
+        public uint MessageId => Messages.AgentControllerMessages.SetCharacterNodePhysics;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class PerformMediaAction : IPacket
     {
-        public uint MessageId => Messages.Audio.PerformMediaAction;
+        public uint MessageId => Messages.AudioMessages.PerformMediaAction;
 
         public uint MediaAction { get; set; }
         public byte Rebroadcast { get; set; }

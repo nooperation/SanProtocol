@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class ControlPoint : IPacket
     {
-        public uint MessageId => Messages.AgentController.ControlPoint;
+        public uint MessageId => Messages.AgentControllerMessages.ControlPoint;
 
         public List<float> Position { get; set; } = new List<float>();
         public Quaternion Orientation { get; set; } = new Quaternion();

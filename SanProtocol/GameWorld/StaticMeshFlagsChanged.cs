@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class StaticMeshFlagsChanged : IPacket
     {
-        public uint MessageId => Messages.GameWorld.StaticMeshFlagsChanged;
+        public uint MessageId => Messages.GameWorldMessages.StaticMeshFlagsChanged;
 
         public ulong Componentid { get; set; }
         public ulong Frame { get; set; }

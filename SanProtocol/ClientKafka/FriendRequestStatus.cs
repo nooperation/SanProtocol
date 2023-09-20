@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class FriendRequestStatus : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.FriendRequestStatus;
+        public uint MessageId => Messages.ClientKafkaMessages.FriendRequestStatus;
 
         public ulong Offset { get; set; }
         public uint Status { get; set; }

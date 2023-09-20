@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterIKPoseDelta : IPacket
     {
-        public uint MessageId => Messages.AgentController.CharacterIKPoseDelta;
+        public uint MessageId => Messages.AgentControllerMessages.CharacterIKPoseDelta;
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }

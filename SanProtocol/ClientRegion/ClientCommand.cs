@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientCommand : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientCommand;
+        public uint MessageId => Messages.ClientRegionMessages.ClientCommand;
 
         public string Command { get; set; }
         public byte Action { get; set; }

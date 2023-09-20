@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class RemoveReaction : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.RemoveReaction;
+        public uint MessageId => Messages.ClientRegionMessages.RemoveReaction;
 
         public string ReactionType { get; set; }
 

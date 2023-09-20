@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class InventoryLoaded : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.InventoryLoaded;
+        public uint MessageId => Messages.ClientKafkaMessages.InventoryLoaded;
 
         public ulong Offset { get; set; }
 

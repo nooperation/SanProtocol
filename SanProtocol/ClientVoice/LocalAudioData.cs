@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LocalAudioData : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LocalAudioData;
+        public uint MessageId => Messages.ClientVoiceMessages.LocalAudioData;
 
         public SanUUID Instance { get; set; }
         public uint AgentControllerId { get; set; }

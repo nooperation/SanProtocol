@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class OpenStoreListing : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.OpenStoreListing;
+        public uint MessageId => Messages.ClientRegionMessages.OpenStoreListing;
 
         public SanUUID ListingId { get; set; }
 

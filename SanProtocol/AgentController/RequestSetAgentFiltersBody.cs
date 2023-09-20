@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestSetAgentFiltersBody : SetAgentFiltersBody
     {
-        public override uint MessageId => Messages.AgentController.RequestSetAgentFiltersBody;
+        public override uint MessageId => Messages.AgentControllerMessages.RequestSetAgentFiltersBody;
 
         public RequestSetAgentFiltersBody(ulong frame, uint agentControllerId, ulong componentId, byte filterBody)
             :base (frame, agentControllerId, componentId, filterBody)

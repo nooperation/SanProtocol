@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class LeaveRegion : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.LeaveRegion;
+        public uint MessageId => Messages.ClientKafkaMessages.LeaveRegion;
 
         public string RegionAddress { get; set; }
 

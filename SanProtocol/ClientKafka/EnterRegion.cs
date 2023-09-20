@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class EnterRegion : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.EnterRegion;
+        public uint MessageId => Messages.ClientKafkaMessages.EnterRegion;
 
         public string RegionAddress { get; set; }
 

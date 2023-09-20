@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UserLogin : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UserLogin;
+        public uint MessageId => Messages.ClientRegionMessages.UserLogin;
 
         public uint Secret { get; set; }
 

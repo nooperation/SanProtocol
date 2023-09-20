@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class AnimationOverride : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.AnimationOverride;
+        public uint MessageId => Messages.AnimationComponentMessages.AnimationOverride;
 
         public byte SlotIndex { get; set; }
 

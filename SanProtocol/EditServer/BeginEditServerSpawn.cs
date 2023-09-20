@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class BeginEditServerSpawn : IPacket
     {
-        public uint MessageId => Messages.EditServer.BeginEditServerSpawn;
+        public uint MessageId => Messages.EditServerMessages.BeginEditServerSpawn;
 
         public SanUUID InventoryId { get; set; }
         public SanUUID PersonaId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class QuestOfferResponse : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.QuestOfferResponse;
+        public uint MessageId => Messages.ClientRegionMessages.QuestOfferResponse;
 
         public SanUUID QuestId { get; set; }
         public SanUUID QuestDefinitionId { get; set; }

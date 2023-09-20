@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class CharacterTransformPersistent : CharacterTransform
     {
-        public override uint MessageId => Messages.AnimationComponent.CharacterTransformPersistent;
+        public override uint MessageId => Messages.AnimationComponentMessages.CharacterTransformPersistent;
 
         public CharacterTransformPersistent(ulong componentId, ulong serverFrame, ulong groundComponentId, List<float> position, Quaternion orientationQuat)
             : base(componentId, serverFrame, groundComponentId, position, orientationQuat)

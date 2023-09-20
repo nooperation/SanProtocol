@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class SetAudioStream : IPacket
     {
-        public uint MessageId => Messages.Audio.SetAudioStream;
+        public uint MessageId => Messages.AudioMessages.SetAudioStream;
 
         public string Url { get; set; }
         public byte Rebroadcast { get; set; }

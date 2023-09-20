@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RelationshipTable : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RelationshipTable;
+        public uint MessageId => Messages.ClientKafkaMessages.RelationshipTable;
 
         public SanUUID Other { get; set; }
         public byte FromSelf { get; set; }

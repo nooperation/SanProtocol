@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientStaticReady : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientStaticReady;
+        public uint MessageId => Messages.ClientRegionMessages.ClientStaticReady;
 
         public byte Ready { get; set; }
 

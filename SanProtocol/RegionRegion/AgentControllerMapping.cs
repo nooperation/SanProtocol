@@ -7,7 +7,7 @@ namespace SanProtocol.RegionRegion
 {
     public class AgentControllerMapping : IPacket
     {
-        public uint MessageId => Messages.RegionRegion.AgentControllerMapping;
+        public uint MessageId => Messages.RegionRegionMessages.AgentControllerMapping;
 
         public uint AgentControllerId { get; set; }
         public ulong AnimationComponentId { get; set; }

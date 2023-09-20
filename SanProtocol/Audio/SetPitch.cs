@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class SetPitch : IPacket
     {
-        public uint MessageId => Messages.Audio.SetPitch;
+        public uint MessageId => Messages.AudioMessages.SetPitch;
 
         public uint PlayHandleId { get; set; }
         public uint Pitch { get; set; }

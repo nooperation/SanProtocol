@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class BoolVariable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.BoolVariable;
+        public uint MessageId => Messages.AnimationComponentMessages.BoolVariable;
 
         public ushort InternalId { get; set; }
         public byte Value { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class PresenceUpdateFanoutLoaded : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.PresenceUpdateFanoutLoaded;
+        public uint MessageId => Messages.ClientKafkaMessages.PresenceUpdateFanoutLoaded;
 
         public ulong Offset { get; set; }
 

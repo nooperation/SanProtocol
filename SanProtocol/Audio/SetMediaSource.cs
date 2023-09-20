@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class SetMediaSource : IPacket
     {
-        public uint MessageId => Messages.Audio.SetMediaSource;
+        public uint MessageId => Messages.AudioMessages.SetMediaSource;
 
         public string Url { get; set; }
         public uint MediaWidth { get; set; }

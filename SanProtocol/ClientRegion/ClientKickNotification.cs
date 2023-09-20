@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientKickNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientKickNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientKickNotification;
 
         public string Message { get; set; }
 

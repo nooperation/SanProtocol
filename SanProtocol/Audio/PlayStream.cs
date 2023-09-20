@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class PlayStream : IPacket
     {
-        public uint MessageId => Messages.Audio.PlayStream;
+        public uint MessageId => Messages.AudioMessages.PlayStream;
 
         public byte StreamChannel { get; set; }
         public ulong CreatePlayHandleId { get; set; }

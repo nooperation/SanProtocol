@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class VectorVariable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.VectorVariable;
+        public uint MessageId => Messages.AnimationComponentMessages.VectorVariable;
 
         public ushort InternalId { get; set; }
         public List<float> Value { get; set; } = new List<float>();

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TwitchEvent : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TwitchEvent;
+        public uint MessageId => Messages.ClientRegionMessages.TwitchEvent;
 
         public uint EventType { get; set; }
         public float Intensity { get; set; }

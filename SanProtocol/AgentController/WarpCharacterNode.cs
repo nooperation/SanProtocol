@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class WarpCharacterNode : IPacket
     {
-        public uint MessageId => Messages.AgentController.WarpCharacterNode;
+        public uint MessageId => Messages.AgentControllerMessages.WarpCharacterNode;
 
         public uint AgentControllerId { get; set; }
         public uint NodeType { get; set; }

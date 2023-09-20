@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class OpenQuestCharacterDialog : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.OpenQuestCharacterDialog;
+        public uint MessageId => Messages.ClientRegionMessages.OpenQuestCharacterDialog;
 
         public SanUUID CharacterId { get; set; }
 

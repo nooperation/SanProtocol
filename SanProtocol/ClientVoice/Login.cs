@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class Login : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.Login;
+        public uint MessageId => Messages.ClientVoiceMessages.Login;
 
         public SanUUID Instance { get; set; }
         public uint Secret { get; set; }

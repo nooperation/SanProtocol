@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RelationshipOperation : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RelationshipOperation;
+        public uint MessageId => Messages.ClientKafkaMessages.RelationshipOperation;
 
         public SanUUID Other { get; set; }
         public uint Operation { get; set; }

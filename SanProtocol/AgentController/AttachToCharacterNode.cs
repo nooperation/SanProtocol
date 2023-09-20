@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class AttachToCharacterNode : IPacket
     {
-        public uint MessageId => Messages.AgentController.AttachToCharacterNode;
+        public uint MessageId => Messages.AgentControllerMessages.AttachToCharacterNode;
 
         public ulong Frame { get; set; }
         public ulong ComponentId { get; set; }

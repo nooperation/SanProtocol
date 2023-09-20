@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TeleportToUri : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TeleportToUri;
+        public uint MessageId => Messages.ClientRegionMessages.TeleportToUri;
 
         public string SansarUri { get; set; }
 

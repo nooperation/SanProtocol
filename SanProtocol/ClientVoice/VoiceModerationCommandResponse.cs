@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class VoiceModerationCommandResponse : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.VoiceModerationCommandResponse;
+        public uint MessageId => Messages.ClientVoiceMessages.VoiceModerationCommandResponse;
 
         public string Message { get; set; }
         public byte Success { get; set; }

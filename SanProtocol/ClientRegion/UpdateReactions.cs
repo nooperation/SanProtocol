@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UpdateReactions : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UpdateReactions;
+        public uint MessageId => Messages.ClientRegionMessages.UpdateReactions;
 
         public List<ReactionDefinition> ReactionDefinitions { get; set; }
         public List<SystemReactionDefinition> SystemReactionDefinitions { get; set; }

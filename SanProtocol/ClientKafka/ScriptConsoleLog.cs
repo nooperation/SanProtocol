@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class ScriptConsoleLog : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.ScriptConsoleLog;
+        public uint MessageId => Messages.ClientKafkaMessages.ScriptConsoleLog;
 
         public uint LogLevel { get; set; }
         public string Tag { get; set; }

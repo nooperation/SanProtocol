@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class SetCharacterUserProperty : IPacket
     {
-        public uint MessageId => Messages.AgentController.SetCharacterUserProperty;
+        public uint MessageId => Messages.AgentControllerMessages.SetCharacterUserProperty;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

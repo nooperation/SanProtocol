@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class BuildWorkspace : IPacket
     {
-        public uint MessageId => Messages.EditServer.BuildWorkspace;
+        public uint MessageId => Messages.EditServerMessages.BuildWorkspace;
 
         public string Authorization { get; set; }
         public string SceneName { get; set; }

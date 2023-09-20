@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class EditServerSpawnReady : IPacket
     {
-        public uint MessageId => Messages.EditServer.EditServerSpawnReady;
+        public uint MessageId => Messages.EditServerMessages.EditServerSpawnReady;
 
         public byte IsValid { get; set; }
         public uint Serial { get; set; }

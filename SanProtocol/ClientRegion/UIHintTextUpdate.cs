@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UIHintTextUpdate : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UIHintTextUpdate;
+        public uint MessageId => Messages.ClientRegionMessages.UIHintTextUpdate;
 
         public string Text { get; set; }
 

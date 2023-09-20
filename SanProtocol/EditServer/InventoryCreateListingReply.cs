@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryCreateListingReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryCreateListingReply;
+        public uint MessageId => Messages.EditServerMessages.InventoryCreateListingReply;
 
         public byte CanBeListed { get; set; }
         public SanUUID ItemId { get; set; }

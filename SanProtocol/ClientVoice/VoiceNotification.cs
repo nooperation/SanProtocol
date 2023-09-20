@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class VoiceNotification : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.VoiceNotification;
+        public uint MessageId => Messages.ClientVoiceMessages.VoiceNotification;
 
         public string Notification { get; set; }
 

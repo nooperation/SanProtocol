@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LocalAudioPosition : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LocalAudioPosition;
+        public uint MessageId => Messages.ClientVoiceMessages.LocalAudioPosition;
 
         public uint Sequence { get; set; }
         public SanUUID Instance { get; set; }

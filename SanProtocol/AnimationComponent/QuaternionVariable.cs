@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class QuaternionVariable : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.QuaternionVariable;
+        public uint MessageId => Messages.AnimationComponentMessages.QuaternionVariable;
 
         public ushort InternalId { get; set; }
         public List<float> Value { get; set; } = new List<float>();

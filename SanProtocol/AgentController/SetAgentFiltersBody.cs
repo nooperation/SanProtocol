@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class SetAgentFiltersBody : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.SetAgentFiltersBody;
+        public virtual uint MessageId => Messages.AgentControllerMessages.SetAgentFiltersBody;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

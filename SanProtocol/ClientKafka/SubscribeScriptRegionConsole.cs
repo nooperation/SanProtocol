@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class SubscribeScriptRegionConsole : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.SubscribeScriptRegionConsole;
+        public uint MessageId => Messages.ClientKafkaMessages.SubscribeScriptRegionConsole;
 
         public string InstanceId { get; set; }
         public ulong Offset { get; set; }

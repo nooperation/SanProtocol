@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class LoadSound : IPacket
     {
-        public uint MessageId => Messages.Audio.LoadSound;
+        public uint MessageId => Messages.AudioMessages.LoadSound;
 
         public SanUUID ResourceId { get; set; }
 

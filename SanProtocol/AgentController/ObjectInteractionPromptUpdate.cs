@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class ObjectInteractionPromptUpdate : IPacket
     {
-        public uint MessageId => Messages.AgentController.ObjectInteractionPromptUpdate;
+        public uint MessageId => Messages.AgentControllerMessages.ObjectInteractionPromptUpdate;
 
         public ulong Frame { get; set; }
         public uint ClusterId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.Simulation
 {
     public class RigidBodyDeactivated : IPacket
     {
-        public uint MessageId => Messages.Simulation.RigidBodyDeactivated;
+        public uint MessageId => Messages.SimulationMessages.RigidBodyDeactivated;
 
         public ulong ComponentId { get; set; }
         public ulong Frame { get; set; }

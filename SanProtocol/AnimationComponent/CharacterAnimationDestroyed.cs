@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class CharacterAnimationDestroyed : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.CharacterAnimationDestroyed;
+        public uint MessageId => Messages.AnimationComponentMessages.CharacterAnimationDestroyed;
 
         public ulong ComponentId { get; set; }
 

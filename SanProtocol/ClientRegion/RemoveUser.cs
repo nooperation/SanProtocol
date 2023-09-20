@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class RemoveUser : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.RemoveUser;
+        public uint MessageId => Messages.ClientRegionMessages.RemoveUser;
 
         public uint SessionId { get; set; }
 

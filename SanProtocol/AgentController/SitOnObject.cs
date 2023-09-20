@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class SitOnObject : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.SitOnObject;
+        public virtual uint MessageId => Messages.AgentControllerMessages.SitOnObject;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

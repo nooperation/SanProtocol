@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class ScriptCameraCapture : IPacket
     {
-        public uint MessageId => Messages.GameWorld.ScriptCameraMessage;
+        public uint MessageId => Messages.GameWorldMessages.ScriptCameraMessage;
 
         public ulong Componentid { get; set; }
 

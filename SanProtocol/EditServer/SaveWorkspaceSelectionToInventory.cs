@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class SaveWorkspaceSelectionToInventory : IPacket
     {
-        public uint MessageId => Messages.EditServer.SaveWorkspaceSelectionToInventory;
+        public uint MessageId => Messages.EditServerMessages.SaveWorkspaceSelectionToInventory;
 
         public string Authorization { get; set; }
         public string ItemName { get; set; }

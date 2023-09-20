@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class DebugTimeChangeToServer : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.DebugTimeChangeToServer;
+        public uint MessageId => Messages.ClientRegionMessages.DebugTimeChangeToServer;
 
         public uint RequestId { get; set; }
         public float ClientDeltaTimeForced { get; set; }

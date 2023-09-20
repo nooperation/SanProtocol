@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class StopBroadcastingSound : IPacket
     {
-        public uint MessageId => Messages.Audio.StopBroadcastingSound;
+        public uint MessageId => Messages.AudioMessages.StopBroadcastingSound;
 
         public ulong PlayHandleId { get; set; }
 

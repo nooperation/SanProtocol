@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class InitialChunkSubscribed : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.InitialChunkSubscribed;
+        public uint MessageId => Messages.ClientRegionMessages.InitialChunkSubscribed;
 
         public byte Unused { get; set; }
 

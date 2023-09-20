@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterControllerInputReliable : CharacterControllerInput
     {
-        public override uint MessageId => Messages.AgentController.CharacterControllerInputReliable;
+        public override uint MessageId => Messages.AgentControllerMessages.CharacterControllerInputReliable;
 
         public CharacterControllerInputReliable(ulong frame, uint agentControllerId, byte jumpState, byte jumpBtnPressed, float moveRight, float moveForward, float cameraYaw, float cameraPitch, float behaviorYawDelta, float behaviorPitchDelta, float characterForward, Quaternion cameraForward)
             : base(

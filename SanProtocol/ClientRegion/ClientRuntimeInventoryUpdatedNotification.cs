@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientRuntimeInventoryUpdatedNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientRuntimeInventoryUpdatedNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientRuntimeInventoryUpdatedNotification;
 
         public string Message { get; set; }
 

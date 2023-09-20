@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class Login : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.Login;
+        public uint MessageId => Messages.ClientKafkaMessages.Login;
 
         public SanUUID AccountId { get; set; }
         public SanUUID PersonaId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class DestroyObject : IPacket
     {
-        public uint MessageId => Messages.WorldState.DestroyObject;
+        public uint MessageId => Messages.WorldStateMessages.DestroyObject;
 
         public uint ObjectId { get; set; }
 

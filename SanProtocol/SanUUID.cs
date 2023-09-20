@@ -91,18 +91,18 @@ namespace SanProtocol
         {
             if(obj is SanUUID targetUUID)
             {
-                return this.Lower == targetUUID.Lower && this.Upper == targetUUID.Upper;
+                return this.Lower == targetUUID?.Lower && this.Upper == targetUUID?.Upper;
             }
 
             return false;
         }
 
-        public static bool operator ==(SanUUID x, SanUUID y)
+        public static bool operator ==(SanUUID? x, SanUUID? y)
         {
-            return x.Lower == y.Lower && x.Upper == y.Upper;
+            return x?.Lower == y?.Lower && x?.Upper == y?.Upper;
         }
 
-        public static bool operator !=(SanUUID x, SanUUID y)
+        public static bool operator !=(SanUUID? x, SanUUID? y)
         {
             return !(x == y);
         }

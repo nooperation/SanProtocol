@@ -7,7 +7,7 @@ namespace SanProtocol.Audio
 {
     public class SetLoudness : IPacket
     {
-        public uint MessageId => Messages.Audio.SetLoudness;
+        public uint MessageId => Messages.AudioMessages.SetLoudness;
 
         public uint PlayHandleId { get; set; }
         public uint Loudness { get; set; }

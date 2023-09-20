@@ -7,7 +7,7 @@ namespace SanProtocol.RegionRegion
 {
     public class DynamicSubscribe : IPacket
     {
-        public uint MessageId => Messages.RegionRegion.DynamicSubscribe;
+        public uint MessageId => Messages.RegionRegionMessages.DynamicSubscribe;
 
 
         public DynamicSubscribe()

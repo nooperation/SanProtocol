@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryDeleteItem : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryDeleteItem;
+        public uint MessageId => Messages.EditServerMessages.InventoryDeleteItem;
 
         public string Authorization { get; set; }
         public SanUUID DeleteRequestId { get; set; }

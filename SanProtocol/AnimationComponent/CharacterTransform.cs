@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class CharacterTransform : IPacket
     {
-        public virtual uint MessageId => Messages.AnimationComponent.CharacterTransform;
+        public virtual uint MessageId => Messages.AnimationComponentMessages.CharacterTransform;
 
         public ulong ComponentId { get; set; }
         public ulong ServerFrame { get; set; }

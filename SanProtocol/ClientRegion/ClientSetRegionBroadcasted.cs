@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientSetRegionBroadcasted : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientSetRegionBroadcasted;
+        public uint MessageId => Messages.ClientRegionMessages.ClientSetRegionBroadcasted;
 
         public byte Broadcasted { get; set; }
 

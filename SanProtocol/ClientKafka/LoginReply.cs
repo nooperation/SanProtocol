@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class LoginReply : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.LoginReply;
+        public uint MessageId => Messages.ClientKafkaMessages.LoginReply;
 
         public bool Success { get; set; }
         public string Message { get; set; }

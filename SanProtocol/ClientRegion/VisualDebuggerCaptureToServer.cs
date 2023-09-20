@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class VisualDebuggerCaptureToServer : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.VisualDebuggerCaptureToServer;
+        public uint MessageId => Messages.ClientRegionMessages.VisualDebuggerCaptureToServer;
 
         public string StartTimeFormatted { get; set; }
         public byte BeginCapture { get; set; }

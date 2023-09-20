@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class LoadClusterDefinition : IPacket
     {
-        public uint MessageId => Messages.WorldState.LoadClusterDefinition;
+        public uint MessageId => Messages.WorldStateMessages.LoadClusterDefinition;
 
         public SanUUID ResourceId { get; set; }
         public uint ClusterId { get; set; }

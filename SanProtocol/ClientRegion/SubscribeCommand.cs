@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class SubscribeCommand : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.SubscribeCommand;
+        public uint MessageId => Messages.ClientRegionMessages.SubscribeCommand;
 
         public string Command { get; set; }
         public byte Action { get; set; }

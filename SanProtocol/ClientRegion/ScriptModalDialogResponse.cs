@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ScriptModalDialogResponse : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ScriptModalDialogResponse;
+        public uint MessageId => Messages.ClientRegionMessages.ScriptModalDialogResponse;
 
         public ulong EventId { get; set; }
         public string Response { get; set; }

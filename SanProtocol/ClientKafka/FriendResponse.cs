@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class FriendResponse : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.FriendResponse;
+        public uint MessageId => Messages.ClientKafkaMessages.FriendResponse;
 
         public ulong Offset { get; set; }
         public SanUUID FromPersonaId { get; set; }

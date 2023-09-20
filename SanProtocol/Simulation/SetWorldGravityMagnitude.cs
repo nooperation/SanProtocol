@@ -7,7 +7,7 @@ namespace SanProtocol.Simulation
 {
     public class SetWorldGravityMagnitude : IPacket
     {
-        public uint MessageId => Messages.Simulation.SetWorldGravityMagnitude;
+        public uint MessageId => Messages.SimulationMessages.SetWorldGravityMagnitude;
 
         public ulong Frame { get; set; }
         public float Magnitude { get; set; }

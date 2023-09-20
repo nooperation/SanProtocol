@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class DestroyAgentController : IPacket
     {
-        public uint MessageId => Messages.WorldState.DestroyAgentController;
+        public uint MessageId => Messages.WorldStateMessages.DestroyAgentController;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

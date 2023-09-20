@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class SaveWorkspaceReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.SaveWorkspaceReply;
+        public uint MessageId => Messages.EditServerMessages.SaveWorkspaceReply;
 
         public byte Success { get; set; }
         public string ItemInventoryId { get; set; }

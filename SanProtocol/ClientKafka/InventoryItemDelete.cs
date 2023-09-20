@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class InventoryItemDelete : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.InventoryItemDelete;
+        public uint MessageId => Messages.ClientKafkaMessages.InventoryItemDelete;
 
         public string Id { get; set; }
         public ulong Offset { get; set; }

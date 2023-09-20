@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RegionChat : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RegionChat;
+        public uint MessageId => Messages.ClientKafkaMessages.RegionChat;
 
         public SanUUID FromPersonaId { get; set; }
         public SanUUID ToPersonaId { get; set; }

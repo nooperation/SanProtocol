@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class ChangeMaterialVectorParam : IPacket
     {
-        public uint MessageId => Messages.GameWorld.ChangeMaterialVectorParam;
+        public uint MessageId => Messages.GameWorldMessages.ChangeMaterialVectorParam;
 
         public byte Parameter { get; set; }
         public List<float> Start { get; set; } = new List<float>();

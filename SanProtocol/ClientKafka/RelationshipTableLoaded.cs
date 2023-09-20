@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RelationshipTableLoaded : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RelationshipTableLoaded;
+        public uint MessageId => Messages.ClientKafkaMessages.RelationshipTableLoaded;
 
         public ulong Offset { get; set; }
 

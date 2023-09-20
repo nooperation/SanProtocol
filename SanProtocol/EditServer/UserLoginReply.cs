@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class UserLoginReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.UserLoginReply;
+        public uint MessageId => Messages.EditServerMessages.UserLoginReply;
 
         public byte Success { get; set; }
         public uint SessionId { get; set; }

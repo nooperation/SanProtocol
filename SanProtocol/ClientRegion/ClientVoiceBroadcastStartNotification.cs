@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientVoiceBroadcastStartNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientVoiceBroadcastStartNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientVoiceBroadcastStartNotification;
 
         public string Message { get; set; }
 

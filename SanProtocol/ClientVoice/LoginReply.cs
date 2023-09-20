@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LoginReply : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LoginReply;
+        public uint MessageId => Messages.ClientVoiceMessages.LoginReply;
 
         public byte Success { get; set; }
         public string Message { get; set; }

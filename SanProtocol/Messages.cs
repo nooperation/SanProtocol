@@ -6,7 +6,7 @@ namespace SanProtocol
 {
     public class Messages
     {
-        public class Audio
+        public class AudioMessages
         {
             public const uint LoadSound = 0x412484C4;
             public const uint PlaySound = 0x8FC77316;
@@ -20,12 +20,12 @@ namespace SanProtocol
             public const uint SetPitch = 0x7BB86A5B;
         }
 
-        public class Render
+        public class RenderMessages
         {
             public const uint LightStateChanged = 0x6951DAEC;
         }
 
-        public class Simulation
+        public class SimulationMessages
         {
             public const uint InitialTimestamp = 0x0D094FEA;
             public const uint Timestamp = 0x1E9B31CE;
@@ -36,7 +36,7 @@ namespace SanProtocol
             public const uint RigidBodyDestroyed = 0x3A92215C;
         }
 
-        public class AgentController
+        public class AgentControllerMessages
         {
             public const uint AgentPlayAnimation = 0x00AC2B81;
             public const uint ExitSit = 0x0B617A9A;
@@ -74,7 +74,7 @@ namespace SanProtocol
             public const uint UserReaction = 0x6F5546CE; /* ADDED 2020-09-10 ? */
         }
 
-        public class GameWorld
+        public class GameWorldMessages
         {
             public const uint StaticMeshFlagsChanged = 0xAE522F17;
             public const uint StaticMeshScaleChanged = 0xCA6CCC08;
@@ -90,7 +90,7 @@ namespace SanProtocol
             public const uint UpdateRuntimeInventorySettings = 0x371D99C1;
         }
 
-        public class RegionRegion
+        public class RegionRegionMessages
         {
             public const uint DynamicSubscribe = 0x513700E2;
             public const uint DynamicPlayback = 0xE87C89BB;
@@ -98,7 +98,7 @@ namespace SanProtocol
             public const uint AgentControllerMapping = 0xBB5865E8;
         }
 
-        public class WorldState
+        public class WorldStateMessages
         {
             public const uint CreateWorld = 0x685B436C;
             public const uint DestroyWorld = 0x20C45982;
@@ -116,7 +116,7 @@ namespace SanProtocol
             public const uint DestroyAgentController = 0x16406FB7;
         }
 
-        public class ClientKafka
+        public class ClientKafkaMessages
         {
             public const uint FriendResponseLoaded = 0x0AF50C12;
             public const uint PresenceUpdateFanoutLoaded = 0x5915FBFE;
@@ -158,7 +158,7 @@ namespace SanProtocol
             public const uint FriendRequestLoaded = 0xF5361468;
         }
 
-        public class ClientVoice
+        public class ClientVoiceMessages
         {
             public const uint Login = 0x59AC5555;
             public const uint LoginReply = 0xA6972017;
@@ -178,7 +178,7 @@ namespace SanProtocol
             public const uint VoiceNotification = 0x3A168D81;
         }
 
-        public class ClientRegion
+        public class ClientRegionMessages
         {
             public const uint UserLogin = 0x3902800A;
             public const uint UserLoginReply = 0x30CDBED6;
@@ -235,7 +235,7 @@ namespace SanProtocol
             public const uint RemoveReaction = 0x3F337471; // NEW: 2021-03-25
         }
 
-        public class EditServer
+        public class EditServerMessages
         {
             public const uint UserLogin = 0x046D3C1E;
             public const uint UserLoginReply = 0xE227C3E2;
@@ -270,7 +270,7 @@ namespace SanProtocol
             public const uint EditServerSpawnReady = 0xB3623297;
         }
 
-        public class AnimationComponent
+        public class AnimationComponentMessages
         {
             public const uint FloatVariable = 0x0B3B7D2E;
             public const uint FloatNodeVariable = 0x4C1B3DF2;

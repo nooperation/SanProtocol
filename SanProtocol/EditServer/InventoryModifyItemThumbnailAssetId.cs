@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryModifyItemThumbnailAssetId : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryModifyItemThumbnailAssetId;
+        public uint MessageId => Messages.EditServerMessages.InventoryModifyItemThumbnailAssetId;
 
         public string Authorization { get; set; }
         public SanUUID ModifyThumbnailRequestId { get; set; }

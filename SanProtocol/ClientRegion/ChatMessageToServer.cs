@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ChatMessageToServer : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ChatMessageToServer;
+        public uint MessageId => Messages.ClientRegionMessages.ChatMessageToServer;
 
         public uint ToSessionId { get; set; }
         public string Message { get; set; }

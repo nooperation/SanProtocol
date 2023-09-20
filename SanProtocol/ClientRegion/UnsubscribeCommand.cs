@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UnsubscribeCommand : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UnsubscribeCommand;
+        public uint MessageId => Messages.ClientRegionMessages.UnsubscribeCommand;
 
         public byte Action { get; set; }
         public string Command { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class ChangeMaterial : IPacket
     {
-        public uint MessageId => Messages.GameWorld.ChangeMaterial;
+        public uint MessageId => Messages.GameWorldMessages.ChangeMaterial;
 
         public ulong StartFrame { get; set; }
         public ulong ComponentId { get; set; }

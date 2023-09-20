@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class BehaviorInitializationData : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.BehaviorInitializationData;
+        public uint MessageId => Messages.AnimationComponentMessages.BehaviorInitializationData;
 
         public BehaviorInternalState BehaviorInternalState { get; set; }
         public List<BehaviorStateUpdate> BehaviorStateUpdates { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class RigidBodyComponentInitialState : IPacket
     {
-        public uint MessageId => Messages.WorldState.RigidBodyComponentInitialState;
+        public uint MessageId => Messages.WorldStateMessages.RigidBodyComponentInitialState;
 
         public uint RelativeComponentId { get; set; }
         public List<float> LinearVelocity { get; set; } = new List<float>();

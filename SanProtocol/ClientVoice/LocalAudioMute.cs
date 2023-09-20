@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class LocalAudioMute : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.LocalAudioMute;
+        public uint MessageId => Messages.ClientVoiceMessages.LocalAudioMute;
 
         public uint AgentControllerId { get; set; }
         public byte ShouldMute { get; set; }

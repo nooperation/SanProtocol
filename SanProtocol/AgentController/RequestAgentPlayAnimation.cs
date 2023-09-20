@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestAgentPlayAnimation : AgentPlayAnimation
     {
-        public override uint MessageId => Messages.AgentController.RequestAgentPlayAnimation;
+        public override uint MessageId => Messages.AgentControllerMessages.RequestAgentPlayAnimation;
 
         public RequestAgentPlayAnimation(uint agentControllerId, ulong frame, ulong componentId, SanUUID resourceId, float playbackSpeed, byte skeletonType, byte animationType, byte playbackMode)
             : base(

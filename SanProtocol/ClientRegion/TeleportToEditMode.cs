@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TeleportToEditMode : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TeleportToEditMode;
+        public uint MessageId => Messages.ClientRegionMessages.TeleportToEditMode;
 
         public string ReturnSpawnPointName { get; set; }
         public byte WorkspaceEditView { get; set; }

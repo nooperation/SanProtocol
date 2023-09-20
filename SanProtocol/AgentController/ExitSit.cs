@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class ExitSit : IPacket
     {
-        public uint MessageId => Messages.AgentController.ExitSit;
+        public uint MessageId => Messages.AgentControllerMessages.ExitSit;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

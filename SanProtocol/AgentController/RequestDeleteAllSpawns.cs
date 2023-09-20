@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestDeleteAllSpawns : IPacket
     {
-        public uint MessageId => Messages.AgentController.RequestDeleteAllSpawns;
+        public uint MessageId => Messages.AgentControllerMessages.RequestDeleteAllSpawns;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

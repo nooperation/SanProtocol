@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class InventoryItemCapabilities : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.InventoryItemCapabilities;
+        public uint MessageId => Messages.ClientKafkaMessages.InventoryItemCapabilities;
 
         public List<string> Capabilities { get; set; } = new List<string>();
 

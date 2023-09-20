@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientVoiceBroadcastStopNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientVoiceBroadcastStopNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientVoiceBroadcastStopNotification;
 
         public string Message { get; set; }
 

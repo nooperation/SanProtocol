@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class DetachFromCharacterNode : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.DetachFromCharacterNode;
+        public virtual uint MessageId => Messages.AgentControllerMessages.DetachFromCharacterNode;
 
         public ulong Frame { get; set; }
         public ulong ComponentId { get; set; }

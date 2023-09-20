@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class SpeechGraphicsData : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.SpeechGraphicsData;
+        public uint MessageId => Messages.ClientVoiceMessages.SpeechGraphicsData;
 
         public ulong Sequence { get; set; }
         public byte[] Data { get; set; }

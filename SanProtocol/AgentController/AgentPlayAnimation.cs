@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class AgentPlayAnimation : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.AgentPlayAnimation;
+        public virtual uint MessageId => Messages.AgentControllerMessages.AgentPlayAnimation;
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }

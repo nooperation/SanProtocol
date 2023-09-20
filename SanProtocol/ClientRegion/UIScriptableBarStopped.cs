@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class UIScriptableBarStopped : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.UIScriptableBarStopped;
+        public uint MessageId => Messages.ClientRegionMessages.UIScriptableBarStopped;
 
         public uint BarId { get; set; }
         public ulong ScriptEventId { get; set; }

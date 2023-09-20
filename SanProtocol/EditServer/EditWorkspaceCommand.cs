@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class EditWorkspaceCommand : IPacket
     {
-        public uint MessageId => Messages.EditServer.EditWorkspaceCommand;
+        public uint MessageId => Messages.EditServerMessages.EditWorkspaceCommand;
 
         public byte[] CommandData { get; set; }
 

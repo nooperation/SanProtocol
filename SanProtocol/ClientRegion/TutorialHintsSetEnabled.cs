@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TutorialHintsSetEnabled : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TutorialHintsSetEnabled;
+        public uint MessageId => Messages.ClientRegionMessages.TutorialHintsSetEnabled;
 
         public byte Enabled { get; set; }
 

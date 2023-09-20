@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestSpawnItem : IPacket
     {
-        public uint MessageId => Messages.AgentController.RequestSpawnItem;
+        public uint MessageId => Messages.AgentControllerMessages.RequestSpawnItem;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class ClientMetric : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.ClientMetric;
+        public uint MessageId => Messages.ClientKafkaMessages.ClientMetric;
 
         public string JsonString { get; set; }
 

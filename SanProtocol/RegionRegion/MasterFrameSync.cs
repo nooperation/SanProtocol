@@ -7,7 +7,7 @@ namespace SanProtocol.RegionRegion
 {
     public class MasterFrameSync : IPacket
     {
-        public uint MessageId => Messages.RegionRegion.MasterFrameSync;
+        public uint MessageId => Messages.RegionRegionMessages.MasterFrameSync;
 
         public ulong MasterFrame { get; set; }
 

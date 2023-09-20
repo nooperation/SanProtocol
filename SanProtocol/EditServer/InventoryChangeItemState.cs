@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryChangeItemState : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryChangeItemState;
+        public uint MessageId => Messages.EditServerMessages.InventoryChangeItemState;
 
         public string Authorization { get; set; }
         public SanUUID ChangeStateRequestId { get; set; }

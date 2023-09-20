@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class TwitchEventSubscription : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.TwitchEventSubscription;
+        public uint MessageId => Messages.ClientRegionMessages.TwitchEventSubscription;
 
         public uint EventMask { get; set; }
 

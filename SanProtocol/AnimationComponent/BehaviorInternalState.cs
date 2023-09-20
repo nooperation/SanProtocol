@@ -19,7 +19,7 @@ namespace SanProtocol.AnimationComponent
             public PlayAnimation Animation { get; set; }
         }
 
-        public virtual uint MessageId => Messages.AnimationComponent.BehaviorInternalState;
+        public virtual uint MessageId => Messages.AnimationComponentMessages.BehaviorInternalState;
 
         public ulong ComponentId { get; set; }
         public ulong Frame { get; set; }

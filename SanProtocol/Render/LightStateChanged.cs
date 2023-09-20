@@ -7,7 +7,7 @@ namespace SanProtocol.Render
 {
     public class LightStateChanged : IPacket
     {
-        public uint MessageId => Messages.Render.LightStateChanged;
+        public uint MessageId => Messages.RenderMessages.LightStateChanged;
 
         public ulong ComponentId { get; set; }
         public ulong Frame { get; set; }

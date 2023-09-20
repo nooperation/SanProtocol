@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class LongLivedNotification : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.LongLivedNotification;
+        public uint MessageId => Messages.ClientKafkaMessages.LongLivedNotification;
 
         public SanUUID Id { get; set; }
         public uint Type { get; set; }

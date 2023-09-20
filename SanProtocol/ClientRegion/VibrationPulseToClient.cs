@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class VibrationPulseToClient : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.VibrationPulseToClient;
+        public uint MessageId => Messages.ClientRegionMessages.VibrationPulseToClient;
 
         public uint ControlPointType { get; set; }
         public float Intensity { get; set; }

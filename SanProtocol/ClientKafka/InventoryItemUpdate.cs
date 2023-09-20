@@ -8,7 +8,7 @@ namespace SanProtocol.ClientKafka
 {
     public class InventoryItemUpdate : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.InventoryItemUpdate;
+        public uint MessageId => Messages.ClientKafkaMessages.InventoryItemUpdate;
 
         public string Id { get; set; }
         public string Licensee_label { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class InventoryItemUploadReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.InventoryItemUploadReply;
+        public uint MessageId => Messages.EditServerMessages.InventoryItemUploadReply;
 
         public SanUUID ProductId { get; set; }
         public string Status { get; set; }

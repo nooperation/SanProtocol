@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterIKPose : IPacket
     {
-        public uint MessageId => Messages.AgentController.CharacterIKPose;
+        public uint MessageId => Messages.AgentControllerMessages.CharacterIKPose;
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }

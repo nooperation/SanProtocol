@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class MasterInstance : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.MasterInstance;
+        public uint MessageId => Messages.ClientVoiceMessages.MasterInstance;
 
         public SanUUID Instance { get; set; }
 

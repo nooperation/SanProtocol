@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class WorkspaceReadyReply : IPacket
     {
-        public uint MessageId => Messages.EditServer.WorkspaceReadyReply;
+        public uint MessageId => Messages.EditServerMessages.WorkspaceReadyReply;
 
         public uint WorkspaceId { get; set; }
 

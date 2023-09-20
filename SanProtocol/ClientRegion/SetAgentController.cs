@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class SetAgentController : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.SetAgentController;
+        public uint MessageId => Messages.ClientRegionMessages.SetAgentController;
 
         public uint AgentControllerId { get; set; }
         public ulong Frame { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class RequestDetachFromCharacterNode : DetachFromCharacterNode
     {
-        public override uint MessageId => Messages.AgentController.RequestDetachFromCharacterNode;
+        public override uint MessageId => Messages.AgentControllerMessages.RequestDetachFromCharacterNode;
 
         public RequestDetachFromCharacterNode(ulong frame, ulong componentId, uint agentControllerId, List<float> bodyPosition, List<float> botyOrientation, List<float> bodyVelocity, List<float> bodyAngularVelocity, byte nodeType)
             : base(

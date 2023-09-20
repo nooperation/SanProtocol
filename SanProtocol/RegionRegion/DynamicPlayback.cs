@@ -7,7 +7,7 @@ namespace SanProtocol.RegionRegion
 {
     public class DynamicPlayback : IPacket
     {
-        public uint MessageId => Messages.RegionRegion.DynamicPlayback;
+        public uint MessageId => Messages.RegionRegionMessages.DynamicPlayback;
 
 
         public DynamicPlayback()

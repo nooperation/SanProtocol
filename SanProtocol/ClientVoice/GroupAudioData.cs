@@ -7,7 +7,7 @@ namespace SanProtocol.ClientVoice
 {
     public class GroupAudioData : IPacket
     {
-        public uint MessageId => Messages.ClientVoice.GroupAudioData;
+        public uint MessageId => Messages.ClientVoiceMessages.GroupAudioData;
 
         public string Group { get; set; }
         public string User { get; set; }

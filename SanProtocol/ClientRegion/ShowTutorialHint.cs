@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ShowTutorialHint : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ShowTutorialHint;
+        public uint MessageId => Messages.ClientRegionMessages.ShowTutorialHint;
 
         public uint TutorialHintEnum { get; set; }
         public uint Variant { get; set; }

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientDynamicReady : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientDynamicReady;
+        public uint MessageId => Messages.ClientRegionMessages.ClientDynamicReady;
 
         public List<float> Position { get; set; } = new List<float>();
         public List<float> Orientation { get; set; } = new List<float>();

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class RegionEventMetric : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.RegionEventMetric;
+        public uint MessageId => Messages.ClientKafkaMessages.RegionEventMetric;
 
         public SanUUID OwnerPersonaID { get; set; }
         public string EventName { get; set; }

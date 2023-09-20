@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class AddUser : IPacket
     {
-        public uint MessageId => Messages.EditServer.AddUser;
+        public uint MessageId => Messages.EditServerMessages.AddUser;
 
         public uint SessionId { get; set; }
         public string UserName { get; set; }

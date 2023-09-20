@@ -7,7 +7,7 @@ namespace SanProtocol.GameWorld
 {
     public class UpdateRuntimeInventorySettings : IPacket
     {
-        public uint MessageId => Messages.GameWorld.UpdateRuntimeInventorySettings;
+        public uint MessageId => Messages.GameWorldMessages.UpdateRuntimeInventorySettings;
 
         public byte SpawnSource { get; set; }
         public byte SpawnLifetimePolicy { get; set; }

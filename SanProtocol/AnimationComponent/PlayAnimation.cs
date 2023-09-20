@@ -7,7 +7,7 @@ namespace SanProtocol.AnimationComponent
 {
     public class PlayAnimation : IPacket
     {
-        public uint MessageId => Messages.AnimationComponent.PlayAnimation;
+        public uint MessageId => Messages.AnimationComponentMessages.PlayAnimation;
 
         public ulong Frame { get; set; }
         public ulong ComponentId { get; set; }

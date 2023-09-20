@@ -7,7 +7,7 @@ namespace SanProtocol.AgentController
 {
     public class CharacterControlPointInput : IPacket
     {
-        public virtual uint MessageId => Messages.AgentController.CharacterControlPointInput;
+        public virtual uint MessageId => Messages.AgentControllerMessages.CharacterControlPointInput;
 
         public ulong Frame { get; set; }
         public uint AgentControllerId { get; set; }

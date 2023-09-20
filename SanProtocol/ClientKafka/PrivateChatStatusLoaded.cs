@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class PrivateChatStatusLoaded : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.PrivateChatStatusLoaded;
+        public uint MessageId => Messages.ClientKafkaMessages.PrivateChatStatusLoaded;
 
         public ulong Offset { get; set; }
 

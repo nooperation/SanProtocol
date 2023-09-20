@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class OpenWorkspace : IPacket
     {
-        public uint MessageId => Messages.EditServer.OpenWorkspace;
+        public uint MessageId => Messages.EditServerMessages.OpenWorkspace;
 
         public SanUUID WorldSourceInventoryItemId { get; set; }
         public string WorldSourceResourceId { get; set; }

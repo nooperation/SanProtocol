@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class UpdateWorkspaceClientBuiltBakeData : IPacket
     {
-        public uint MessageId => Messages.EditServer.UpdateWorkspaceClientBuiltBakeData;
+        public uint MessageId => Messages.EditServerMessages.UpdateWorkspaceClientBuiltBakeData;
 
         public string Authorization { get; set; }
         public byte[] BakeData { get; set; }

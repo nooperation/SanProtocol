@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class ComponentRelativeTransform : IPacket
     {
-        public uint MessageId => Messages.WorldState.ComponentRelativeTransform;
+        public uint MessageId => Messages.WorldStateMessages.ComponentRelativeTransform;
 
         public List<float> RelativePosition { get; set; } = new List<float>();
         public List<float> RelativeRotation { get; set; } = new List<float>();

@@ -8,7 +8,7 @@ namespace SanProtocol.AgentController
     // REMOVED 40.11.0.1810696  (2020-08-13)
     public class CreateSpeechGraphicsPlayer : IPacket
     {
-        public uint MessageId => Messages.AgentController.CreateSpeechGraphicsPlayer;
+        public uint MessageId => Messages.AgentControllerMessages.CreateSpeechGraphicsPlayer;
 
         public uint AgentControllerId { get; set; }
         public byte[] SinkConfigData { get; set; }

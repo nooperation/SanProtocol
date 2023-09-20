@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class ClientSmiteNotification : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.ClientSmiteNotification;
+        public uint MessageId => Messages.ClientRegionMessages.ClientSmiteNotification;
 
         public string Message { get; set; }
 

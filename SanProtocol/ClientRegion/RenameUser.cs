@@ -7,7 +7,7 @@ namespace SanProtocol.ClientRegion
 {
     public class RenameUser : IPacket
     {
-        public uint MessageId => Messages.ClientRegion.RenameUser;
+        public uint MessageId => Messages.ClientRegionMessages.RenameUser;
 
         public uint SessionId { get; set; }
         public string UserName { get; set; }

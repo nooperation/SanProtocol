@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class RemoveUser : IPacket
     {
-        public uint MessageId => Messages.EditServer.RemoveUser;
+        public uint MessageId => Messages.EditServerMessages.RemoveUser;
 
         public uint SessionId { get; set; }
 

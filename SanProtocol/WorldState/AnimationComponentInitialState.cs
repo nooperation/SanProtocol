@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class AnimationComponentInitialState : IPacket
     {
-        public uint MessageId => Messages.WorldState.AnimationComponentInitialState;
+        public uint MessageId => Messages.WorldStateMessages.AnimationComponentInitialState;
 
         public uint RelativeComponentId { get; set; }
         public List<float> Velocity { get; set; } = new List<float>();

@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class InventoryItemRevision : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.InventoryItemRevision;
+        public uint MessageId => Messages.ClientKafkaMessages.InventoryItemRevision;
 
         public string Asset_id { get; set; }
         public string Asset_type { get; set; }

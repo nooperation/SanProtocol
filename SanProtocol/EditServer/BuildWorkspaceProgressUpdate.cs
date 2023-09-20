@@ -7,7 +7,7 @@ namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceProgressUpdate : IPacket
     {
-        public uint MessageId => Messages.EditServer.BuildWorkspaceProgressUpdate;
+        public uint MessageId => Messages.EditServerMessages.BuildWorkspaceProgressUpdate;
 
         public uint Stage { get; set; }
         public float Percent { get; set; }

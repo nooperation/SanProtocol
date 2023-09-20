@@ -7,7 +7,7 @@ namespace SanProtocol.ClientKafka
 {
     public class PrivateChat : IPacket
     {
-        public uint MessageId => Messages.ClientKafka.PrivateChat;
+        public uint MessageId => Messages.ClientKafkaMessages.PrivateChat;
 
         public ulong Offset { get; set; }
         public SanUUID FromPersonaId { get; set; }

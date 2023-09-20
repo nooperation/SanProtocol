@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class DestroyCluster : IPacket
     {
-        public uint MessageId => Messages.WorldState.DestroyCluster;
+        public uint MessageId => Messages.WorldStateMessages.DestroyCluster;
 
         public ulong Frame { get; set; }
         public uint ClusterId { get; set; }

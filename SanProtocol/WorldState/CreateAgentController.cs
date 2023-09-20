@@ -8,7 +8,7 @@ namespace SanProtocol.WorldState
 {
     public class CreateAgentController : IPacket
     {
-        public uint MessageId => Messages.WorldState.CreateAgentController;
+        public uint MessageId => Messages.WorldStateMessages.CreateAgentController;
 
         public uint SessionId { get; set; }
         public uint ClusterId { get; set; }

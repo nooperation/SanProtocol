@@ -7,7 +7,7 @@ namespace SanProtocol.WorldState
 {
     public class CreateWorld : IPacket
     {
-        public uint MessageId => Messages.WorldState.CreateWorld;
+        public uint MessageId => Messages.WorldStateMessages.CreateWorld;
 
         public SanUUID WorldDefinition { get; set; }
         public uint StartingClusterId { get; set; }
