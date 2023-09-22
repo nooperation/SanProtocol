@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class Messages
     {
@@ -228,11 +224,12 @@ namespace SanProtocol
             public const uint ShowWorldDetail = 0x5F483F0C;
             public const uint ShowTutorialHint = 0x581827CC;
             public const uint TutorialHintsSetEnabled = 0xE4C496DF;
-            public const uint ReactionDefinition = 0x1753788; // NEW: 2021-03-25
+            public const uint ReactionDefinition = 0x01753788; // NEW: 2021-03-25
             public const uint SystemReactionDefinition = 0xFA87F231; // NEW: 2021-03-25
             public const uint UpdateReactions = 0x9B5B20E9; // NEW: 2021-03-25
             public const uint AddReaction = 0x28323E96; // NEW: 2021-03-25
             public const uint RemoveReaction = 0x3F337471; // NEW: 2021-03-25
+            public const uint UIScriptableScoreBoard = 0xDE4E07ED; // NEW: 2023-06-13
         }
 
         public class EditServerMessages

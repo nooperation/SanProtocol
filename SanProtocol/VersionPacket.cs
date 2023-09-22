@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class VersionPacket : IPacket
     {
@@ -18,7 +13,8 @@ namespace SanProtocol
 
         public uint Unknown { get; set; }
         public string Name { get; set; }
-        Dictionary<uint, ushort> Versions = new Dictionary<uint, ushort>();
+
+        private readonly Dictionary<uint, ushort> Versions = new();
 
         public VersionPacket(VersionType versionType)
         {
@@ -113,6 +109,7 @@ namespace SanProtocol
                     {0xB87F9C66, 1},
                     {0x75C0AC6B, 1},
                     {0xBB382C6B, 1},
+                    {0x3F337471, 1},
                     {0x88023C72, 1},
                     {0x4F20B073, 1},
                     {0x3F020C77, 1},
@@ -132,6 +129,7 @@ namespace SanProtocol
                     {0x864418DA, 2},
                     {0x604E18DE, 1},
                     {0xEA2934E8, 1},
+                    {0x9B5B20E9, 1},
                     {0xEC3CA8EC, 1},
                     {0x6A2C4CEF, 1},
                     {0xA67454F0, 1},
@@ -178,6 +176,7 @@ namespace SanProtocol
                     {0x53078A1E, 1},
                     {0x0A7FC621, 1},
                     {0xF555FE2D, 5},
+                    {0xFA87F231, 1},
                     {0x4DB48E35, 1},
                     {0x64225637, 1},
                     {0x575AC239, 1},
@@ -188,6 +187,7 @@ namespace SanProtocol
                     {0x7BB86A5B, 1},
                     {0x85BA6E75, 1},
                     {0xEB3C4296, 1},
+                    {0x28323E96, 1},
                     {0x0B617A9A, 1},
                     {0xBB086E9B, 1},
                     {0x0741CA9B, 2},
@@ -208,6 +208,7 @@ namespace SanProtocol
                     {0x403D5704, 1},
                     {0x5F483F0C, 1},
                     {0x7D22C30C, 1},
+                    {0x575D5715, 1},
                     {0x8FC77316, 1},
                     {0xAE522F17, 1},
                     {0xFCA3EF20, 1},
@@ -227,6 +228,7 @@ namespace SanProtocol
                     {0xB4E1AB7B, 1},
                     {0xEFC20B7F, 1},
                     {0x00AC2B81, 1},
+                    {0x01753788, 1},
                     {0xA36E9F9C, 1},
                     {0x16406FB7, 1},
                     {0x581827CC, 1},
@@ -236,9 +238,10 @@ namespace SanProtocol
                     {0x83F1D7DB, 1},
                     {0x25C093E0, 1},
                     {0x0D094FEA, 1},
+                    {0xDE4E07ED, 1},
                     {0x86E6A7F6, 1},
                     {0x09DD53F6, 1},
-                    {0x706F63FB, 1}
+                    {0x706F63FB, 1},
                 };
             }
             else
@@ -254,7 +257,7 @@ namespace SanProtocol
             Versions = new Dictionary<uint, ushort>();
 
             var numEntries = br.ReadInt32();
-            for (int i = 0; i < numEntries; i++)
+            for (var i = 0; i < numEntries; i++)
             {
                 var id = br.ReadUInt32();
                 var version = br.ReadUInt16();
@@ -265,9 +268,9 @@ namespace SanProtocol
 
         public byte[] GetBytes()
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
-                using (BinaryWriter bw = new BinaryWriter(ms))
+                using (var bw = new BinaryWriter(ms))
                 {
                     bw.Write(MessageId);
                     bw.Write(Unknown);
