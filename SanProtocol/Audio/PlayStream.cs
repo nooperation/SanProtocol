@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class PlayStream : IPacket
     {
@@ -19,13 +14,13 @@ namespace SanProtocol.Audio
 
         public PlayStream(byte streamChannel, ulong createPlayHandleId, ulong componentId, List<float> position, float loudness, float pitch, byte flags)
         {
-            this.StreamChannel = streamChannel;
-            this.CreatePlayHandleId = createPlayHandleId;
-            this.ComponentId = componentId;
-            this.Position = position;
-            this.Loudness = loudness;
-            this.Pitch = pitch;
-            this.Flags = flags;
+            StreamChannel = streamChannel;
+            CreatePlayHandleId = createPlayHandleId;
+            ComponentId = componentId;
+            Position = position;
+            Loudness = loudness;
+            Pitch = pitch;
+            Flags = flags;
         }
 
         public PlayStream(BinaryReader br)
@@ -71,7 +66,7 @@ namespace SanProtocol.Audio
                    $"  {nameof(StreamChannel)} = {StreamChannel}\n" +
                    $"  {nameof(CreatePlayHandleId)} = {CreatePlayHandleId}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
                    $"  {nameof(Loudness)} = {Loudness}\n" +
                    $"  {nameof(Pitch)} = {Pitch}\n" +
                    $"  {nameof(Flags)} = {Flags}\n";

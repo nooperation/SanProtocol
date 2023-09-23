@@ -1,9 +1,4 @@
 ﻿using SanProtocol.AnimationComponent;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SanProtocol.AgentController
 {
@@ -56,10 +51,10 @@ namespace SanProtocol.AgentController
                    $"  {nameof(Quaternions)} = {Quaternions}\n" +
                    $"  {nameof(Int8s)} = {Int8s}\n" +
                    $"  {nameof(Bools)} = {Bools}\n" +
-                   $"  {nameof(InternalEventIds)} = {String.Join(',', InternalEventIds)}\n" +
+                   $"  {nameof(InternalEventIds)} = {string.Join(',', InternalEventIds)}\n" +
                    $"  {nameof(AnimationAction)} = {AnimationAction}\n" +
-                   $"  {nameof(NodeLocalTimes)} = {String.Join(',', NodeLocalTimes)}\n" +
-                   $"  {nameof(NodeCropValues)} = {String.Join(',', NodeCropValues)}\n";
+                   $"  {nameof(NodeLocalTimes)} = {string.Join(',', NodeLocalTimes)}\n" +
+                   $"  {nameof(NodeCropValues)} = {string.Join(',', NodeCropValues)}\n";
         }
     }
 }

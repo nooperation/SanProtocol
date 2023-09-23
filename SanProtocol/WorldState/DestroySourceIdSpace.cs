@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class DestroySourceIdSpace : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.WorldState
 
         public DestroySourceIdSpace(uint sourceIdSpace)
         {
-            this.SourceIdSpace = sourceIdSpace;
+            SourceIdSpace = sourceIdSpace;
         }
 
         public DestroySourceIdSpace(BinaryReader br)

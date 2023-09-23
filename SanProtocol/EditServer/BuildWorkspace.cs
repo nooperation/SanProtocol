@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class BuildWorkspace : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.EditServer
 
         public BuildWorkspace(string authorization, string sceneName, byte start)
         {
-            this.Authorization = authorization;
-            this.SceneName = sceneName;
-            this.Start = start;
+            Authorization = authorization;
+            SceneName = sceneName;
+            Start = start;
         }
 
         public BuildWorkspace(BinaryReader br)

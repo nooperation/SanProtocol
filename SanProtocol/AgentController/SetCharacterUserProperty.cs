@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class SetCharacterUserProperty : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public SetCharacterUserProperty(ulong frame, uint agentControllerId, float value, byte propertyType)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.Value = value;
-            this.PropertyType = propertyType;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            Value = value;
+            PropertyType = propertyType;
         }
 
         public SetCharacterUserProperty(BinaryReader br)

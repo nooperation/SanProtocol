@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class ObjectInteractionUpdate : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public ObjectInteractionUpdate(ulong frame, uint clusterId, uint objectId, byte enabled)
         {
-            this.Frame = frame;
-            this.ClusterId = clusterId;
-            this.ObjectId = objectId;
-            this.Enabled = enabled;
+            Frame = frame;
+            ClusterId = clusterId;
+            ObjectId = objectId;
+            Enabled = enabled;
         }
 
         public ObjectInteractionUpdate(BinaryReader br)

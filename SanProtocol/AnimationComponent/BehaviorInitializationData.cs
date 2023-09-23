@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class BehaviorInitializationData : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.AnimationComponent
 
         public BehaviorInitializationData(List<BehaviorStateUpdate> behaviorStateUpdates, List<PlayAnimation> animationUpdates, BehaviorInternalState internalState)
         {
-            this.BehaviorInternalState = internalState;
-            this.BehaviorStateUpdates = behaviorStateUpdates;
-            this.AnimationUpdates = animationUpdates;
+            BehaviorInternalState = internalState;
+            BehaviorStateUpdates = behaviorStateUpdates;
+            AnimationUpdates = animationUpdates;
         }
 
         public BehaviorInitializationData(BinaryReader br)
@@ -27,7 +22,7 @@ namespace SanProtocol.AnimationComponent
 
             var behaviorStateUpdatesLength = br.ReadInt32();
             BehaviorStateUpdates = new List<BehaviorStateUpdate>(behaviorStateUpdatesLength);
-            for (int i = 0; i < behaviorStateUpdatesLength; i++)
+            for (var i = 0; i < behaviorStateUpdatesLength; i++)
             {
                 var update = new BehaviorStateUpdate(br);
                 BehaviorStateUpdates.Add(update);
@@ -35,7 +30,7 @@ namespace SanProtocol.AnimationComponent
 
             var animationUpdatesLength = br.ReadInt32();
             AnimationUpdates = new List<PlayAnimation>(animationUpdatesLength);
-            for (int i = 0; i < animationUpdatesLength; i++)
+            for (var i = 0; i < animationUpdatesLength; i++)
             {
                 var update = new PlayAnimation(br);
                 AnimationUpdates.Add(update);
@@ -69,7 +64,7 @@ namespace SanProtocol.AnimationComponent
         public override string ToString()
         {
             return $"AnimationComponent::BehaviorInitializationData:\n" +
-                   $"  {nameof(BehaviorInternalState)} = {BehaviorInternalState.ToString()}\n" +
+                   $"  {nameof(BehaviorInternalState)} = {BehaviorInternalState}\n" +
                    $"  {nameof(BehaviorStateUpdates)} = [{BehaviorStateUpdates.Count}]\n" +
                    $"  {nameof(AnimationUpdates)} = [{AnimationUpdates.Count}]\n";
         }

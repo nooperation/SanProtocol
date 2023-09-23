@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class ChangeMaterial : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.GameWorld
 
         public ChangeMaterial(ulong startFrame, ulong componentId, byte materialIndex, uint time, byte interpMode)
         {
-            this.StartFrame = startFrame;
-            this.ComponentId = componentId;
-            this.MaterialIndex = materialIndex;
-            this.Time = time;
-            this.InterpMode = interpMode;
+            StartFrame = startFrame;
+            ComponentId = componentId;
+            MaterialIndex = materialIndex;
+            Time = time;
+            InterpMode = interpMode;
         }
 
         public ChangeMaterial(BinaryReader br)

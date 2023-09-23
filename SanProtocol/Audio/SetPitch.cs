@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class SetPitch : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Audio
 
         public SetPitch(uint playHandleId, uint pitch)
         {
-            this.PlayHandleId = playHandleId;
-            this.Pitch = pitch;
+            PlayHandleId = playHandleId;
+            Pitch = pitch;
         }
 
         public SetPitch(BinaryReader br)

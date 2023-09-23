@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     // REMOVED 40.11.0.1810696  (2020-08-13)
     public class CreateSpeechGraphicsPlayer : IPacket
@@ -15,8 +10,8 @@ namespace SanProtocol.AgentController
 
         public CreateSpeechGraphicsPlayer(uint agentControllerId, byte[] sinkConfigData)
         {
-            this.AgentControllerId = agentControllerId;
-            this.SinkConfigData = sinkConfigData;
+            AgentControllerId = agentControllerId;
+            SinkConfigData = sinkConfigData;
         }
 
         public CreateSpeechGraphicsPlayer(BinaryReader br)

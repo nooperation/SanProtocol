@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class VectorVariable : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.AnimationComponent
 
         public VectorVariable(ushort internalId, List<float> value)
         {
-            this.InternalId = internalId;
-            this.Value = value;
+            InternalId = internalId;
+            Value = value;
         }
 
         public VectorVariable(BinaryReader br)
@@ -49,7 +44,7 @@ namespace SanProtocol.AnimationComponent
         {
             return $"AnimationComponent::VectorVariable:\n" +
                    $"  {nameof(InternalId)} = {InternalId}\n" +
-                   $"  {nameof(Value)} = <{String.Join(',', Value)}>\n";
+                   $"  {nameof(Value)} = <{string.Join(',', Value)}>\n";
         }
     }
 }

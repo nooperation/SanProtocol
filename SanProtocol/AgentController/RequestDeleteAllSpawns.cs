@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestDeleteAllSpawns : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.AgentController
 
         public RequestDeleteAllSpawns(ulong frame, uint agentControllerId)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
         }
 
         public RequestDeleteAllSpawns(BinaryReader br)

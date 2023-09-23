@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class RiggedMeshScaleChanged : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.GameWorld
 
         public RiggedMeshScaleChanged(ulong componentid, ulong frame, float scale)
         {
-            this.Componentid = componentid;
-            this.Frame = frame;
-            this.Scale = scale;
+            Componentid = componentid;
+            Frame = frame;
+            Scale = scale;
         }
 
         public RiggedMeshScaleChanged(BinaryReader br)

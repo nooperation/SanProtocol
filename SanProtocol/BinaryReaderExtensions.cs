@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace SanProtocol
 {
@@ -30,7 +25,7 @@ namespace SanProtocol
         {
             uuid.WriteBytes(writer);
         }
-        
+
         public static void WriteSanString(this BinaryWriter writer, string str)
         {
             var bytes = ASCIIEncoding.UTF8.GetBytes(str);

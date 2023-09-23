@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class PlaySound : IPacket
     {
@@ -21,15 +16,15 @@ namespace SanProtocol.Audio
 
         public PlaySound(SanUUID resourceId, ulong createPlayHandleId, ulong frame, ulong componentId, List<float> position, float loudness, float pitch, uint playOffset, byte flags)
         {
-            this.ResourceId = resourceId;
-            this.CreatePlayHandleId = createPlayHandleId;
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.Position = position;
-            this.Loudness = loudness;
-            this.Pitch = pitch;
-            this.PlayOffset = playOffset;
-            this.Flags = flags;
+            ResourceId = resourceId;
+            CreatePlayHandleId = createPlayHandleId;
+            Frame = frame;
+            ComponentId = componentId;
+            Position = position;
+            Loudness = loudness;
+            Pitch = pitch;
+            PlayOffset = playOffset;
+            Flags = flags;
         }
 
         public PlaySound(BinaryReader br)
@@ -80,7 +75,7 @@ namespace SanProtocol.Audio
                    $"  {nameof(CreatePlayHandleId)} = {CreatePlayHandleId}\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
                    $"  {nameof(Loudness)} = {Loudness}\n" +
                    $"  {nameof(Pitch)} = {Pitch}\n" +
                    $"  {nameof(PlayOffset)} = {PlayOffset}\n" +

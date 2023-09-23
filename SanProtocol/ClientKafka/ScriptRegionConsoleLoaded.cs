@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientKafka
+﻿namespace SanProtocol.ClientKafka
 {
     public class ScriptRegionConsoleLoaded : IPacket
     {

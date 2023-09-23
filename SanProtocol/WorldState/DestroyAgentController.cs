@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class DestroyAgentController : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.WorldState
 
         public DestroyAgentController(ulong frame, uint agentControllerId)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
         }
 
         public DestroyAgentController(BinaryReader br)

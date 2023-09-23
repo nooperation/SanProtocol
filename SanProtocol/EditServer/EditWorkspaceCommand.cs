@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class EditWorkspaceCommand : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.EditServer
 
         public EditWorkspaceCommand(byte[] commandData)
         {
-            this.CommandData = commandData;
+            CommandData = commandData;
         }
 
         public EditWorkspaceCommand(BinaryReader br)

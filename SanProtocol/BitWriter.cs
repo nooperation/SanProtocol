@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class BitWriter
     {
@@ -14,8 +7,8 @@ namespace SanProtocol
 
         public BitWriter()
         {
-            this.Buffer = new List<byte>();
-            this.BitOffset = 0;
+            Buffer = new List<byte>();
+            BitOffset = 0;
         }
 
         public byte[] GetBytes()
@@ -25,7 +18,7 @@ namespace SanProtocol
 
         public void WriteFloats(List<float> floats, int bitsPerFloat, float modifier)
         {
-            var numBytes = 1 + (floats.Count * bitsPerFloat) / 8;
+            var numBytes = 1 + (floats.Count * bitsPerFloat / 8);
 
             var tempBuffer = new List<byte>(numBytes);
             var tempBufferBitOffset = 0L;
@@ -33,12 +26,12 @@ namespace SanProtocol
             foreach (var value in floats)
             {
                 var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
-                var result = (ulong)Math.Round(value * (mask / modifier) + mask);
+                var result = (ulong)Math.Round((value * (mask / modifier)) + mask);
 
                 tempBufferBitOffset = WriteBits(tempBuffer, tempBufferBitOffset, result, bitsPerFloat);
             }
 
-            this.BitOffset = WriteManyBits(this.Buffer, this.BitOffset, tempBuffer.ToArray(), floats.Count * bitsPerFloat);
+            BitOffset = WriteManyBits(Buffer, BitOffset, tempBuffer.ToArray(), floats.Count * bitsPerFloat);
         }
 
         public void WriteQuaternion(Quaternion quat, int bitsPerFloat)
@@ -60,7 +53,7 @@ namespace SanProtocol
             foreach (var value in quat.Values)
             {
                 var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
-                var result = (ulong)Math.Round(value * (mask / modifier) + mask);
+                var result = (ulong)Math.Round((value * (mask / modifier)) + mask);
 
                 BitOffset = WriteBits(Buffer, BitOffset, result, bitsPerFloat);
             }
@@ -68,7 +61,7 @@ namespace SanProtocol
 
         public void WriteFloat(float value, int numBits, float modifier = 1.0f)
         {
-            WriteFloats(new List<float>() {value}, numBits, modifier);
+            WriteFloats(new List<float>() { value }, numBits, modifier);
         }
 
         public void WriteUnsigned(ulong value, int numBits)
@@ -96,7 +89,7 @@ namespace SanProtocol
             if ((index + numBytesToWrite) >= buffer.Count)
             {
                 // Resize the buffer if we need more data. Buffer should really be sized correctly before calling to avoid this
-                buffer.AddRange(new byte[(index + numBytesToWrite) - buffer.Count]);
+                buffer.AddRange(new byte[index + numBytesToWrite - buffer.Count]);
             }
 
             //      numBits = 6
@@ -116,79 +109,79 @@ namespace SanProtocol
             switch (numBytesToWrite)
             {
                 case 1:
-                {
-                    buffer[index + 0] = (byte)((val & 0b11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 0] = (byte)((val & 0b11111111) >> 0);
+                        break;
+                    }
                 case 2:
-                {
-                    buffer[index + 1] = (byte)((val & 0b11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 1] = (byte)((val & 0b11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_11111111) >> 0);
+                        break;
+                    }
                 case 3:
-                {
-                    buffer[index + 2] = (byte)((val & 0b11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 2] = (byte)((val & 0b11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 4:
-                {
-                    buffer[index + 3] = (byte)((val & 0b11111111_00000000_00000000_00000000) >> 24);
-                    buffer[index + 2] = (byte)((val & 0b00000000_11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 3] = (byte)((val & 0b11111111_00000000_00000000_00000000) >> 24);
+                        buffer[index + 2] = (byte)((val & 0b00000000_11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 5:
-                {
-                    buffer[index + 4] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000) >> 32);
-                    buffer[index + 3] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000) >> 24);
-                    buffer[index + 2] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 4] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000) >> 32);
+                        buffer[index + 3] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000) >> 24);
+                        buffer[index + 2] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 6:
-                {
-                    buffer[index + 5] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
-                    buffer[index + 4] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
-                    buffer[index + 3] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
-                    buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 5] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
+                        buffer[index + 4] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
+                        buffer[index + 3] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
+                        buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 7:
-                {
-                    buffer[index + 6] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000_00000000) >> 48);
-                    buffer[index + 5] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
-                    buffer[index + 4] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
-                    buffer[index + 3] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
-                    buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 6] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000_00000000) >> 48);
+                        buffer[index + 5] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
+                        buffer[index + 4] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
+                        buffer[index + 3] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
+                        buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 8:
-                {
-                    buffer[index + 7] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000) >> 56);
-                    buffer[index + 6] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000_00000000_00000000) >> 48);
-                    buffer[index + 5] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
-                    buffer[index + 4] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
-                    buffer[index + 3] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
-                    buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
-                    buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
-                    buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
-                    break;
-                }
+                    {
+                        buffer[index + 7] = (byte)((val & 0b11111111_00000000_00000000_00000000_00000000_00000000_00000000_00000000) >> 56);
+                        buffer[index + 6] = (byte)((val & 0b00000000_11111111_00000000_00000000_00000000_00000000_00000000_00000000) >> 48);
+                        buffer[index + 5] = (byte)((val & 0b00000000_00000000_11111111_00000000_00000000_00000000_00000000_00000000) >> 40);
+                        buffer[index + 4] = (byte)((val & 0b00000000_00000000_00000000_11111111_00000000_00000000_00000000_00000000) >> 32);
+                        buffer[index + 3] = (byte)((val & 0b00000000_00000000_00000000_00000000_11111111_00000000_00000000_00000000) >> 24);
+                        buffer[index + 2] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_11111111_00000000_00000000) >> 16);
+                        buffer[index + 1] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_11111111_00000000) >> 8);
+                        buffer[index + 0] = (byte)((val & 0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_11111111) >> 0);
+                        break;
+                    }
                 case 9:
-                {
-                    WriteBits(buffer, bitOffset, value, (byte)(numBits - 8));
-                    WriteBits(buffer, bitOffset + numBits - 8, value >> (numBits - 8), 8);
-                    break;
-                }
+                    {
+                        WriteBits(buffer, bitOffset, value, (byte)(numBits - 8));
+                        WriteBits(buffer, bitOffset + numBits - 8, value >> (numBits - 8), 8);
+                        break;
+                    }
                 default:
                     throw new Exception($"Somehow attempted to write {numBytesToWrite} bytes with {nameof(WriteBits)}");
             }
@@ -196,16 +189,16 @@ namespace SanProtocol
             return bitOffset + numBits;
         }
 
-        long WriteManyBits(List<byte> outputBuffer, long totalBitOffset, byte[] input, int numBits)
+        private long WriteManyBits(List<byte> outputBuffer, long totalBitOffset, byte[] input, int numBits)
         {
             var bitsRemaining = numBits;
             var inputIndex = 0L;
 
             if (numBits >= 32)
             {
-                var numInts = numBits/32;
+                var numInts = numBits / 32;
 
-                for (int i = 0; i < numInts; i++)
+                for (var i = 0; i < numInts; i++)
                 {
                     var value =
                         ((ulong)input[inputIndex + 3] << 24) |
@@ -223,18 +216,18 @@ namespace SanProtocol
             ulong finalValueToWrite = 0;
             var finalBitsToWrite = (byte)bitsRemaining;
 
-            while(bitsRemaining >= 8)
+            while (bitsRemaining >= 8)
             {
                 bitsRemaining -= 8;
 
-                finalValueToWrite |= ((ulong)input[inputIndex] << bitsRemaining);
+                finalValueToWrite |= (ulong)input[inputIndex] << bitsRemaining;
                 inputIndex++;
             }
 
-            if (bitsRemaining > 0 )
+            if (bitsRemaining > 0)
             {
                 var mask = (byte)((1UL << bitsRemaining) - 1);
-                finalValueToWrite |= ((ulong)input[inputIndex] & mask);
+                finalValueToWrite |= (ulong)input[inputIndex] & mask;
             }
 
             return WriteBits(outputBuffer, totalBitOffset, finalValueToWrite, finalBitsToWrite);

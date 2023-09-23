@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class CreateClusterViaDefinition : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.WorldState
 
         public CreateClusterViaDefinition(uint clusterId, uint startingObjectId, SanUUID resourceId, List<float> spawnPosition, List<float> spawnRotation)
         {
-            this.ClusterId = clusterId;
-            this.StartingObjectId = startingObjectId;
-            this.ResourceId = resourceId;
-            this.SpawnPosition = spawnPosition;
-            this.SpawnRotation = spawnRotation;
+            ClusterId = clusterId;
+            StartingObjectId = startingObjectId;
+            ResourceId = resourceId;
+            SpawnPosition = spawnPosition;
+            SpawnRotation = spawnRotation;
         }
 
         public CreateClusterViaDefinition(BinaryReader br)
@@ -70,8 +65,8 @@ namespace SanProtocol.WorldState
                    $"  {nameof(ClusterId)} = {ClusterId}\n" +
                    $"  {nameof(StartingObjectId)} = {StartingObjectId}\n" +
                    $"  {nameof(ResourceId)} = {ResourceId}\n" +
-                   $"  {nameof(SpawnPosition)} = <{String.Join(',', SpawnPosition)}>\n" +
-                   $"  {nameof(SpawnRotation)} = <{String.Join(',', SpawnRotation)}>\n";
+                   $"  {nameof(SpawnPosition)} = <{string.Join(',', SpawnPosition)}>\n" +
+                   $"  {nameof(SpawnRotation)} = <{string.Join(',', SpawnRotation)}>\n";
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class DestroyObject : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.WorldState
 
         public DestroyObject(uint objectId)
         {
-            this.ObjectId = objectId;
+            ObjectId = objectId;
         }
 
         public DestroyObject(BinaryReader br)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class BehaviorInternalState : IPacket
     {
@@ -30,12 +25,12 @@ namespace SanProtocol.AnimationComponent
 
         public BehaviorInternalState(ulong componentId, ulong frame, List<AnimationOverride> overrides, byte[] slotStates, byte[] stateData, byte isPlaying)
         {
-            this.ComponentId = componentId;
-            this.Frame = frame;
-            this.Overrides = overrides;
-            this.SlotStates = slotStates;
-            this.StateData = stateData;
-            this.IsPlaying = isPlaying;
+            ComponentId = componentId;
+            Frame = frame;
+            Overrides = overrides;
+            SlotStates = slotStates;
+            StateData = stateData;
+            IsPlaying = isPlaying;
         }
 
         public BehaviorInternalState(BinaryReader br)
@@ -45,7 +40,7 @@ namespace SanProtocol.AnimationComponent
 
             var numOverrides = br.ReadInt32();
             Overrides = new List<AnimationOverride>(numOverrides);
-            for (int i = 0; i < numOverrides; i++)
+            for (var i = 0; i < numOverrides; i++)
             {
                 var flag = br.ReadByte();
                 var animation = new PlayAnimation(br);
@@ -55,7 +50,7 @@ namespace SanProtocol.AnimationComponent
 
             var slotStatesLength = br.ReadUInt32();
             SlotStates = new byte[slotStatesLength];
-            for (int i = 0; i < slotStatesLength; i++)
+            for (var i = 0; i < slotStatesLength; i++)
             {
                 SlotStates[i] = br.ReadByte();
             }

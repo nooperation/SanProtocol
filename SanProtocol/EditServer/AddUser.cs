@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class AddUser : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.EditServer
 
         public AddUser(uint sessionId, string userName, SanUUID personaId)
         {
-            this.SessionId = sessionId;
-            this.UserName = userName;
-            this.PersonaId = personaId;
+            SessionId = sessionId;
+            UserName = userName;
+            PersonaId = personaId;
         }
 
         public AddUser(BinaryReader br)

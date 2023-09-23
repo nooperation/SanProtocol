@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryModifyItemCapabilities : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.EditServer
 
         public InventoryModifyItemCapabilities(string authorization, SanUUID modifyCapabilitiesRequestId, SanUUID itemToChangeId, List<string> capabilitiesToAdd, List<string> capabilitiesToRemove)
         {
-            this.Authorization = authorization;
-            this.ModifyCapabilitiesRequestId = modifyCapabilitiesRequestId;
-            this.ItemToChangeId = itemToChangeId;
-            this.CapabilitiesToAdd = capabilitiesToAdd;
-            this.CapabilitiesToRemove = capabilitiesToRemove;
+            Authorization = authorization;
+            ModifyCapabilitiesRequestId = modifyCapabilitiesRequestId;
+            ItemToChangeId = itemToChangeId;
+            CapabilitiesToAdd = capabilitiesToAdd;
+            CapabilitiesToRemove = capabilitiesToRemove;
         }
 
         public InventoryModifyItemCapabilities(BinaryReader br)
@@ -74,8 +69,8 @@ namespace SanProtocol.EditServer
                    $"  {nameof(Authorization)} = {Authorization}\n" +
                    $"  {nameof(ModifyCapabilitiesRequestId)} = {ModifyCapabilitiesRequestId}\n" +
                    $"  {nameof(ItemToChangeId)} = {ItemToChangeId}\n" +
-                   $"  {nameof(CapabilitiesToAdd)} = {String.Join(',', CapabilitiesToAdd)}\n" +
-                   $"  {nameof(CapabilitiesToRemove)} = {String.Join(',', CapabilitiesToRemove)}\n";
+                   $"  {nameof(CapabilitiesToAdd)} = {string.Join(',', CapabilitiesToAdd)}\n" +
+                   $"  {nameof(CapabilitiesToRemove)} = {string.Join(',', CapabilitiesToRemove)}\n";
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryChangeItemState : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public InventoryChangeItemState(string authorization, SanUUID changeStateRequestId, SanUUID itemToChangeId, byte newState)
         {
-            this.Authorization = authorization;
-            this.ChangeStateRequestId = changeStateRequestId;
-            this.ItemToChangeId = itemToChangeId;
-            this.NewState = newState;
+            Authorization = authorization;
+            ChangeStateRequestId = changeStateRequestId;
+            ItemToChangeId = itemToChangeId;
+            NewState = newState;
         }
 
         public InventoryChangeItemState(BinaryReader br)

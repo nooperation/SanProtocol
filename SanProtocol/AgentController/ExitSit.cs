@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class ExitSit : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.AgentController
 
         public ExitSit(ulong frame, uint agentControllerId, ulong componentId, bool skipAnimation, bool skipExitTeleport)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ComponentId = componentId;
-            this.SkipAnimation = skipAnimation;
-            this.SkipExitTeleport = skipExitTeleport;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ComponentId = componentId;
+            SkipAnimation = skipAnimation;
+            SkipExitTeleport = skipExitTeleport;
         }
 
         public ExitSit(BinaryReader br)

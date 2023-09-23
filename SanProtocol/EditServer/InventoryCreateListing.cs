@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryCreateListing : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.EditServer
 
         public InventoryCreateListing(string authorization, SanUUID itemId, string itemName, string categoryName, string bundleName)
         {
-            this.Authorization = authorization;
-            this.ItemId = itemId;
-            this.ItemName = itemName;
-            this.CategoryName = categoryName;
-            this.BundleName = bundleName;
+            Authorization = authorization;
+            ItemId = itemId;
+            ItemName = itemName;
+            CategoryName = categoryName;
+            BundleName = bundleName;
         }
 
         public InventoryCreateListing(BinaryReader br)

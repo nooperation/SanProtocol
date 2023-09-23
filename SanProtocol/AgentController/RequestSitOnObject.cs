@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestSitOnObject : SitOnObject
     {
@@ -19,7 +14,7 @@ namespace SanProtocol.AgentController
         }
 
         public RequestSitOnObject(BinaryReader br)
-            :base(br)
+            : base(br)
         {
         }
 

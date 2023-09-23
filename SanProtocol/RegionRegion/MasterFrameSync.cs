@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.RegionRegion
+﻿namespace SanProtocol.RegionRegion
 {
     public class MasterFrameSync : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.RegionRegion
 
         public MasterFrameSync(ulong masterFrame)
         {
-            this.MasterFrame = masterFrame;
+            MasterFrame = masterFrame;
         }
 
         public MasterFrameSync(BinaryReader br)

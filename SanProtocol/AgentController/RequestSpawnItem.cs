@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestSpawnItem : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.AgentController
 
         public RequestSpawnItem(ulong frame, uint agentControllerId, SanUUID resourceId, byte attachmentNode, List<float> spawnPosition, Quaternion spawnOrientation)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ResourceId = resourceId;
-            this.AttachmentNode = attachmentNode;
-            this.SpawnPosition = spawnPosition;
-            this.SpawnOrientation = spawnOrientation;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ResourceId = resourceId;
+            AttachmentNode = attachmentNode;
+            SpawnPosition = spawnPosition;
+            SpawnOrientation = spawnOrientation;
         }
 
 
@@ -34,7 +29,7 @@ namespace SanProtocol.AgentController
             ResourceId = br.ReadSanUUID();
             AttachmentNode = br.ReadByte();
 
-            var bitReader = new BitReader(br, 3 * 26 + (3 * 13 + 4));
+            var bitReader = new BitReader(br, (3 * 26) + (3 * 13) + 4);
             SpawnPosition = bitReader.ReadFloats(3, 26, 2048.0f);
             SpawnOrientation = bitReader.ReadQuaternion(3, 13);
         }
@@ -68,7 +63,7 @@ namespace SanProtocol.AgentController
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
                    $"  {nameof(ResourceId)} = {ResourceId}\n" +
                    $"  {nameof(AttachmentNode)} = {AttachmentNode}\n" +
-                   $"  {nameof(SpawnPosition)} = <{String.Join(',', SpawnPosition)}>\n" +
+                   $"  {nameof(SpawnPosition)} = <{string.Join(',', SpawnPosition)}>\n" +
                    $"  {nameof(SpawnOrientation)} = {SpawnOrientation}\n";
         }
     }

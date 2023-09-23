@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class UpdateWorkspaceClientBuiltBakeData : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.EditServer
 
         public UpdateWorkspaceClientBuiltBakeData(string authorization, byte[] bakeData)
         {
-            this.Authorization = authorization;
-            this.BakeData = bakeData;
+            Authorization = authorization;
+            BakeData = bakeData;
         }
 
         public UpdateWorkspaceClientBuiltBakeData(BinaryReader br)

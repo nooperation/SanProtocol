@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class ObjectInteractionPromptUpdate : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public ObjectInteractionPromptUpdate(ulong frame, uint clusterId, uint objectId, string prompt)
         {
-            this.Frame = frame;
-            this.ClusterId = clusterId;
-            this.ObjectId = objectId;
-            this.Prompt = prompt;
+            Frame = frame;
+            ClusterId = clusterId;
+            ObjectId = objectId;
+            Prompt = prompt;
         }
 
         public ObjectInteractionPromptUpdate(BinaryReader br)

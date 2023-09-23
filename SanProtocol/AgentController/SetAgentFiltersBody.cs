@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class SetAgentFiltersBody : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public SetAgentFiltersBody(ulong frame, uint agentControllerId, ulong componentId, byte filterBody)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ComponentId = componentId;
-            this.FilterBody = filterBody;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ComponentId = componentId;
+            FilterBody = filterBody;
         }
 
         public SetAgentFiltersBody(BinaryReader br)

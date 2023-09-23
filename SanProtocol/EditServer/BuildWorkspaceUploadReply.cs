@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceUploadReply : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.EditServer
 
         public BuildWorkspaceUploadReply(byte success, string worldDefinitionId)
         {
-            this.Success = success;
-            this.WorldDefinitionId = worldDefinitionId;
+            Success = success;
+            WorldDefinitionId = worldDefinitionId;
         }
 
         public BuildWorkspaceUploadReply(BinaryReader br)

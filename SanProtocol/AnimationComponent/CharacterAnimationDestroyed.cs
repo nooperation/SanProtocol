@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class CharacterAnimationDestroyed : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.AnimationComponent
 
         public CharacterAnimationDestroyed(ulong componentId)
         {
-            this.ComponentId = componentId;
+            ComponentId = componentId;
         }
 
         public CharacterAnimationDestroyed(BinaryReader br)

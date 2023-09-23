@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class InitialTimestamp : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Simulation
 
         public InitialTimestamp(ulong nanoseconds, ulong frame)
         {
-            this.Nanoseconds = nanoseconds;
-            this.Frame = frame;
+            Nanoseconds = nanoseconds;
+            Frame = frame;
         }
 
         public InitialTimestamp(BinaryReader br)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class ObjectInteraction : IPacket
     {
@@ -19,13 +14,13 @@ namespace SanProtocol.AgentController
 
         public ObjectInteraction(ulong frame, uint agentControllerId, uint objectId, List<float> targetedPosition, List<float> targetedNormal, List<float> origin, byte controlPointType)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ObjectId = objectId;
-            this.TargetedPosition = targetedPosition;
-            this.TargetedNormal = targetedNormal;
-            this.Origin = origin;
-            this.ControlPointType = controlPointType;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ObjectId = objectId;
+            TargetedPosition = targetedPosition;
+            TargetedNormal = targetedNormal;
+            Origin = origin;
+            ControlPointType = controlPointType;
         }
 
         public ObjectInteraction(BinaryReader br)
@@ -93,9 +88,9 @@ namespace SanProtocol.AgentController
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
                    $"  {nameof(ObjectId)} = {ObjectId}\n" +
-                   $"  {nameof(TargetedPosition)} = <{String.Join(',', TargetedPosition)}>\n" +
-                   $"  {nameof(TargetedNormal)} = <{String.Join(',', TargetedNormal)}>\n" +
-                   $"  {nameof(Origin)} = <{String.Join(',', Origin)}>\n" +
+                   $"  {nameof(TargetedPosition)} = <{string.Join(',', TargetedPosition)}>\n" +
+                   $"  {nameof(TargetedNormal)} = <{string.Join(',', TargetedNormal)}>\n" +
+                   $"  {nameof(Origin)} = <{string.Join(',', Origin)}>\n" +
                    $"  {nameof(ControlPointType)} = {ControlPointType}\n";
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientVoice
+﻿namespace SanProtocol.ClientVoice
 {
     public class LocalAudioPosition : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.ClientVoice
 
         public LocalAudioPosition(uint sequence, SanUUID instance, List<float> position, uint agentControllerId)
         {
-            this.Sequence = sequence;
-            this.Instance = instance;
-            this.Position = position;
-            this.AgentControllerId = agentControllerId;
+            Sequence = sequence;
+            Instance = instance;
+            Position = position;
+            AgentControllerId = agentControllerId;
         }
 
         public LocalAudioPosition(BinaryReader br)
@@ -58,7 +53,7 @@ namespace SanProtocol.ClientVoice
             return $"ClientVoice::LocalAudioPosition:\n" +
                    $"  {nameof(Sequence)} = {Sequence}\n" +
                    $"  {nameof(Instance)} = {Instance}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n";
         }
     }

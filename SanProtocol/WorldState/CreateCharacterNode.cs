@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class CreateCharacterNode : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.WorldState
 
         public CreateCharacterNode(byte nodeType, byte controllerNodetype, byte flags)
         {
-            this.NodeType = nodeType;
-            this.ControllerNodetype = controllerNodetype;
-            this.Flags = flags;
+            NodeType = nodeType;
+            ControllerNodetype = controllerNodetype;
+            Flags = flags;
         }
 
         public CreateCharacterNode(BinaryReader br)

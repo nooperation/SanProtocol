@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class BoolVariable : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.AnimationComponent
 
         public BoolVariable(ushort internalId, byte value)
         {
-            this.InternalId = internalId;
-            this.Value = value;
+            InternalId = internalId;
+            Value = value;
         }
 
         public BoolVariable(BinaryReader br)

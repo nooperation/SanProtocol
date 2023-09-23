@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class ClientCommand : IPacket
     {
@@ -23,17 +18,17 @@ namespace SanProtocol.ClientRegion
 
         public ClientCommand(string command, byte action, List<float> origin, List<float> targetPosition, List<float> normal, ulong componentId, ulong frame, byte device, byte mouseLook, byte controlMode, byte isAimTarget)
         {
-            this.Command = command;
-            this.Action = action;
-            this.Origin = origin;
-            this.TargetPosition = targetPosition;
-            this.Normal = normal;
-            this.ComponentId = componentId;
-            this.Frame = frame;
-            this.Device = device;
-            this.MouseLook = mouseLook;
-            this.ControlMode = controlMode;
-            this.IsAimTarget = isAimTarget;
+            Command = command;
+            Action = action;
+            Origin = origin;
+            TargetPosition = targetPosition;
+            Normal = normal;
+            ComponentId = componentId;
+            Frame = frame;
+            Device = device;
+            MouseLook = mouseLook;
+            ControlMode = controlMode;
+            IsAimTarget = isAimTarget;
         }
 
         public ClientCommand(BinaryReader br)
@@ -100,9 +95,9 @@ namespace SanProtocol.ClientRegion
             return $"ClientRegion::ClientCommand:\n" +
                    $"  {nameof(Command)} = {Command}\n" +
                    $"  {nameof(Action)} = {Action}\n" +
-                   $"  {nameof(Origin)} = <{String.Join(',', Origin)}>\n" +
-                   $"  {nameof(TargetPosition)} = <{String.Join(',', TargetPosition)}>\n" +
-                   $"  {nameof(Normal)} = <{String.Join(',', Normal)}>\n" +
+                   $"  {nameof(Origin)} = <{string.Join(',', Origin)}>\n" +
+                   $"  {nameof(TargetPosition)} = <{string.Join(',', TargetPosition)}>\n" +
+                   $"  {nameof(Normal)} = <{string.Join(',', Normal)}>\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(Device)} = {Device}\n" +

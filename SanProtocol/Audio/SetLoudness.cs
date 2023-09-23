@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class SetLoudness : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Audio
 
         public SetLoudness(uint playHandleId, uint loudness)
         {
-            this.PlayHandleId = playHandleId;
-            this.Loudness = loudness;
+            PlayHandleId = playHandleId;
+            Loudness = loudness;
         }
 
         public SetLoudness(BinaryReader br)

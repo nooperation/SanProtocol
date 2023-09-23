@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class CharacterBehaviorInternalState : BehaviorInternalState
     {
@@ -15,7 +10,7 @@ namespace SanProtocol.AnimationComponent
         }
 
         public CharacterBehaviorInternalState(BinaryReader br)
-            :base(br)
+            : base(br)
         {
         }
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientVoice
+﻿namespace SanProtocol.ClientVoice
 {
     public class SpeechGraphicsData : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.ClientVoice
 
         public SpeechGraphicsData(ulong sequence, byte[] data)
         {
-            this.Sequence = sequence;
-            this.Data = data;
+            Sequence = sequence;
+            Data = data;
         }
 
         public SpeechGraphicsData(BinaryReader br)

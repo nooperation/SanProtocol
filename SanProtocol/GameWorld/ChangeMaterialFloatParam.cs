@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class ChangeMaterialFloatParam : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.GameWorld
 
         public ChangeMaterialFloatParam(byte parameter, float start, float end)
         {
-            this.Parameter = parameter;
-            this.Start = start;
-            this.End = end;
+            Parameter = parameter;
+            Start = start;
+            End = end;
         }
 
         public ChangeMaterialFloatParam(BinaryReader br)

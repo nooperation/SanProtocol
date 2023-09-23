@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class ChangeMaterialVectorParam : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.GameWorld
 
         public ChangeMaterialVectorParam(byte parameter, List<float> start, List<float> end)
         {
-            this.Parameter = parameter;
-            this.Start = start;
-            this.End = end;
+            Parameter = parameter;
+            Start = start;
+            End = end;
         }
 
         public ChangeMaterialVectorParam(BinaryReader br)
@@ -60,8 +55,8 @@ namespace SanProtocol.GameWorld
         {
             return $"GameWorld::ChangeMaterialVectorParam:\n" +
                    $"  {nameof(Parameter)} = {Parameter}\n" +
-                   $"  {nameof(Start)} = <{String.Join(',', Start)}>\n" +
-                   $"  {nameof(End)} = <{String.Join(',', End)}>\n";
+                   $"  {nameof(Start)} = <{string.Join(',', Start)}>\n" +
+                   $"  {nameof(End)} = <{string.Join(',', End)}>\n";
         }
     }
 }

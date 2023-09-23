@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class StopBroadcastingSound : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.Audio
 
         public StopBroadcastingSound(ulong playHandleId)
         {
-            this.PlayHandleId = playHandleId;
+            PlayHandleId = playHandleId;
         }
 
         public StopBroadcastingSound(BinaryReader br)

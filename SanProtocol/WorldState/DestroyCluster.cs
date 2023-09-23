@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class DestroyCluster : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.WorldState
 
         public DestroyCluster(ulong frame, uint clusterId)
         {
-            this.Frame = frame;
-            this.ClusterId = clusterId;
+            Frame = frame;
+            ClusterId = clusterId;
         }
 
         public DestroyCluster(BinaryReader br)

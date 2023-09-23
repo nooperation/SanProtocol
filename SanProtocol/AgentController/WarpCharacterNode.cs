@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class WarpCharacterNode : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.AgentController
 
         public WarpCharacterNode(uint agentControllerId, uint nodeType)
         {
-            this.AgentControllerId = agentControllerId;
-            this.NodeType = nodeType;
+            AgentControllerId = agentControllerId;
+            NodeType = nodeType;
         }
 
         public WarpCharacterNode(BinaryReader br)

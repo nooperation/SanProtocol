@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterIKBone : IPacket
     {
@@ -14,13 +9,13 @@ namespace SanProtocol.AgentController
 
         public CharacterIKBone(byte boneIndex, Quaternion localOrientation)
         {
-            this.BoneIndex = boneIndex;
-            this.LocalOrientation = localOrientation;
+            BoneIndex = boneIndex;
+            LocalOrientation = localOrientation;
         }
 
         public CharacterIKBone(BinaryReader br)
         {
-            var bitReader = new BitReader(br, 6 + (3*12 + 4));
+            var bitReader = new BitReader(br, 6 + (3 * 12) + 4);
             BoneIndex = (byte)bitReader.ReadUnsigned(6);
             LocalOrientation = bitReader.ReadQuaternion(3, 12);
         }

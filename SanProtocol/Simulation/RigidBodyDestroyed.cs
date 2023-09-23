@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class RigidBodyDestroyed : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.Simulation
 
         public RigidBodyDestroyed(ulong componentId)
         {
-            this.ComponentId = componentId;
+            ComponentId = componentId;
         }
 
         public RigidBodyDestroyed(BinaryReader br)

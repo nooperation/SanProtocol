@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class UpdateReactions : IPacket
     {
@@ -22,7 +17,7 @@ namespace SanProtocol.ClientRegion
         {
             var reactionsLength = br.ReadInt32();
             ReactionDefinitions = new List<ReactionDefinition>(reactionsLength);
-            for (int i = 0; i < reactionsLength; i++)
+            for (var i = 0; i < reactionsLength; i++)
             {
                 var reaction = new ReactionDefinition(br);
                 ReactionDefinitions.Add(reaction);
@@ -30,7 +25,7 @@ namespace SanProtocol.ClientRegion
 
             var systemReactionsLength = br.ReadInt32();
             SystemReactionDefinitions = new List<SystemReactionDefinition>(systemReactionsLength);
-            for (int i = 0; i < systemReactionsLength; i++)
+            for (var i = 0; i < systemReactionsLength; i++)
             {
                 var reaction = new SystemReactionDefinition(br);
                 SystemReactionDefinitions.Add(reaction);
@@ -43,14 +38,14 @@ namespace SanProtocol.ClientRegion
             {
                 using (var bw = new BinaryWriter(ms))
                 {
-                    bw.Write((int)ReactionDefinitions.Count);
+                    bw.Write(ReactionDefinitions.Count);
                     foreach (var reaction in ReactionDefinitions)
                     {
                         var reactionBytes = reaction.GetBytes().Skip(4).ToArray();
                         bw.Write(reactionBytes);
                     }
 
-                    bw.Write((int)SystemReactionDefinitions.Count);
+                    bw.Write(SystemReactionDefinitions.Count);
                     foreach (var reaction in SystemReactionDefinitions)
                     {
                         var reactionBytes = reaction.GetBytes().Skip(4).ToArray();

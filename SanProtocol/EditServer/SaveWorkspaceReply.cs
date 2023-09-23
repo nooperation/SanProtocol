@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class SaveWorkspaceReply : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public SaveWorkspaceReply(byte success, string itemInventoryId, string itemResourceId, string itemName)
         {
-            this.Success = success;
-            this.ItemInventoryId = itemInventoryId;
-            this.ItemResourceId = itemResourceId;
-            this.ItemName = itemName;
+            Success = success;
+            ItemInventoryId = itemInventoryId;
+            ItemResourceId = itemResourceId;
+            ItemName = itemName;
         }
 
         public SaveWorkspaceReply(BinaryReader br)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestAgentPlayAnimation : AgentPlayAnimation
     {
@@ -21,13 +16,13 @@ namespace SanProtocol.AgentController
                 playbackMode
               )
         {
-           
+
         }
 
         public RequestAgentPlayAnimation(BinaryReader br)
             : base(br)
         {
-          
+
         }
 
         public override string ToString()

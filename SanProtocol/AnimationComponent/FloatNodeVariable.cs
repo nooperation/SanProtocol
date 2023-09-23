@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class FloatNodeVariable : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.AnimationComponent
 
         public FloatNodeVariable(ushort nodeId, float value)
         {
-            this.NodeId = nodeId;
-            this.Value = value;
+            NodeId = nodeId;
+            Value = value;
         }
 
         public FloatNodeVariable(BinaryReader br)

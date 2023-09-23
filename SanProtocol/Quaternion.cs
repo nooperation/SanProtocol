@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class Quaternion
     {
@@ -16,7 +10,7 @@ namespace SanProtocol
 
         public override string ToString()
         {
-            return $"Quat({UnknownA},{UnknownB},{ModifierFlag})<{String.Join(",", Values)}>";
+            return $"Quat({UnknownA},{UnknownB},{ModifierFlag})<{string.Join(",", Values)}>";
         }
     }
 }

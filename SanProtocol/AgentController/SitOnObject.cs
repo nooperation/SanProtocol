@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class SitOnObject : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.AgentController
 
         public SitOnObject(ulong frame, uint agentControllerId, ulong componentId)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ComponentId = componentId;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ComponentId = componentId;
         }
 
         public SitOnObject(BinaryReader br)

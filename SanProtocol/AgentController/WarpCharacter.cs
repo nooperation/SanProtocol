@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class WarpCharacter : IPacket
     {
@@ -21,15 +16,15 @@ namespace SanProtocol.AgentController
 
         public WarpCharacter(ulong frame, uint agentControllerId, float position_x, float position_y, float position_z, float rotation_x, float rotation_y, float rotation_z, float rotation_w)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.Position_x = position_x;
-            this.Position_y = position_y;
-            this.Position_z = position_z;
-            this.Rotation_x = rotation_x;
-            this.Rotation_y = rotation_y;
-            this.Rotation_z = rotation_z;
-            this.Rotation_w = rotation_w;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            Position_x = position_x;
+            Position_y = position_y;
+            Position_z = position_z;
+            Rotation_x = rotation_x;
+            Rotation_y = rotation_y;
+            Rotation_z = rotation_z;
+            Rotation_w = rotation_w;
         }
 
         public WarpCharacter(BinaryReader br)

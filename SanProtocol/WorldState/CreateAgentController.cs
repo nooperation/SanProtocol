@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class CreateAgentController : IPacket
     {
@@ -21,14 +15,14 @@ namespace SanProtocol.WorldState
 
         public CreateAgentController(uint sessionId, uint clusterId, uint agentControllerId, uint characterObjectId, List<CreateCharacterNode> characterNodes, ulong frame, SanUUID personaId, byte isRemoteAgent)
         {
-            this.SessionId = sessionId;
-            this.ClusterId = clusterId;
-            this.AgentControllerId = agentControllerId;
-            this.CharacterObjectId = characterObjectId;
-            this.CharacterNodes = characterNodes;
-            this.Frame = frame;
-            this.PersonaId = personaId;
-            this.IsRemoteAgent = isRemoteAgent != 0;
+            SessionId = sessionId;
+            ClusterId = clusterId;
+            AgentControllerId = agentControllerId;
+            CharacterObjectId = characterObjectId;
+            CharacterNodes = characterNodes;
+            Frame = frame;
+            PersonaId = personaId;
+            IsRemoteAgent = isRemoteAgent != 0;
         }
 
         public CreateAgentController(BinaryReader br)
@@ -39,7 +33,7 @@ namespace SanProtocol.WorldState
             CharacterObjectId = br.ReadUInt32();
 
             var characterNodesLength = br.ReadUInt32();
-            for (int i = 0; i < characterNodesLength; i++)
+            for (var i = 0; i < characterNodesLength; i++)
             {
                 CharacterNodes.Add(new CreateCharacterNode(br));
             }

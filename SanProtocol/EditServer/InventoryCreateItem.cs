@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryCreateItem : IPacket
     {
@@ -23,17 +18,17 @@ namespace SanProtocol.EditServer
 
         public InventoryCreateItem(string authorization, SanUUID createRequestId, string itemName, string ssetId, string licenseAssetName, string inventoryTag, string assetSerializationTag, string thumbnailAssetId, List<string> additionalCapabilities, ulong resourceVersion, byte assetState)
         {
-            this.Authorization = authorization;
-            this.CreateRequestId = createRequestId;
-            this.ItemName = itemName;
-            this.SsetId = ssetId;
-            this.LicenseAssetName = licenseAssetName;
-            this.InventoryTag = inventoryTag;
-            this.AssetSerializationTag = assetSerializationTag;
-            this.ThumbnailAssetId = thumbnailAssetId;
-            this.AdditionalCapabilities = additionalCapabilities;
-            this.ResourceVersion = resourceVersion;
-            this.AssetState = assetState;
+            Authorization = authorization;
+            CreateRequestId = createRequestId;
+            ItemName = itemName;
+            SsetId = ssetId;
+            LicenseAssetName = licenseAssetName;
+            InventoryTag = inventoryTag;
+            AssetSerializationTag = assetSerializationTag;
+            ThumbnailAssetId = thumbnailAssetId;
+            AdditionalCapabilities = additionalCapabilities;
+            ResourceVersion = resourceVersion;
+            AssetState = assetState;
         }
 
         public InventoryCreateItem(BinaryReader br)
@@ -94,7 +89,7 @@ namespace SanProtocol.EditServer
                    $"  {nameof(InventoryTag)} = {InventoryTag}\n" +
                    $"  {nameof(AssetSerializationTag)} = {AssetSerializationTag}\n" +
                    $"  {nameof(ThumbnailAssetId)} = {ThumbnailAssetId}\n" +
-                   $"  {nameof(AdditionalCapabilities)} = {String.Join(',', AdditionalCapabilities)}\n" +
+                   $"  {nameof(AdditionalCapabilities)} = {string.Join(',', AdditionalCapabilities)}\n" +
                    $"  {nameof(ResourceVersion)} = {ResourceVersion}\n" +
                    $"  {nameof(AssetState)} = {AssetState}\n";
         }

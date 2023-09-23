@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class UpdateRuntimeInventorySettings : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.GameWorld
 
         public UpdateRuntimeInventorySettings(byte spawnSource, byte spawnLifetimePolicy, ushort totalSpawnLimit, ushort perUserSpawnLimit, uint spawnTimeout)
         {
-            this.SpawnSource = spawnSource;
-            this.SpawnLifetimePolicy = spawnLifetimePolicy;
-            this.TotalSpawnLimit = totalSpawnLimit;
-            this.PerUserSpawnLimit = perUserSpawnLimit;
-            this.SpawnTimeout = spawnTimeout;
+            SpawnSource = spawnSource;
+            SpawnLifetimePolicy = spawnLifetimePolicy;
+            TotalSpawnLimit = totalSpawnLimit;
+            PerUserSpawnLimit = perUserSpawnLimit;
+            SpawnTimeout = spawnTimeout;
         }
 
         public UpdateRuntimeInventorySettings(BinaryReader br)

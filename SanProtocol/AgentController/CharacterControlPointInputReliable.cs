@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterControllerInputReliable : CharacterControllerInput
     {
@@ -29,7 +24,7 @@ namespace SanProtocol.AgentController
         }
 
         public CharacterControllerInputReliable(BinaryReader br)
-            :base(br)
+            : base(br)
         {
         }
 

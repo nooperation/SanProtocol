@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace SanProtocol.ClientKafka
+﻿namespace SanProtocol.ClientKafka
 {
     public class InventoryItemUpdate : IPacket
     {
@@ -52,7 +46,7 @@ namespace SanProtocol.ClientKafka
             OriginReference = br.ReadSanString();
 
             var revisionsLength = br.ReadUInt32();
-            for (int i = 0; i < revisionsLength; i++)
+            for (var i = 0; i < revisionsLength; i++)
             {
                 var newRevision = new InventoryItemRevision(br);
                 Revisions.Add(newRevision);
@@ -105,7 +99,7 @@ namespace SanProtocol.ClientKafka
                    $"  {nameof(ModificationTime)} = {ModificationTime}\n" +
                    $"  {nameof(Origin)} = {Origin}\n" +
                    $"  {nameof(OriginReference)} = {OriginReference}\n" +
-                   $"  {nameof(Revisions)} = [{String.Join(",\r\n", Revisions)}]\n" +
+                   $"  {nameof(Revisions)} = [{string.Join(",\r\n", Revisions)}]\n" +
                    $"  {nameof(Offset)} = {Offset}\n" +
                    $"  {nameof(State)} = {State}\n";
         }

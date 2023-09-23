@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class ClientDynamicReady : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.ClientRegion
 
         public ClientDynamicReady(List<float> position, List<float> orientation, SanUUID targetPersonaId, string targetSpawnPointName, byte spawnStyle, byte ready)
         {
-            this.Position = position;
-            this.Orientation = orientation;
-            this.TargetPersonaId = targetPersonaId;
-            this.TargetSpawnPointName = targetSpawnPointName;
-            this.SpawnStyle = spawnStyle;
-            this.Ready = ready;
+            Position = position;
+            Orientation = orientation;
+            TargetPersonaId = targetPersonaId;
+            TargetSpawnPointName = targetSpawnPointName;
+            SpawnStyle = spawnStyle;
+            Ready = ready;
         }
 
         public ClientDynamicReady(BinaryReader br)
@@ -71,8 +66,8 @@ namespace SanProtocol.ClientRegion
         public override string ToString()
         {
             return $"ClientRegion::ClientDynamicReady:\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
-                   $"  {nameof(Orientation)} = <{String.Join(',', Orientation)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
+                   $"  {nameof(Orientation)} = <{string.Join(',', Orientation)}>\n" +
                    $"  {nameof(TargetPersonaId)} = {TargetPersonaId}\n" +
                    $"  {nameof(TargetSpawnPointName)} = {TargetSpawnPointName}\n" +
                    $"  {nameof(SpawnStyle)} = {SpawnStyle}\n" +

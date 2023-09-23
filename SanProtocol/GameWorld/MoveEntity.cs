@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class MoveEntity : IPacket
     {
@@ -21,15 +16,15 @@ namespace SanProtocol.GameWorld
 
         public MoveEntity(ulong startFrame, ulong componentId, List<float> startPosition, List<float> targetPosition, uint time, Quaternion startOrientation, Quaternion targetOrientation, byte positionInterpMode, byte rotationInterpMode)
         {
-            this.StartFrame = startFrame;
-            this.ComponentId = componentId;
-            this.StartPosition = startPosition;
-            this.TargetPosition = targetPosition;
-            this.Time = time;
-            this.StartOrientation = startOrientation;
-            this.TargetOrientation = targetOrientation;
-            this.PositionInterpMode = positionInterpMode;
-            this.RotationInterpMode = rotationInterpMode;
+            StartFrame = startFrame;
+            ComponentId = componentId;
+            StartPosition = startPosition;
+            TargetPosition = targetPosition;
+            Time = time;
+            StartOrientation = startOrientation;
+            TargetOrientation = targetOrientation;
+            PositionInterpMode = positionInterpMode;
+            RotationInterpMode = rotationInterpMode;
         }
 
         public MoveEntity(BinaryReader br)
@@ -48,7 +43,7 @@ namespace SanProtocol.GameWorld
             }
             Time = br.ReadUInt32();
 
-            var bitReader = new BitReader(br, (3 * 14 + 4) + (3 * 14 + 4) + 4 + 4);
+            var bitReader = new BitReader(br, (3 * 14) + 4 + (3 * 14) + 4 + 4 + 4);
             StartOrientation = bitReader.ReadQuaternion(3, 14);
             TargetOrientation = bitReader.ReadQuaternion(3, 14);
             PositionInterpMode = (byte)bitReader.ReadUnsigned(4);
@@ -92,8 +87,8 @@ namespace SanProtocol.GameWorld
             return $"GameWorld::MoveEntity:\n" +
                    $"  {nameof(StartFrame)} = {StartFrame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
-                   $"  {nameof(StartPosition)} = <{String.Join(',', StartPosition)}>\n" +
-                   $"  {nameof(TargetPosition)} = <{String.Join(',', TargetPosition)}>\n" +
+                   $"  {nameof(StartPosition)} = <{string.Join(',', StartPosition)}>\n" +
+                   $"  {nameof(TargetPosition)} = <{string.Join(',', TargetPosition)}>\n" +
                    $"  {nameof(Time)} = {Time}\n" +
                    $"  {nameof(StartOrientation)} = {StartOrientation}\n" +
                    $"  {nameof(TargetOrientation)} = {TargetOrientation}\n" +

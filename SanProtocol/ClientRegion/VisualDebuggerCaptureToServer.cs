@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class VisualDebuggerCaptureToServer : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.ClientRegion
 
         public VisualDebuggerCaptureToServer(string startTimeFormatted, byte beginCapture, List<string> viewers)
         {
-            this.StartTimeFormatted = startTimeFormatted;
-            this.BeginCapture = beginCapture;
-            this.Viewers = viewers;
+            StartTimeFormatted = startTimeFormatted;
+            BeginCapture = beginCapture;
+            Viewers = viewers;
         }
 
         public VisualDebuggerCaptureToServer(BinaryReader br)
@@ -56,7 +51,7 @@ namespace SanProtocol.ClientRegion
             return $"ClientRegion::VisualDebuggerCaptureToServer:\n" +
                    $"  {nameof(StartTimeFormatted)} = {StartTimeFormatted}\n" +
                    $"  {nameof(BeginCapture)} = {BeginCapture}\n" +
-                   $"  {nameof(Viewers)} = {String.Join(',', Viewers)}\n";
+                   $"  {nameof(Viewers)} = {string.Join(',', Viewers)}\n";
         }
     }
 }

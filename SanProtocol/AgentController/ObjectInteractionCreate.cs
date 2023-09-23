@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class ObjectInteractionCreate : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.AgentController
 
         public ObjectInteractionCreate(ulong frame, uint clusterId, uint objectId, string prompt, byte enabled)
         {
-            this.Frame = frame;
-            this.ClusterId = clusterId;
-            this.ObjectId = objectId;
-            this.Prompt = prompt;
-            this.Enabled = enabled;
+            Frame = frame;
+            ClusterId = clusterId;
+            ObjectId = objectId;
+            Prompt = prompt;
+            Enabled = enabled;
         }
 
         public ObjectInteractionCreate(BinaryReader br)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientKafka
+﻿namespace SanProtocol.ClientKafka
 {
     public class InventoryItemCapabilities : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.ClientKafka
 
         public InventoryItemCapabilities(List<string> capabilities)
         {
-            this.Capabilities = capabilities;
+            Capabilities = capabilities;
         }
 
         public InventoryItemCapabilities(BinaryReader br)
@@ -46,7 +41,7 @@ namespace SanProtocol.ClientKafka
         public override string ToString()
         {
             return $"ClientKafka::InventoryItemCapabilities:\n" +
-                   $"  {nameof(Capabilities)} = {String.Join(',', Capabilities)}\n";
+                   $"  {nameof(Capabilities)} = {string.Join(',', Capabilities)}\n";
         }
     }
 }

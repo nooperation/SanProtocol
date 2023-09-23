@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Render
+﻿namespace SanProtocol.Render
 {
     public class LightStateChanged : IPacket
     {
@@ -20,14 +15,14 @@ namespace SanProtocol.Render
 
         public LightStateChanged(ulong componentId, ulong frame, List<float> rgb, float range, uint shadowPriority, float spotSinHalfAngle, float spotAngularFalloff, float spotNearClip)
         {
-            this.ComponentId = componentId;
-            this.Frame = frame;
-            this.Rgb = rgb;
-            this.Range = range;
-            this.ShadowPriority = shadowPriority;
-            this.SpotSinHalfAngle = spotSinHalfAngle;
-            this.SpotAngularFalloff = spotAngularFalloff;
-            this.SpotNearClip = spotNearClip;
+            ComponentId = componentId;
+            Frame = frame;
+            Rgb = rgb;
+            Range = range;
+            ShadowPriority = shadowPriority;
+            SpotSinHalfAngle = spotSinHalfAngle;
+            SpotAngularFalloff = spotAngularFalloff;
+            SpotNearClip = spotNearClip;
         }
 
         public LightStateChanged(BinaryReader br)
@@ -74,7 +69,7 @@ namespace SanProtocol.Render
             return $"Render::LightStateChanged:\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
-                   $"  {nameof(Rgb)} = <{String.Join(',', Rgb)}>\n" +
+                   $"  {nameof(Rgb)} = <{string.Join(',', Rgb)}>\n" +
                    $"  {nameof(Range)} = {Range}\n" +
                    $"  {nameof(ShadowPriority)} = {ShadowPriority}\n" +
                    $"  {nameof(SpotSinHalfAngle)} = {SpotSinHalfAngle}\n" +

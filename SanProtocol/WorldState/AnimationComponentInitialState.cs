@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class AnimationComponentInitialState : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.WorldState
 
         public AnimationComponentInitialState(uint relativeComponentId, List<float> velocity, byte[] behaviorState)
         {
-            this.RelativeComponentId = relativeComponentId;
-            this.Velocity = velocity;
-            this.BehaviorState = behaviorState;
+            RelativeComponentId = relativeComponentId;
+            Velocity = velocity;
+            BehaviorState = behaviorState;
         }
 
         public AnimationComponentInitialState(BinaryReader br)
@@ -55,7 +50,7 @@ namespace SanProtocol.WorldState
         {
             return $"WorldState::AnimationComponentInitialState:\n" +
                    $"  {nameof(RelativeComponentId)} = {RelativeComponentId}\n" +
-                   $"  {nameof(Velocity)} = <{String.Join(',', Velocity)}>\n" +
+                   $"  {nameof(Velocity)} = <{string.Join(',', Velocity)}>\n" +
                    $"  {nameof(BehaviorState)} = {BehaviorState}\n";
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class ScriptCameraMessage : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.GameWorld
 
         public ScriptCameraMessage(ulong componentid, ulong frame, byte controlMode)
         {
-            this.Componentid = componentid;
-            this.Frame = frame;
-            this.ControlMode = controlMode;
+            Componentid = componentid;
+            Frame = frame;
+            ControlMode = controlMode;
         }
 
         public ScriptCameraMessage(BinaryReader br)

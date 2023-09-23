@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryItemUploadReply : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.EditServer
 
         public InventoryItemUploadReply(SanUUID productId, string status, string listingUrl, string editUrl, string errorCode, string errorMessage)
         {
-            this.ProductId = productId;
-            this.Status = status;
-            this.ListingUrl = listingUrl;
-            this.EditUrl = editUrl;
-            this.ErrorCode = errorCode;
-            this.ErrorMessage = errorMessage;
+            ProductId = productId;
+            Status = status;
+            ListingUrl = listingUrl;
+            EditUrl = editUrl;
+            ErrorCode = errorCode;
+            ErrorMessage = errorMessage;
         }
 
         public InventoryItemUploadReply(BinaryReader br)

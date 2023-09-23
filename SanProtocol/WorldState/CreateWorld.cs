@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class CreateWorld : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.WorldState
 
         public CreateWorld(SanUUID worldDefinition, uint startingClusterId, uint startingObjectId)
         {
-            this.WorldDefinition = worldDefinition;
-            this.StartingClusterId = startingClusterId;
-            this.StartingObjectId = startingObjectId;
+            WorldDefinition = worldDefinition;
+            StartingClusterId = startingClusterId;
+            StartingObjectId = startingObjectId;
         }
 
         public CreateWorld(BinaryReader br)

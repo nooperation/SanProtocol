@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class CharacterSetPosition : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AnimationComponent
 
         public CharacterSetPosition(ulong frame, ulong componentId, ulong groundComponentId, List<float> position)
         {
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.GroundComponentId = groundComponentId;
-            this.Position = position;
+            Frame = frame;
+            ComponentId = componentId;
+            GroundComponentId = groundComponentId;
+            Position = position;
         }
 
         public CharacterSetPosition(BinaryReader br)
@@ -59,7 +54,7 @@ namespace SanProtocol.AnimationComponent
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(GroundComponentId)} = {GroundComponentId}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n";
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n";
         }
     }
 }

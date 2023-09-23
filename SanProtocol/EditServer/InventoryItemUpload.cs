@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryItemUpload : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public InventoryItemUpload(string authorization, SanUUID itemId, string itemName, string categoryName)
         {
-            this.Authorization = authorization;
-            this.ItemId = itemId;
-            this.ItemName = itemName;
-            this.CategoryName = categoryName;
+            Authorization = authorization;
+            ItemId = itemId;
+            ItemName = itemName;
+            CategoryName = categoryName;
         }
 
         public InventoryItemUpload(BinaryReader br)

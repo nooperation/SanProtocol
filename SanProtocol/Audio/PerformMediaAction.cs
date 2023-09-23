@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class PerformMediaAction : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Audio
 
         public PerformMediaAction(uint mediaAction, byte rebroadcast)
         {
-            this.MediaAction = mediaAction;
-            this.Rebroadcast = rebroadcast;
+            MediaAction = mediaAction;
+            Rebroadcast = rebroadcast;
         }
 
         public PerformMediaAction(BinaryReader br)

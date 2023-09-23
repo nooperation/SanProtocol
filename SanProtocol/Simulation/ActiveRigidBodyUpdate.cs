@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class ActiveRigidBodyUpdate : IPacket
     {
@@ -21,15 +16,15 @@ namespace SanProtocol.Simulation
 
         public ActiveRigidBodyUpdate(ulong componentId, ulong frame, uint ownerId, byte ownershipWatermark, byte authority, List<float> position, Quaternion orientationQuat, List<float> linearVeolcity, List<float> angularVelocity)
         {
-            this.ComponentId = componentId;
-            this.Frame = frame;
-            this.OwnerId = ownerId;
-            this.OwnershipWatermark = ownershipWatermark;
-            this.Authority = authority;
-            this.Position = position;
-            this.OrientationQuat = orientationQuat;
-            this.LinearVeolcity = linearVeolcity;
-            this.AngularVelocity = angularVelocity;
+            ComponentId = componentId;
+            Frame = frame;
+            OwnerId = ownerId;
+            OwnershipWatermark = ownershipWatermark;
+            Authority = authority;
+            Position = position;
+            OrientationQuat = orientationQuat;
+            LinearVeolcity = linearVeolcity;
+            AngularVelocity = angularVelocity;
         }
 
         public ActiveRigidBodyUpdate(BinaryReader br)
@@ -40,7 +35,7 @@ namespace SanProtocol.Simulation
             OwnershipWatermark = br.ReadByte();
             Authority = br.ReadByte();
 
-            var bitReader = new BitReader(br, 3 * 26 + (3 * 13 + 4) + 3 * 13 + 3 * 12);
+            var bitReader = new BitReader(br, (3 * 26) + (3 * 13) + 4 + (3 * 13) + (3 * 12));
             Position = bitReader.ReadFloats(3, 26, 2048.0f);
             OrientationQuat = bitReader.ReadQuaternion(3, 13);
             LinearVeolcity = bitReader.ReadFloats(3, 13, 256.0f);
@@ -81,10 +76,10 @@ namespace SanProtocol.Simulation
                    $"  {nameof(OwnerId)} = {OwnerId}\n" +
                    $"  {nameof(OwnershipWatermark)} = {OwnershipWatermark}\n" +
                    $"  {nameof(Authority)} = {Authority}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
-                   $"  {nameof(OrientationQuat)} = <{String.Join(',', OrientationQuat.Values)}>\n" +
-                   $"  {nameof(LinearVeolcity)} = <{String.Join(',', LinearVeolcity)}>\n" +
-                   $"  {nameof(AngularVelocity)} = <{String.Join(',', AngularVelocity)}>\n";
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
+                   $"  {nameof(OrientationQuat)} = <{string.Join(',', OrientationQuat.Values)}>\n" +
+                   $"  {nameof(LinearVeolcity)} = <{string.Join(',', LinearVeolcity)}>\n" +
+                   $"  {nameof(AngularVelocity)} = <{string.Join(',', AngularVelocity)}>\n";
         }
     }
 }

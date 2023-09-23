@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceProgressUpdate : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.EditServer
 
         public BuildWorkspaceProgressUpdate(uint stage, float percent)
         {
-            this.Stage = stage;
-            this.Percent = percent;
+            Stage = stage;
+            Percent = percent;
         }
 
         public BuildWorkspaceProgressUpdate(BinaryReader br)

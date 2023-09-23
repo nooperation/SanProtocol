@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class SetAudioStream : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Audio
 
         public SetAudioStream(string url, byte rebroadcast)
         {
-            this.Url = url;
-            this.Rebroadcast = rebroadcast;
+            Url = url;
+            Rebroadcast = rebroadcast;
         }
 
         public SetAudioStream(BinaryReader br)

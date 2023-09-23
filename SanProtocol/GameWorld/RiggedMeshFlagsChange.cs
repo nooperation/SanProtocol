@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class RiggedMeshFlagsChange : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.GameWorld
 
         public RiggedMeshFlagsChange(ulong componentid, ulong frame, byte flags)
         {
-            this.Componentid = componentid;
-            this.Frame = frame;
-            this.Flags = flags;
+            Componentid = componentid;
+            Frame = frame;
+            Flags = flags;
         }
 
         public RiggedMeshFlagsChange(BinaryReader br)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class LoadClusterDefinition : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.WorldState
 
         public LoadClusterDefinition(SanUUID resourceId, uint clusterId)
         {
-            this.ResourceId = resourceId;
-            this.ClusterId = clusterId;
+            ResourceId = resourceId;
+            ClusterId = clusterId;
         }
 
         public LoadClusterDefinition(BinaryReader br)

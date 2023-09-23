@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestDetachFromCharacterNode : DetachFromCharacterNode
     {
@@ -25,7 +20,7 @@ namespace SanProtocol.AgentController
         }
 
         public RequestDetachFromCharacterNode(BinaryReader br)
-            :base(br)
+            : base(br)
         {
         }
 
@@ -36,10 +31,10 @@ namespace SanProtocol.AgentController
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
-                   $"  {nameof(BodyPosition)} = <{String.Join(',', BodyPosition)}>\n" +
-                   $"  {nameof(BotyOrientation)} = <{String.Join(',', BotyOrientation)}>\n" +
-                   $"  {nameof(BodyVelocity)} = <{String.Join(',', BodyVelocity)}>\n" +
-                   $"  {nameof(BodyAngularVelocity)} = <{String.Join(',', BodyAngularVelocity)}>\n" +
+                   $"  {nameof(BodyPosition)} = <{string.Join(',', BodyPosition)}>\n" +
+                   $"  {nameof(BotyOrientation)} = <{string.Join(',', BotyOrientation)}>\n" +
+                   $"  {nameof(BodyVelocity)} = <{string.Join(',', BodyVelocity)}>\n" +
+                   $"  {nameof(BodyAngularVelocity)} = <{string.Join(',', BodyAngularVelocity)}>\n" +
                    $"  {nameof(NodeType)} = {NodeType}\n";
         }
     }

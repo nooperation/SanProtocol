@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class RigidBodyPropertyChanged : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.Simulation
 
         public RigidBodyPropertyChanged(ulong frame, ulong componentId, byte[] propertyData, byte propertyType)
         {
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.PropertyData = propertyData;
-            this.PropertyType = propertyType;
+            Frame = frame;
+            ComponentId = componentId;
+            PropertyData = propertyData;
+            PropertyType = propertyType;
         }
 
         public RigidBodyPropertyChanged(BinaryReader br)

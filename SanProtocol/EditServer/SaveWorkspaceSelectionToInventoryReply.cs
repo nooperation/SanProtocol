@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class SaveWorkspaceSelectionToInventoryReply : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.EditServer
 
         public SaveWorkspaceSelectionToInventoryReply(string itemName, SanUUID itemId, uint triggeringState, uint requestResult, uint statusCode)
         {
-            this.ItemName = itemName;
-            this.ItemId = itemId;
-            this.TriggeringState = triggeringState;
-            this.RequestResult = requestResult;
-            this.StatusCode = statusCode;
+            ItemName = itemName;
+            ItemId = itemId;
+            TriggeringState = triggeringState;
+            RequestResult = requestResult;
+            StatusCode = statusCode;
         }
 
         public SaveWorkspaceSelectionToInventoryReply(BinaryReader br)

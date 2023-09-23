@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterControllerInput : IPacket
     {
@@ -36,18 +31,18 @@ namespace SanProtocol.AgentController
             float characterForward,
             Quaternion cameraForward)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.JumpState = jumpState;
-            this.JumpBtnPressed = jumpBtnPressed;
-            this.MoveRight = moveRight;
-            this.MoveForward = moveForward;
-            this.CameraYaw = cameraYaw;
-            this.CameraPitch = cameraPitch;
-            this.BehaviorYawDelta = behaviorYawDelta;
-            this.BehaviorPitchDelta = behaviorPitchDelta;
-            this.CharacterForward = characterForward;
-            this.CameraForward = cameraForward;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            JumpState = jumpState;
+            JumpBtnPressed = jumpBtnPressed;
+            MoveRight = moveRight;
+            MoveForward = moveForward;
+            CameraYaw = cameraYaw;
+            CameraPitch = cameraPitch;
+            BehaviorYawDelta = behaviorYawDelta;
+            BehaviorPitchDelta = behaviorPitchDelta;
+            CharacterForward = characterForward;
+            CameraForward = cameraForward;
         }
 
         public CharacterControllerInput(BinaryReader br)

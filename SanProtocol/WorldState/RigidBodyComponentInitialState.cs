@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class RigidBodyComponentInitialState : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.WorldState
 
         public RigidBodyComponentInitialState(uint relativeComponentId, List<float> linearVelocity, List<float> angularVelocity)
         {
-            this.RelativeComponentId = relativeComponentId;
-            this.LinearVelocity = linearVelocity;
-            this.AngularVelocity = angularVelocity;
+            RelativeComponentId = relativeComponentId;
+            LinearVelocity = linearVelocity;
+            AngularVelocity = angularVelocity;
         }
 
         public RigidBodyComponentInitialState(BinaryReader br)
@@ -60,8 +55,8 @@ namespace SanProtocol.WorldState
         {
             return $"WorldState::RigidBodyComponentInitialState:\n" +
                    $"  {nameof(RelativeComponentId)} = {RelativeComponentId}\n" +
-                   $"  {nameof(LinearVelocity)} = <{String.Join(',', LinearVelocity)}>\n" +
-                   $"  {nameof(AngularVelocity)} = <{String.Join(',', AngularVelocity)}>\n";
+                   $"  {nameof(LinearVelocity)} = <{string.Join(',', LinearVelocity)}>\n" +
+                   $"  {nameof(AngularVelocity)} = <{string.Join(',', AngularVelocity)}>\n";
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class SetMediaSource : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.Audio
 
         public SetMediaSource(string url, uint mediaWidth, uint mediaHeight, byte rebroadcast)
         {
-            this.Url = url;
-            this.MediaWidth = mediaWidth;
-            this.MediaHeight = mediaHeight;
-            this.Rebroadcast = rebroadcast;
+            Url = url;
+            MediaWidth = mediaWidth;
+            MediaHeight = mediaHeight;
+            Rebroadcast = rebroadcast;
         }
 
         public SetMediaSource(BinaryReader br)

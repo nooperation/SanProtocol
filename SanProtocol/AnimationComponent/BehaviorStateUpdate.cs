@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class BehaviorStateUpdate : IPacket
     {
@@ -38,18 +32,18 @@ namespace SanProtocol.AnimationComponent
             List<FloatRangeNodeVariable> nodeCropValues
             )
         {
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.ExceptAgentControllerId = exceptAgentControllerId;
-            this.Floats = floats;
-            this.Vectors = vectors;
-            this.Quaternions = quaternions;
-            this.Int8s = int8s;
-            this.Bools = bools;
-            this.InternalEventIds = internalEventIds;
-            this.AnimationAction = animationAction;
-            this.NodeLocalTimes = nodeLocalTimes;
-            this.NodeCropValues = nodeCropValues;
+            Frame = frame;
+            ComponentId = componentId;
+            ExceptAgentControllerId = exceptAgentControllerId;
+            Floats = floats;
+            Vectors = vectors;
+            Quaternions = quaternions;
+            Int8s = int8s;
+            Bools = bools;
+            InternalEventIds = internalEventIds;
+            AnimationAction = animationAction;
+            NodeLocalTimes = nodeLocalTimes;
+            NodeCropValues = nodeCropValues;
         }
 
         public BehaviorStateUpdate(BinaryReader br)
@@ -59,37 +53,37 @@ namespace SanProtocol.AnimationComponent
             ExceptAgentControllerId = br.ReadUInt32();
 
             var floatsLength = br.ReadInt32();
-            for (int i = 0; i < floatsLength; i++)
+            for (var i = 0; i < floatsLength; i++)
             {
                 Floats.Add(new FloatVariable(br));
             }
 
             var vectorsLength = br.ReadInt32();
-            for (int i = 0; i < vectorsLength; i++)
+            for (var i = 0; i < vectorsLength; i++)
             {
                 Vectors.Add(new VectorVariable(br));
             }
 
             var quaternionsLength = br.ReadInt32();
-            for (int i = 0; i < quaternionsLength; i++)
+            for (var i = 0; i < quaternionsLength; i++)
             {
                 Quaternions.Add(new QuaternionVariable(br));
             }
 
             var int8sLength = br.ReadInt32();
-            for (int i = 0; i < int8sLength; i++)
+            for (var i = 0; i < int8sLength; i++)
             {
                 Int8s.Add(new Int8Variable(br));
             }
 
             var boolsLength = br.ReadInt32();
-            for (int i = 0; i < boolsLength; i++)
+            for (var i = 0; i < boolsLength; i++)
             {
                 Bools.Add(new BoolVariable(br));
             }
 
             var internalEventIdsLength = br.ReadInt32();
-            for (int i = 0; i < internalEventIdsLength; i++)
+            for (var i = 0; i < internalEventIdsLength; i++)
             {
                 InternalEventIds.Add(br.ReadUInt16());
             }
@@ -97,13 +91,13 @@ namespace SanProtocol.AnimationComponent
             AnimationAction = br.ReadByte();
 
             var nodeLocalTimesLength = br.ReadInt32();
-            for (int i = 0; i < nodeLocalTimesLength; i++)
+            for (var i = 0; i < nodeLocalTimesLength; i++)
             {
                 NodeLocalTimes.Add(new FloatNodeVariable(br));
             }
 
             var nodeCropValuesLength = br.ReadInt32();
-            for (int i = 0; i < nodeCropValuesLength; i++)
+            for (var i = 0; i < nodeCropValuesLength; i++)
             {
                 NodeCropValues.Add(new FloatRangeNodeVariable(br));
             }
@@ -193,10 +187,10 @@ namespace SanProtocol.AnimationComponent
                    $"  {nameof(Quaternions)} = {string.Join(", ", Quaternions)}\n" +
                    $"  {nameof(Int8s)} = {string.Join(", ", Int8s)}\n" +
                    $"  {nameof(Bools)} = {string.Join(", ", Bools)}\n" +
-                   $"  {nameof(InternalEventIds)} = {String.Join(',', InternalEventIds)}\n" +
+                   $"  {nameof(InternalEventIds)} = {string.Join(',', InternalEventIds)}\n" +
                    $"  {nameof(AnimationAction)} = {AnimationAction}\n" +
-                   $"  {nameof(NodeLocalTimes)} = {String.Join(',', NodeLocalTimes)}\n" +
-                   $"  {nameof(NodeCropValues)} = {String.Join(',', NodeCropValues)}\n";
+                   $"  {nameof(NodeLocalTimes)} = {string.Join(',', NodeLocalTimes)}\n" +
+                   $"  {nameof(NodeCropValues)} = {string.Join(',', NodeCropValues)}\n";
         }
     }
 

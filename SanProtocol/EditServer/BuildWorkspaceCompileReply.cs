@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class BuildWorkspaceCompileReply : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public BuildWorkspaceCompileReply(byte compileStatus, byte isCanceled, List<string> errors, List<string> nonErrorMessage)
         {
-            this.CompileStatus = compileStatus;
-            this.IsCanceled = isCanceled;
-            this.Errors = errors;
-            this.NonErrorMessage = nonErrorMessage;
+            CompileStatus = compileStatus;
+            IsCanceled = isCanceled;
+            Errors = errors;
+            NonErrorMessage = nonErrorMessage;
         }
 
         public BuildWorkspaceCompileReply(BinaryReader br)
@@ -69,8 +64,8 @@ namespace SanProtocol.EditServer
             return $"EditServer::BuildWorkspaceCompileReply:\n" +
                    $"  {nameof(CompileStatus)} = {CompileStatus}\n" +
                    $"  {nameof(IsCanceled)} = {IsCanceled}\n" +
-                   $"  {nameof(Errors)} = {String.Join(',', Errors)}\n" +
-                   $"  {nameof(NonErrorMessage)} = {String.Join(',', NonErrorMessage)}\n";
+                   $"  {nameof(Errors)} = {string.Join(',', Errors)}\n" +
+                   $"  {nameof(NonErrorMessage)} = {string.Join(',', NonErrorMessage)}\n";
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryUpdateItemReply : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.EditServer
 
         public InventoryUpdateItemReply(SanUUID requestId, SanUUID itemId, string assetId, uint requestResult, string statusCode, string errorMsg)
         {
-            this.RequestId = requestId;
-            this.ItemId = itemId;
-            this.AssetId = assetId;
-            this.RequestResult = requestResult;
-            this.StatusCode = statusCode;
-            this.ErrorMsg = errorMsg;
+            RequestId = requestId;
+            ItemId = itemId;
+            AssetId = assetId;
+            RequestResult = requestResult;
+            StatusCode = statusCode;
+            ErrorMsg = errorMsg;
         }
 
         public InventoryUpdateItemReply(BinaryReader br)

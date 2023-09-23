@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class CharacterTransform : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.AnimationComponent
 
         public CharacterTransform(ulong componentId, ulong serverFrame, ulong groundComponentId, List<float> position, Quaternion orientationQuat)
         {
-            this.ComponentId = componentId;
-            this.ServerFrame = serverFrame;
-            this.GroundComponentId = groundComponentId;
-            this.Position = position;
-            this.OrientationQuat = orientationQuat;
+            ComponentId = componentId;
+            ServerFrame = serverFrame;
+            GroundComponentId = groundComponentId;
+            Position = position;
+            OrientationQuat = orientationQuat;
         }
 
         public CharacterTransform(BinaryReader br)
@@ -30,7 +25,7 @@ namespace SanProtocol.AnimationComponent
             ServerFrame = br.ReadUInt64();
             GroundComponentId = br.ReadUInt64();
 
-            var bitReader = new BitReader(br, 3 * 24 + (3 * 12 + 4));
+            var bitReader = new BitReader(br, (3 * 24) + (3 * 12) + 4);
             Position = bitReader.ReadFloats(3, 24, 2048.0f);
             OrientationQuat = bitReader.ReadQuaternion(3, 12);
         }
@@ -64,7 +59,7 @@ namespace SanProtocol.AnimationComponent
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(ServerFrame)} = {ServerFrame}\n" +
                    $"  {nameof(GroundComponentId)} = {GroundComponentId}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
                    $"  {nameof(OrientationQuat)} = {OrientationQuat}\n";
         }
     }

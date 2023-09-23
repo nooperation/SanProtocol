@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class SetCharacterNodePhysics : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.AgentController
 
         public SetCharacterNodePhysics(ulong frame, uint agentControllerId, byte nodeType, byte collisionsEnabled, byte broadcastToSelf)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.NodeType = nodeType;
-            this.CollisionsEnabled = collisionsEnabled;
-            this.BroadcastToSelf = broadcastToSelf;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            NodeType = nodeType;
+            CollisionsEnabled = collisionsEnabled;
+            BroadcastToSelf = broadcastToSelf;
         }
 
         public SetCharacterNodePhysics(BinaryReader br)

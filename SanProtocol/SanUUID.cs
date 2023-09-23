@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class SanUUID
     {
         public const string Zero = "00000000000000000000000000000000";
 
         private Guid? _guid;
-        public Guid Guid 
+        public Guid Guid
         {
             get
             {
-                if(_guid == null)
+                if (_guid == null)
                 {
-                    _guid = new Guid(this.Format());
+                    _guid = new Guid(Format());
                 }
 
                 return _guid.Value;
@@ -84,14 +79,14 @@ namespace SanProtocol
 
         public override int GetHashCode()
         {
-            return this.UUID.GetHashCode();
+            return UUID.GetHashCode();
         }
 
         public override bool Equals(object? obj)
         {
-            if(obj is SanUUID targetUUID)
+            if (obj is SanUUID targetUUID)
             {
-                return this.Lower == targetUUID?.Lower && this.Upper == targetUUID?.Upper;
+                return Lower == targetUUID?.Lower && Upper == targetUUID?.Upper;
             }
 
             return false;
@@ -107,6 +102,9 @@ namespace SanProtocol
             return !(x == y);
         }
 
-        public static implicit operator SanUUID(string str) => new SanUUID(str);
+        public static implicit operator SanUUID(string str)
+        {
+            return new SanUUID(str);
+        }
     }
 }

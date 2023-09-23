@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class SetWorldGravityMagnitude : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.Simulation
 
         public SetWorldGravityMagnitude(ulong frame, float magnitude)
         {
-            this.Frame = frame;
-            this.Magnitude = magnitude;
+            Frame = frame;
+            Magnitude = magnitude;
         }
 
         public SetWorldGravityMagnitude(BinaryReader br)

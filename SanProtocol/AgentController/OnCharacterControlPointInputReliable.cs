@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterControlPointInputReliable : CharacterControlPointInput
     {
         public override uint MessageId => Messages.AgentControllerMessages.CharacterControlPointInputReliable;
-        
+
         public CharacterControlPointInputReliable(
             ulong frame,
             uint agentControllerId,

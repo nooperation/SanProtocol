@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class AgentPlayAnimation : IPacket
     {
@@ -20,14 +15,14 @@ namespace SanProtocol.AgentController
 
         public AgentPlayAnimation(uint agentControllerId, ulong frame, ulong componentId, SanUUID resourceId, float playbackSpeed, byte skeletonType, byte animationType, byte playbackMode)
         {
-            this.AgentControllerId = agentControllerId;
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.ResourceId = resourceId;
-            this.PlaybackSpeed = playbackSpeed;
-            this.SkeletonType = skeletonType;
-            this.AnimationType = animationType;
-            this.PlaybackMode = playbackMode;
+            AgentControllerId = agentControllerId;
+            Frame = frame;
+            ComponentId = componentId;
+            ResourceId = resourceId;
+            PlaybackSpeed = playbackSpeed;
+            SkeletonType = skeletonType;
+            AnimationType = animationType;
+            PlaybackMode = playbackMode;
         }
 
         public AgentPlayAnimation(BinaryReader br)

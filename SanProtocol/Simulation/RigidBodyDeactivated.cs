@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Simulation
+﻿namespace SanProtocol.Simulation
 {
     public class RigidBodyDeactivated : IPacket
     {
@@ -17,11 +12,11 @@ namespace SanProtocol.Simulation
 
         public RigidBodyDeactivated(ulong componentId, ulong frame, byte ownershipWatermark, List<float> position, Quaternion orientationQuat)
         {
-            this.ComponentId = componentId;
-            this.Frame = frame;
-            this.OwnershipWatermark = ownershipWatermark;
-            this.Position = position;
-            this.OrientationQuat = orientationQuat;
+            ComponentId = componentId;
+            Frame = frame;
+            OwnershipWatermark = ownershipWatermark;
+            Position = position;
+            OrientationQuat = orientationQuat;
         }
 
         public RigidBodyDeactivated(BinaryReader br)
@@ -30,7 +25,7 @@ namespace SanProtocol.Simulation
             Frame = br.ReadUInt64();
             OwnershipWatermark = br.ReadByte();
 
-            var bitReader = new BitReader(br, 3 * 26 + (3 * 13 + 4));
+            var bitReader = new BitReader(br, (3 * 26) + (3 * 13) + 4);
             Position = bitReader.ReadFloats(3, 26, 2048.0f);
             OrientationQuat = bitReader.ReadQuaternion(3, 13);
         }
@@ -63,7 +58,7 @@ namespace SanProtocol.Simulation
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(OwnershipWatermark)} = {OwnershipWatermark}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
                    $"  {nameof(OrientationQuat)} = {OrientationQuat}\n";
         }
     }

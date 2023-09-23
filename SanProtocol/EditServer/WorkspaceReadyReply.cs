@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class WorkspaceReadyReply : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.EditServer
 
         public WorkspaceReadyReply(uint workspaceId)
         {
-            this.WorkspaceId = workspaceId;
+            WorkspaceId = workspaceId;
         }
 
         public WorkspaceReadyReply(BinaryReader br)

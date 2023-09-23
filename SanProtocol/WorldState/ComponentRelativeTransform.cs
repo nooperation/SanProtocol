@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class ComponentRelativeTransform : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.WorldState
 
         public ComponentRelativeTransform(List<float> relativePosition, List<float> relativeRotation, ulong componentId)
         {
-            this.RelativePosition = relativePosition;
-            this.RelativeRotation = relativeRotation;
-            this.ComponentId = componentId;
+            RelativePosition = relativePosition;
+            RelativeRotation = relativeRotation;
+            ComponentId = componentId;
         }
 
         public ComponentRelativeTransform(BinaryReader br)
@@ -59,8 +54,8 @@ namespace SanProtocol.WorldState
         public override string ToString()
         {
             return $"WorldState::ComponentRelativeTransform:\n" +
-                   $"  {nameof(RelativePosition)} = <{String.Join(',', RelativePosition)}>\n" +
-                   $"  {nameof(RelativeRotation)} = <{String.Join(',', RelativeRotation)}>\n" +
+                   $"  {nameof(RelativePosition)} = <{string.Join(',', RelativePosition)}>\n" +
+                   $"  {nameof(RelativeRotation)} = <{string.Join(',', RelativeRotation)}>\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n";
         }
     }

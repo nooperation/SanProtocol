@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryDeleteItem : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.EditServer
 
         public InventoryDeleteItem(string authorization, SanUUID deleteRequestId, SanUUID itemToDeleteId)
         {
-            this.Authorization = authorization;
-            this.DeleteRequestId = deleteRequestId;
-            this.ItemToDeleteId = itemToDeleteId;
+            Authorization = authorization;
+            DeleteRequestId = deleteRequestId;
+            ItemToDeleteId = itemToDeleteId;
         }
 
         public InventoryDeleteItem(BinaryReader br)

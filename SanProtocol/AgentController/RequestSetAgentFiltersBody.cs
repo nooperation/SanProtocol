@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class RequestSetAgentFiltersBody : SetAgentFiltersBody
     {
         public override uint MessageId => Messages.AgentControllerMessages.RequestSetAgentFiltersBody;
 
         public RequestSetAgentFiltersBody(ulong frame, uint agentControllerId, ulong componentId, byte filterBody)
-            :base (frame, agentControllerId, componentId, filterBody)
+            : base(frame, agentControllerId, componentId, filterBody)
         {
         }
 
         public RequestSetAgentFiltersBody(BinaryReader br)
-            :base(br)
+            : base(br)
         {
         }
 

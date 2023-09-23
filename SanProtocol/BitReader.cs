@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SanProtocol
+﻿namespace SanProtocol
 {
     public class BitReader
     {
@@ -14,8 +7,8 @@ namespace SanProtocol
 
         public BitReader(byte[] buffer)
         {
-            this.Buffer = buffer;
-            this.BitOffset = 0;
+            Buffer = buffer;
+            BitOffset = 0;
         }
 
         public BitReader(BinaryReader br, long totalBits)
@@ -29,7 +22,7 @@ namespace SanProtocol
             // ReadBits tends to go way out of bounds. Just give ourselves enough room to play with.
             Buffer = new byte[bytesToRead + 8];
             br.Read(Buffer, 0, bytesToRead);
-            this.BitOffset = 0;
+            BitOffset = 0;
         }
 
         public BitReader(BinaryReader br)
@@ -39,13 +32,13 @@ namespace SanProtocol
             // ReadBits tends to go way out of bounds. Just give ourselves enough room to play with.
             Buffer = new byte[bytesToRead + 8];
             br.Read(Buffer, 0, (int)bytesToRead);
-            this.BitOffset = 0;
+            BitOffset = 0;
         }
 
         public ulong ReadUnsigned(byte numBits)
         {
             var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - numBits);
-            BitOffset = ReadBits(Buffer, BitOffset, out ulong output, numBits);
+            BitOffset = ReadBits(Buffer, BitOffset, out var output, numBits);
 
             return output & mask;
         }
@@ -59,13 +52,13 @@ namespace SanProtocol
         private byte[] _cleanBytes = new byte[256];
         public List<float> ReadFloats(int numFloats, int bitsPerFloat, float modifier = 1.0f)
         {
-            if(numFloats < 0)
+            if (numFloats < 0)
             {
                 throw new ArgumentException(nameof(numFloats));
             }
 
-            int bufferSize = 1 + (numFloats * bitsPerFloat) / 8;
-            if(bufferSize > _cleanBytes.Length)
+            var bufferSize = 1 + (numFloats * bitsPerFloat / 8);
+            if (bufferSize > _cleanBytes.Length)
             {
                 _cleanBytes = new byte[bufferSize];
             }
@@ -73,13 +66,13 @@ namespace SanProtocol
             BitOffset = ReadManyBits(Buffer, BitOffset, _cleanBytes, 0, numFloats * bitsPerFloat);
 
             var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
-            var valueModifier = (1.0f / mask) * modifier;
+            var valueModifier = 1.0f / mask * modifier;
 
             var results = new List<float>(numFloats);
             var bitOffset = 0L;
-            for (int i = 0; i < numFloats; i++)
+            for (var i = 0; i < numFloats; i++)
             {
-                bitOffset = BitReader.ReadBits(_cleanBytes, bitOffset, out ulong floatData, bitsPerFloat);
+                bitOffset = BitReader.ReadBits(_cleanBytes, bitOffset, out var floatData, bitsPerFloat);
 
                 var value = ((long)floatData - (long)mask) * valueModifier;
 
@@ -91,9 +84,9 @@ namespace SanProtocol
 
         public Quaternion ReadQuaternion(int numFloats, int bitsPerFloat)
         {
-            BitOffset = ReadBits(Buffer, BitOffset, out ulong unknownA, 2);
-            BitOffset = ReadBits(Buffer, BitOffset, out ulong unknownB, 1);
-            BitOffset = ReadBits(Buffer, BitOffset, out ulong modifierFlag, 1);
+            BitOffset = ReadBits(Buffer, BitOffset, out var unknownA, 2);
+            BitOffset = ReadBits(Buffer, BitOffset, out var unknownB, 1);
+            BitOffset = ReadBits(Buffer, BitOffset, out var modifierFlag, 1);
 
             float modifier;
             if (modifierFlag == 1)
@@ -106,12 +99,12 @@ namespace SanProtocol
             }
 
             var mask = 0xFFFFFFFFFFFFFFFFul >> (64 - (bitsPerFloat - 1));
-            var valueModifier = (1.0f / mask) * modifier;
+            var valueModifier = 1.0f / mask * modifier;
 
             var results = new List<float>(numFloats);
-            for (int i = 0; i < numFloats; i++)
+            for (var i = 0; i < numFloats; i++)
             {
-                BitOffset = ReadBits(Buffer, BitOffset, out ulong floatData, bitsPerFloat);
+                BitOffset = ReadBits(Buffer, BitOffset, out var floatData, bitsPerFloat);
 
                 var value = ((long)floatData - (long)mask) * valueModifier;
 
@@ -138,7 +131,7 @@ namespace SanProtocol
 
                 for (var i = 0u; i < intsRemaining; i++)
                 {
-                    ReadBits(input, totalBitOffset, out ulong result, 32);
+                    ReadBits(input, totalBitOffset, out var result, 32);
 
                     output[outputIndex + 3] = (byte)((result & 0b11111111_00000000_00000000_00000000) >> 24);
                     output[outputIndex + 2] = (byte)((result & 0b00000000_11111111_00000000_00000000) >> 16);
@@ -150,7 +143,7 @@ namespace SanProtocol
                 }
             }
 
-            ReadBits(input, totalBitOffset, out ulong outRemaining, (byte)bitsRemaining);
+            ReadBits(input, totalBitOffset, out var outRemaining, (byte)bitsRemaining);
 
             while (bitsRemaining >= 8)
             {
@@ -177,7 +170,7 @@ namespace SanProtocol
             {
                 throw new Exception($"{nameof(ReadBits)} can only read up to 64 bits");
             }
-            if(numBits < 0)
+            if (numBits < 0)
             {
                 throw new ArgumentException(nameof(numBits));
             }
@@ -293,8 +286,8 @@ namespace SanProtocol
                     }
                 case 9:
                     {
-                        ReadBits(input, bitOffset, out ulong outHigh, numBits - 8);
-                        ReadBits(input, bitOffset + numBits - 8, out ulong outLow, 8);
+                        ReadBits(input, bitOffset, out var outHigh, numBits - 8);
+                        ReadBits(input, bitOffset + numBits - 8, out var outLow, 8);
 
                         output = (outHigh & 0xFF) | (outLow << (numBits - 8));
                         break;

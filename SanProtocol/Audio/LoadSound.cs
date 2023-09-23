@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.Audio
+﻿namespace SanProtocol.Audio
 {
     public class LoadSound : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.Audio
 
         public LoadSound(SanUUID resourceId)
         {
-            this.ResourceId = resourceId;
+            ResourceId = resourceId;
         }
 
         public LoadSound(BinaryReader br)

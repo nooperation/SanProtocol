@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterControlPointInput : IPacket
     {
@@ -37,19 +32,19 @@ namespace SanProtocol.AgentController
             bool leftHandIsHolding,
             bool rightHandIsHolding)
         {
-            this.Frame = frame;
-            this.AgentControllerId = agentControllerId;
-            this.ControlPointsLength = (uint)controlPoints.Count;
-            this.ControlPoints = controlPoints;
-            this.LeftIndexTrigger = leftIndexTrigger;
-            this.RightIndexTrigger = rightIndexTrigger;
-            this.LeftGripTrigger = leftGripTrigger;
-            this.RightGripTrigger = rightGripTrigger;
-            this.LeftTouches = leftTouches;
-            this.RightTouches = rightTouches;
-            this.IndexTriggerControlsHand = indexTriggerControlsHand;
-            this.LeftHandIsHolding = leftHandIsHolding;
-            this.RightHandIsHolding = rightHandIsHolding;
+            Frame = frame;
+            AgentControllerId = agentControllerId;
+            ControlPointsLength = (uint)controlPoints.Count;
+            ControlPoints = controlPoints;
+            LeftIndexTrigger = leftIndexTrigger;
+            RightIndexTrigger = rightIndexTrigger;
+            LeftGripTrigger = leftGripTrigger;
+            RightGripTrigger = rightGripTrigger;
+            LeftTouches = leftTouches;
+            RightTouches = rightTouches;
+            IndexTriggerControlsHand = indexTriggerControlsHand;
+            LeftHandIsHolding = leftHandIsHolding;
+            RightHandIsHolding = rightHandIsHolding;
         }
 
         public CharacterControlPointInput(BinaryReader br)
@@ -61,7 +56,7 @@ namespace SanProtocol.AgentController
             ControlPoints = new List<ControlPoint>();
 
             var bitReader = new BitReader(br);
-            for (int i = 0; i < ControlPointsLength; i++)
+            for (var i = 0; i < ControlPointsLength; i++)
             {
                 var newControlPoint = new AgentController.ControlPoint(bitReader);
                 ControlPoints.Add(newControlPoint);

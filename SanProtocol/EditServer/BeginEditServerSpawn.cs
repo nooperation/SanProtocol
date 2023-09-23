@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class BeginEditServerSpawn : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public BeginEditServerSpawn(SanUUID inventoryId, SanUUID personaId, uint serial, string inventoryName)
         {
-            this.InventoryId = inventoryId;
-            this.PersonaId = personaId;
-            this.Serial = serial;
-            this.InventoryName = inventoryName;
+            InventoryId = inventoryId;
+            PersonaId = personaId;
+            Serial = serial;
+            InventoryName = inventoryName;
         }
 
         public BeginEditServerSpawn(BinaryReader br)

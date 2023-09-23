@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class UserLoginReply : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.ClientRegion
 
         public UserLoginReply(bool success, uint sessionId, string regionServerVersion, List<string> privileges)
         {
-            this.Success = success;
-            this.SessionId = sessionId;
-            this.RegionServerVersion = regionServerVersion;
-            this.Privileges = privileges;
+            Success = success;
+            SessionId = sessionId;
+            RegionServerVersion = regionServerVersion;
+            Privileges = privileges;
         }
 
         public UserLoginReply(BinaryReader br)
@@ -61,7 +56,7 @@ namespace SanProtocol.ClientRegion
                    $"  {nameof(Success)} = {Success}\n" +
                    $"  {nameof(SessionId)} = {SessionId}\n" +
                    $"  {nameof(RegionServerVersion)} = {RegionServerVersion}\n" +
-                   $"  {nameof(Privileges)} = {String.Join(',', Privileges)}\n";
+                   $"  {nameof(Privileges)} = {string.Join(',', Privileges)}\n";
         }
     }
 }

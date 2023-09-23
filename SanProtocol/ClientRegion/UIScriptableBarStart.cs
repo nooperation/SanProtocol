@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class UIScriptableBarStart : IPacket
     {
@@ -21,15 +16,15 @@ namespace SanProtocol.ClientRegion
 
         public UIScriptableBarStart(uint barId, ulong scriptEventId, string label, float duration, List<float> color, float startPct, float endPct, byte options, byte start)
         {
-            this.BarId = barId;
-            this.ScriptEventId = scriptEventId;
-            this.Label = label;
-            this.Duration = duration;
-            this.Color = color;
-            this.StartPct = startPct;
-            this.EndPct = endPct;
-            this.Options = options;
-            this.Start = start;
+            BarId = barId;
+            ScriptEventId = scriptEventId;
+            Label = label;
+            Duration = duration;
+            Color = color;
+            StartPct = startPct;
+            EndPct = endPct;
+            Options = options;
+            Start = start;
         }
 
         public UIScriptableBarStart(BinaryReader br)
@@ -80,7 +75,7 @@ namespace SanProtocol.ClientRegion
                    $"  {nameof(ScriptEventId)} = {ScriptEventId}\n" +
                    $"  {nameof(Label)} = {Label}\n" +
                    $"  {nameof(Duration)} = {Duration}\n" +
-                   $"  {nameof(Color)} = <{String.Join(',', Color)}>\n" +
+                   $"  {nameof(Color)} = <{string.Join(',', Color)}>\n" +
                    $"  {nameof(StartPct)} = {StartPct}\n" +
                    $"  {nameof(EndPct)} = {EndPct}\n" +
                    $"  {nameof(Options)} = {Options}\n" +

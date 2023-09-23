@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace SanProtocol.WorldState
+﻿namespace SanProtocol.WorldState
 {
     public class InitiateCluster : IPacket
     {
@@ -17,10 +11,10 @@ namespace SanProtocol.WorldState
 
         public InitiateCluster(uint clusterId, ulong frame, List<RigidBodyComponentInitialState> rigidBodyInitialStates, List<AnimationComponentInitialState> animationInitialStates)
         {
-            this.ClusterId = clusterId;
-            this.Frame = frame;
-            this.RigidBodyInitialStates = rigidBodyInitialStates;
-            this.AnimationInitialStates = animationInitialStates;
+            ClusterId = clusterId;
+            Frame = frame;
+            RigidBodyInitialStates = rigidBodyInitialStates;
+            AnimationInitialStates = animationInitialStates;
         }
 
         public InitiateCluster(BinaryReader br)
@@ -30,14 +24,14 @@ namespace SanProtocol.WorldState
 
             var rigidBodyInitialStatesLength = br.ReadUInt32();
             RigidBodyInitialStates = new List<RigidBodyComponentInitialState>();
-            for (int i = 0; i < rigidBodyInitialStatesLength; i++)
+            for (var i = 0; i < rigidBodyInitialStatesLength; i++)
             {
                 RigidBodyInitialStates.Add(new RigidBodyComponentInitialState(br));
             }
 
             var animationInitialStatesLength = br.ReadUInt32();
             AnimationInitialStates = new List<AnimationComponentInitialState>();
-            for (int i = 0; i < animationInitialStatesLength; i++)
+            for (var i = 0; i < animationInitialStatesLength; i++)
             {
                 AnimationInitialStates.Add(new AnimationComponentInitialState(br));
             }

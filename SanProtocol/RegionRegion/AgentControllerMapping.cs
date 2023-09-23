@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.RegionRegion
+﻿namespace SanProtocol.RegionRegion
 {
     public class AgentControllerMapping : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.RegionRegion
 
         public AgentControllerMapping(uint agentControllerId, ulong animationComponentId, uint clusterId)
         {
-            this.AgentControllerId = agentControllerId;
-            this.AnimationComponentId = animationComponentId;
-            this.ClusterId = clusterId;
+            AgentControllerId = agentControllerId;
+            AnimationComponentId = animationComponentId;
+            ClusterId = clusterId;
         }
 
         public AgentControllerMapping(BinaryReader br)

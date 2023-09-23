@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class UserLogin : IPacket
     {
@@ -14,8 +9,8 @@ namespace SanProtocol.EditServer
 
         public UserLogin(string authorization, uint secret)
         {
-            this.Authorization = authorization;
-            this.Secret = secret;
+            Authorization = authorization;
+            Secret = secret;
         }
 
         public UserLogin(BinaryReader br)

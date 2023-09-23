@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class AttachToCharacterNode : IPacket
     {
@@ -20,14 +15,14 @@ namespace SanProtocol.AgentController
 
         public AttachToCharacterNode(ulong frame, ulong componentId, uint agentControllerId, List<float> attachmentOffsetPosition, List<float> attachmentOffsetOrientation, byte nodeType, byte ownershipWatermark, byte broadcastToSelf)
         {
-            this.Frame = frame;
-            this.ComponentId = componentId;
-            this.AgentControllerId = agentControllerId;
-            this.AttachmentOffsetPosition = attachmentOffsetPosition;
-            this.AttachmentOffsetOrientation = attachmentOffsetOrientation;
-            this.NodeType = nodeType;
-            this.OwnershipWatermark = ownershipWatermark;
-            this.BroadcastToSelf = broadcastToSelf;
+            Frame = frame;
+            ComponentId = componentId;
+            AgentControllerId = agentControllerId;
+            AttachmentOffsetPosition = attachmentOffsetPosition;
+            AttachmentOffsetOrientation = attachmentOffsetOrientation;
+            NodeType = nodeType;
+            OwnershipWatermark = ownershipWatermark;
+            BroadcastToSelf = broadcastToSelf;
         }
 
         public AttachToCharacterNode(BinaryReader br)
@@ -82,8 +77,8 @@ namespace SanProtocol.AgentController
                    $"  {nameof(Frame)} = {Frame}\n" +
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(AgentControllerId)} = {AgentControllerId}\n" +
-                   $"  {nameof(AttachmentOffsetPosition)} = <{String.Join(',', AttachmentOffsetPosition)}>\n" +
-                   $"  {nameof(AttachmentOffsetOrientation)} = <{String.Join(',', AttachmentOffsetOrientation)}>\n" +
+                   $"  {nameof(AttachmentOffsetPosition)} = <{string.Join(',', AttachmentOffsetPosition)}>\n" +
+                   $"  {nameof(AttachmentOffsetOrientation)} = <{string.Join(',', AttachmentOffsetOrientation)}>\n" +
                    $"  {nameof(NodeType)} = {NodeType}\n" +
                    $"  {nameof(OwnershipWatermark)} = {OwnershipWatermark}\n" +
                    $"  {nameof(BroadcastToSelf)} = {BroadcastToSelf}\n";

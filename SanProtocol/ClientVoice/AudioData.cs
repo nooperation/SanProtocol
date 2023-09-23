@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientVoice
+﻿namespace SanProtocol.ClientVoice
 {
     public class AudioData : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.ClientVoice
 
         public AudioData(ulong sequence, ushort volume, byte[] data)
         {
-            this.Sequence = sequence;
-            this.Volume = volume;
-            this.Data = data;
+            Sequence = sequence;
+            Volume = volume;
+            Data = data;
         }
 
         public AudioData(BinaryReader br)

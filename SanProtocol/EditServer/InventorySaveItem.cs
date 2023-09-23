@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventorySaveItem : IPacket
     {
@@ -20,14 +15,14 @@ namespace SanProtocol.EditServer
 
         public InventorySaveItem(string authorization, SanUUID saveItemRequestId, SanUUID itemToSaveId, string assetId, string licenseAssetName, byte assetState, string assetSerializationTag, ulong resourceVersion)
         {
-            this.Authorization = authorization;
-            this.SaveItemRequestId = saveItemRequestId;
-            this.ItemToSaveId = itemToSaveId;
-            this.AssetId = assetId;
-            this.LicenseAssetName = licenseAssetName;
-            this.AssetState = assetState;
-            this.AssetSerializationTag = assetSerializationTag;
-            this.ResourceVersion = resourceVersion;
+            Authorization = authorization;
+            SaveItemRequestId = saveItemRequestId;
+            ItemToSaveId = itemToSaveId;
+            AssetId = assetId;
+            LicenseAssetName = licenseAssetName;
+            AssetState = assetState;
+            AssetSerializationTag = assetSerializationTag;
+            ResourceVersion = resourceVersion;
         }
 
         public InventorySaveItem(BinaryReader br)

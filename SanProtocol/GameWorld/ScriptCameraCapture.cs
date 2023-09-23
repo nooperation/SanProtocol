@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.GameWorld
+﻿namespace SanProtocol.GameWorld
 {
     public class ScriptCameraCapture : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.GameWorld
 
         public ScriptCameraCapture(ulong componentid)
         {
-            this.Componentid = componentid;
+            Componentid = componentid;
         }
 
         public ScriptCameraCapture(BinaryReader br)

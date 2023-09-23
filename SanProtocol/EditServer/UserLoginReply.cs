@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class UserLoginReply : IPacket
     {
@@ -15,9 +10,9 @@ namespace SanProtocol.EditServer
 
         public UserLoginReply(byte success, uint sessionId, string editServerVersion)
         {
-            this.Success = success;
-            this.SessionId = sessionId;
-            this.EditServerVersion = editServerVersion;
+            Success = success;
+            SessionId = sessionId;
+            EditServerVersion = editServerVersion;
         }
 
         public UserLoginReply(BinaryReader br)

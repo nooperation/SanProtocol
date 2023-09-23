@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.ClientRegion
+﻿namespace SanProtocol.ClientRegion
 {
     public class VisualDebuggerCaptureToClient : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.ClientRegion
 
         public VisualDebuggerCaptureToClient(string startTimeFormatted, byte[] compressedHkmBytes, ulong uncompressedSize, byte beginCapture, byte succeeded, string errorMessage)
         {
-            this.StartTimeFormatted = startTimeFormatted;
-            this.CompressedHkmBytes = compressedHkmBytes;
-            this.UncompressedSize = uncompressedSize;
-            this.BeginCapture = beginCapture;
-            this.Succeeded = succeeded;
-            this.ErrorMessage = errorMessage;
+            StartTimeFormatted = startTimeFormatted;
+            CompressedHkmBytes = compressedHkmBytes;
+            UncompressedSize = uncompressedSize;
+            BeginCapture = beginCapture;
+            Succeeded = succeeded;
+            ErrorMessage = errorMessage;
         }
 
         public VisualDebuggerCaptureToClient(BinaryReader br)

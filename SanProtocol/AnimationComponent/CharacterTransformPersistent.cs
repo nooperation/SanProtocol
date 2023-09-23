@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class CharacterTransformPersistent : CharacterTransform
     {
@@ -25,8 +20,8 @@ namespace SanProtocol.AnimationComponent
                    $"  {nameof(ComponentId)} = {ComponentId}\n" +
                    $"  {nameof(ServerFrame)} = {ServerFrame}\n" +
                    $"  {nameof(GroundComponentId)} = {GroundComponentId}\n" +
-                   $"  {nameof(Position)} = <{String.Join(',', Position)}>\n" +
-                   $"  {nameof(OrientationQuat)} = <{String.Join(',', OrientationQuat)}>\n";
+                   $"  {nameof(Position)} = <{string.Join(',', Position)}>\n" +
+                   $"  {nameof(OrientationQuat)} = <{string.Join(',', OrientationQuat)}>\n";
         }
     }
 

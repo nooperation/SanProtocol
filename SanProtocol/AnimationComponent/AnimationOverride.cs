@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AnimationComponent
+﻿namespace SanProtocol.AnimationComponent
 {
     public class AnimationOverride : IPacket
     {
@@ -13,7 +8,7 @@ namespace SanProtocol.AnimationComponent
 
         public AnimationOverride(byte slotIndex)
         {
-            this.SlotIndex = slotIndex;
+            SlotIndex = slotIndex;
         }
 
         public AnimationOverride(BinaryReader br)

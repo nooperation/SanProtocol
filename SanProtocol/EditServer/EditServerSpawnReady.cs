@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class EditServerSpawnReady : IPacket
     {
@@ -18,12 +13,12 @@ namespace SanProtocol.EditServer
 
         public EditServerSpawnReady(byte isValid, uint serial, uint instanceCount, string inventoryName, List<string> instanceNames, List<string> folderNames)
         {
-            this.IsValid = isValid;
-            this.Serial = serial;
-            this.InstanceCount = instanceCount;
-            this.InventoryName = inventoryName;
-            this.InstanceNames = instanceNames;
-            this.FolderNames = folderNames;
+            IsValid = isValid;
+            Serial = serial;
+            InstanceCount = instanceCount;
+            InventoryName = inventoryName;
+            InstanceNames = instanceNames;
+            FolderNames = folderNames;
         }
 
         public EditServerSpawnReady(BinaryReader br)
@@ -79,8 +74,8 @@ namespace SanProtocol.EditServer
                    $"  {nameof(Serial)} = {Serial}\n" +
                    $"  {nameof(InstanceCount)} = {InstanceCount}\n" +
                    $"  {nameof(InventoryName)} = {InventoryName}\n" +
-                   $"  {nameof(InstanceNames)} = {String.Join(',', InstanceNames)}\n" +
-                   $"  {nameof(FolderNames)} = {String.Join(',', FolderNames)}\n";
+                   $"  {nameof(InstanceNames)} = {string.Join(',', InstanceNames)}\n" +
+                   $"  {nameof(FolderNames)} = {string.Join(',', FolderNames)}\n";
         }
     }
 }

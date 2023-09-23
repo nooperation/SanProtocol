@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.EditServer
+﻿namespace SanProtocol.EditServer
 {
     public class InventoryModifyItemThumbnailAssetId : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.EditServer
 
         public InventoryModifyItemThumbnailAssetId(string authorization, SanUUID modifyThumbnailRequestId, SanUUID itemToChangeId, string newThumbnailAssetId)
         {
-            this.Authorization = authorization;
-            this.ModifyThumbnailRequestId = modifyThumbnailRequestId;
-            this.ItemToChangeId = itemToChangeId;
-            this.NewThumbnailAssetId = newThumbnailAssetId;
+            Authorization = authorization;
+            ModifyThumbnailRequestId = modifyThumbnailRequestId;
+            ItemToChangeId = itemToChangeId;
+            NewThumbnailAssetId = newThumbnailAssetId;
         }
 
         public InventoryModifyItemThumbnailAssetId(BinaryReader br)

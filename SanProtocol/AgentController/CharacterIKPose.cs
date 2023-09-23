@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace SanProtocol.AgentController
+﻿namespace SanProtocol.AgentController
 {
     public class CharacterIKPose : IPacket
     {
@@ -16,10 +11,10 @@ namespace SanProtocol.AgentController
 
         public CharacterIKPose(uint agentControllerId, ulong frame, List<Tuple<byte, Quaternion>> boneRotations, List<float> rootBoneTranslation)
         {
-            this.AgentControllerId = agentControllerId;
-            this.Frame = frame;
-            this.BoneRotations = boneRotations;
-            this.RootBoneTranslation = rootBoneTranslation;
+            AgentControllerId = agentControllerId;
+            Frame = frame;
+            BoneRotations = boneRotations;
+            RootBoneTranslation = rootBoneTranslation;
         }
 
         public CharacterIKPose(BinaryReader br)
@@ -31,7 +26,7 @@ namespace SanProtocol.AgentController
             var numBoneRotations = br.ReadUInt32();
 
             var bitReader = new BitReader(br);
-            for (int i = 0; i < numBoneRotations; i++)
+            for (var i = 0; i < numBoneRotations; i++)
             {
                 var boneIndex = (byte)bitReader.ReadUnsigned(6);
                 var localOrientation = bitReader.ReadQuaternion(3, 12);
